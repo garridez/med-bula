@@ -22,25 +22,49 @@ const nav = computed<NavItem[]>(() => [
     label: 'Pacientes',
     path: '/pacientes',
     icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
-    show: () => true,
-  },
-  {
-    label: 'Prontuário',
-    path: '/prontuario',
-    icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
-    show: () => auth.canAccessProntuario,
+    show: () => !auth.isSuperAdmin,
   },
   {
     label: 'Documentos',
     path: '/documentos',
     icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
-    show: () => auth.role === 'doctor' || auth.role === 'super_admin',
+    show: () => auth.canAccessDocumentos,
   },
   {
-    label: 'Admin',
-    path: '/admin',
+    label: 'Financeiro',
+    path: '/financeiro',
+    icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+    show: () => auth.isDoctor || auth.isAdmin,
+  },
+  {
+    label: 'Médicos',
+    path: '/medicos',
+    icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
+    show: () => auth.isAdmin,
+  },
+  {
+    label: 'Secretárias',
+    path: '/secretarias',
+    icon: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
+    show: () => auth.isAdmin,
+  },
+  {
+    label: 'Clínicas',
+    path: '/admin/clinicas',
+    icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+    show: () => auth.isSuperAdmin,
+  },
+  {
+    label: 'Planos',
+    path: '/admin/planos',
+    icon: 'M9 12l2 2 4-4M21 12c0 1.5-4 6-9 6s-9-4.5-9-6 4-6 9-6 9 4.5 9 6z',
+    show: () => auth.isSuperAdmin,
+  },
+  {
+    label: 'Configurações',
+    path: '/configuracoes',
     icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
-    show: () => auth.role === 'super_admin' || auth.role === 'admin',
+    show: () => true,
   },
 ])
 
@@ -57,18 +81,13 @@ const initials = computed(() => {
 })
 
 const roleLabel = computed(() => {
-  switch (auth.role) {
-    case 'super_admin':
-      return 'Super Admin'
-    case 'admin':
-      return 'Administrador'
-    case 'doctor':
-      return 'Médico(a)'
-    case 'secretary':
-      return 'Secretária'
-    default:
-      return ''
+  if (auth.role === 'super_admin') return 'Super Admin'
+  if (auth.role === 'admin') return 'Administrador'
+  if (auth.role === 'doctor') {
+    return auth.isConsultorio ? 'Médico (Consultório)' : 'Médico'
   }
+  if (auth.role === 'secretary') return 'Secretária'
+  return ''
 })
 
 const isActive = (path: string) =>
@@ -79,18 +98,25 @@ const isActive = (path: string) =>
 
 <template>
   <div class="min-h-screen flex bg-slate-50">
-    <!-- Sidebar -->
     <aside class="w-64 bg-white border-r border-slate-200 flex flex-col">
       <!-- Logo -->
       <div class="px-6 py-5 border-b border-slate-100">
         <div class="flex items-center gap-2.5">
-          <BulaLogo size="sm" rounded="lg" badge-class="shadow-sm" />
+          <div
+            class="w-9 h-9 bg-bula-500 rounded-lg flex items-center justify-center shadow-sm"
+          >
+            <svg viewBox="0 0 100 100" class="w-6 h-6" fill="white">
+              <path
+                d="M20 15 L20 85 L55 85 C72 85 80 75 80 60 C80 52 76 46 70 43 C75 40 78 35 78 28 C78 18 70 15 55 15 Z M35 28 L52 28 C58 28 62 31 62 36 C62 41 58 44 52 44 L35 44 Z M35 56 L54 56 C61 56 65 60 65 65 C65 70 61 73 54 73 L35 73 Z"
+              />
+            </svg>
+          </div>
           <div>
             <div class="font-bold text-slate-900 text-base leading-tight">
               med.bula
             </div>
             <div class="text-[11px] text-slate-500 leading-tight">
-              {{ auth.user?.clinic?.name || 'Consultório' }}
+              {{ auth.user?.clinic?.name || 'med.bula' }}
             </div>
           </div>
         </div>
@@ -102,26 +128,15 @@ const isActive = (path: string) =>
           v-for="item in visibleNav"
           :key="item.path"
           :to="item.path"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
-                 transition-colors"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
           :class="
             isActive(item.path)
               ? 'bg-bula-50 text-bula-700'
               : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
           "
         >
-          <svg
-            class="w-5 h-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              :d="item.icon"
-            />
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="item.icon" />
           </svg>
           {{ item.label }}
         </NuxtLink>
@@ -131,8 +146,7 @@ const isActive = (path: string) =>
       <div class="border-t border-slate-100 p-3">
         <div class="flex items-center gap-3 px-2 py-2">
           <div
-            class="w-9 h-9 rounded-full bg-bula-500 text-white font-semibold
-                   flex items-center justify-center text-sm shrink-0"
+            class="w-9 h-9 rounded-full bg-bula-500 text-white font-semibold flex items-center justify-center text-sm shrink-0"
           >
             {{ initials }}
           </div>
@@ -144,29 +158,18 @@ const isActive = (path: string) =>
           </div>
           <button
             @click="auth.logout()"
-            class="p-1.5 rounded-md text-slate-400 hover:text-slate-700
-                   hover:bg-slate-100 transition-colors"
+            class="p-1.5 rounded-md text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
             title="Sair"
           >
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-              />
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
             </svg>
           </button>
         </div>
       </div>
     </aside>
 
-    <!-- Main -->
     <main class="flex-1 overflow-auto">
       <slot />
     </main>

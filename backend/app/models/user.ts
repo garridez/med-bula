@@ -50,6 +50,14 @@ export default class User extends compose(BaseModel, AuthFinder) {
   declare specialty: string | null
 
   @column()
+  declare address: string | null
+
+  @column({
+    consume: (v) => (v == null ? null : Number(v)),
+  })
+  declare consultationPrice: number | null
+
+  @column()
   declare signatureProvider: string | null
 
   @column({

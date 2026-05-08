@@ -11,18 +11,17 @@ const DocumentsController = () => import('#controllers/documents_controller')
 const SignatureController = () => import('#controllers/signature_controller')
 const DocumentDeliveryController = () =>
   import('#controllers/document_delivery_controller')
+const ProfileController = () => import('#controllers/profile_controller')
 
-router.get('/', async () => ({ ok: true, app: 'med-bula', version: '0.4.0' }))
+router.get('/', async () => ({ ok: true, app: 'med-bula', version: '0.5.0a' }))
 
 // ==========================================================================
-// PUBLIC — sem auth. Acesso por delivery_token + OTP do paciente OU CNPJ.
+// PUBLIC — sem auth.
 // ==========================================================================
 router.get('/api/public/r/:token', [DocumentDeliveryController, 'preview'])
 router.post('/api/public/r/:token/verify', [DocumentDeliveryController, 'verify'])
 router.post('/api/public/r/:token/dispense', [DocumentDeliveryController, 'dispense'])
 router.get('/api/public/r/:token/pdf', [DocumentDeliveryController, 'pdf'])
-
-// Callback Vidaas — também público (UUID + expiração curta)
 router.get('/api/signature/callback', [SignatureController, 'callback'])
 
 // ==========================================================================
@@ -38,17 +37,24 @@ router
     // ---------- Protected ----------
     router
       .group(() => {
-        // Clínica / metadados
-        router.get('/clinics/doctors', [ClinicsController, 'doctors'])
+        // ---- Profile (qualquer role autenticado) ----
+        router.get('/profile/me', [ProfileController, 'me'])
+        router.patch('/profile/me', [ProfileController, 'update'])
+        router.post('/profile/password', [ProfileController, 'changePassword'])
 
-        // Pacientes
+        // ---- Clínica ----
+        router.get('/clinics/doctors', [ClinicsController, 'doctors'])
+        router.get('/clinic/me', [ClinicsController, 'showMine'])
+        router.patch('/clinic/me', [ClinicsController, 'update']) // forbid secretary in controller
+
+        // ---- Pacientes (médico + secretária) ----
         router.get('/patients', [PatientsController, 'index'])
         router.get('/patients/:id', [PatientsController, 'show'])
         router.post('/patients', [PatientsController, 'store'])
         router.patch('/patients/:id', [PatientsController, 'update'])
         router.delete('/patients/:id', [PatientsController, 'destroy'])
 
-        // Consultas
+        // ---- Consultas (médico + secretária) ----
         router.get('/appointments', [AppointmentsController, 'index'])
         router.get('/appointments/:id', [AppointmentsController, 'show'])
         router.post('/appointments', [AppointmentsController, 'store'])
@@ -63,26 +69,38 @@ router
           'clearPayment',
         ])
 
-        // Prontuário
-        router.get('/medical-records', [MedicalRecordsController, 'index'])
-        router.get('/medical-records/:id', [MedicalRecordsController, 'show'])
-        router.post('/medical-records', [MedicalRecordsController, 'upsert'])
+        // ---- Prontuário (SÓ médico/admin — secretária BLOQUEADA) ----
+        router
+          .group(() => {
+            router.get('/medical-records', [MedicalRecordsController, 'index'])
+            router.get('/medical-records/:id', [MedicalRecordsController, 'show'])
+            router.post('/medical-records', [MedicalRecordsController, 'upsert'])
+          })
+          .use(middleware.role(['doctor', 'admin', 'super_admin']))
 
-        // Documentos
-        router.get('/documents', [DocumentsController, 'index'])
-        router.get('/documents/:id', [DocumentsController, 'show'])
-        router.get('/documents/:id/pdf', [DocumentsController, 'pdf'])
-        router.post('/documents', [DocumentsController, 'store'])
-        router.delete('/documents/:id', [DocumentsController, 'destroy'])
-        router.post('/documents/:id/send-whatsapp', [
-          DocumentDeliveryController,
-          'sendToWhatsApp',
-        ])
+        // ---- Documentos (SÓ médico/admin — secretária BLOQUEADA) ----
+        router
+          .group(() => {
+            router.get('/documents', [DocumentsController, 'index'])
+            router.get('/documents/:id', [DocumentsController, 'show'])
+            router.get('/documents/:id/pdf', [DocumentsController, 'pdf'])
+            router.post('/documents', [DocumentsController, 'store'])
+            router.delete('/documents/:id', [DocumentsController, 'destroy'])
+            router.post('/documents/:id/send-whatsapp', [
+              DocumentDeliveryController,
+              'sendToWhatsApp',
+            ])
+          })
+          .use(middleware.role(['doctor', 'admin', 'super_admin']))
 
-        // Assinatura digital
-        router.get('/signature/providers', [SignatureController, 'providers'])
-        router.post('/signature/sessions', [SignatureController, 'createSession'])
-        router.get('/signature/sessions/:id', [SignatureController, 'getSession'])
+        // ---- Assinatura (SÓ médico — secretária e admin BLOQUEADA) ----
+        router
+          .group(() => {
+            router.get('/signature/providers', [SignatureController, 'providers'])
+            router.post('/signature/sessions', [SignatureController, 'createSession'])
+            router.get('/signature/sessions/:id', [SignatureController, 'getSession'])
+          })
+          .use(middleware.role(['doctor']))
       })
       .use(middleware.auth())
   })

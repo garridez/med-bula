@@ -15,6 +15,9 @@ export default class Clinic extends BaseModel {
   declare cnpj: string | null
 
   @column()
+  declare plan: 'consultorio' | 'clinica'
+
+  @column()
   declare phone: string | null
 
   @column()

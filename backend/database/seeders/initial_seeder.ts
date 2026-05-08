@@ -18,6 +18,7 @@ export default class extends BaseSeeder {
         cnpj: '12.345.678/0001-90',
         phone: '(31) 3000-0000',
         address: 'Rua das Flores, 100 - Belo Horizonte/MG',
+        plan: 'consultorio',
         primaryColor: '#e53935',
         isActive: true,
       }
@@ -60,6 +61,8 @@ export default class extends BaseSeeder {
         crm: '12345',
         crmUf: 'MG',
         specialty: 'Clínica Geral',
+        address: 'Avenida Professor Manoel Martins, 687 - Conselheiro Lafaiete/MG',
+        consultationPrice: 250,
         signatureProvider: 'vidaas',
         isActive: true,
       }

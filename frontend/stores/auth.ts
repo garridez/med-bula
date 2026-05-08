@@ -1,14 +1,20 @@
 import { defineStore } from 'pinia'
 
+export type UserRole = 'super_admin' | 'admin' | 'doctor' | 'secretary'
+export type ClinicPlan = 'consultorio' | 'clinica'
+
 export interface AuthUser {
   id: number
   fullName: string
   email: string
-  role: 'super_admin' | 'admin' | 'doctor' | 'secretary'
+  role: UserRole
   clinicId: number | null
+  cpf?: string | null
+  phone?: string | null
   crm?: string | null
   crmUf?: string | null
   specialty?: string | null
+  consultationPrice?: number | null
   permissions?: Record<string, boolean> | null
   isDoctor?: boolean
   isAdmin?: boolean
@@ -16,7 +22,11 @@ export interface AuthUser {
   clinic?: {
     id: number
     name: string
+    plan: ClinicPlan
     primaryColor: string
+    cnpj?: string | null
+    phone?: string | null
+    address?: string | null
   } | null
 }
 
@@ -29,19 +39,30 @@ export const useAuthStore = defineStore('auth', {
   getters: {
     isAuthenticated: (s) => !!s.token && !!s.user,
     role: (s) => s.user?.role,
-    canAccessProntuario: (s) => {
-      if (!s.user) return false
-      if (s.user.role === 'doctor' || s.user.role === 'super_admin') return true
-      if (s.user.role === 'admin') return true
-      return s.user.permissions?.prontuario === true
+    clinicPlan: (s) => s.user?.clinic?.plan ?? 'consultorio',
+    isSecretary: (s) => s.user?.role === 'secretary',
+    isDoctor: (s) => s.user?.role === 'doctor',
+    isAdmin: (s) => s.user?.role === 'admin',
+    isSuperAdmin: (s) => s.user?.role === 'super_admin',
+    isConsultorio: (s) => s.user?.clinic?.plan === 'consultorio',
+    isClinica: (s) => s.user?.clinic?.plan === 'clinica',
+    /** Médico em consultório age como admin da própria clínica. */
+    isClinicAdmin(): boolean {
+      return (
+        this.role === 'admin' ||
+        this.role === 'super_admin' ||
+        (this.role === 'doctor' && this.clinicPlan === 'consultorio')
+      )
     },
-    canAccessAgenda: (s) => {
-      if (!s.user) return false
-      if (s.user.role === 'secretary') {
-        return s.user.permissions?.agenda !== false
-      }
-      return true
-    },
+    canAccessAgenda: (s) => !!s.user && s.user.role !== 'super_admin',
+    canAccessProntuario: (s) =>
+      !!s.user &&
+      (s.user.role === 'doctor' ||
+        s.user.role === 'admin' ||
+        s.user.role === 'super_admin'),
+    canAccessDocumentos: (s) =>
+      !!s.user && (s.user.role === 'doctor' || s.user.role === 'admin'),
+    canStartConsultation: (s) => s.user?.role === 'doctor',
   },
   actions: {
     hydrateFromStorage() {
@@ -67,16 +88,17 @@ export const useAuthStore = defineStore('auth', {
         localStorage.removeItem('mb_auth')
       }
     },
+    setUser(u: AuthUser | null) {
+      this.user = u
+      this.persist()
+    },
     async login(email: string, password: string) {
       this.loading = true
       try {
         const { apiBase } = useRuntimeConfig().public
         const res = await $fetch<{ token: string; user: AuthUser }>(
           `${apiBase}/api/auth/login`,
-          {
-            method: 'POST',
-            body: { email, password },
-          }
+          { method: 'POST', body: { email, password } }
         )
         this.token = res.token
         this.user = res.user
@@ -110,7 +132,7 @@ export const useAuthStore = defineStore('auth', {
             headers: { Authorization: `Bearer ${this.token}` },
           })
         } catch {
-          // ignore
+          /* ignore */
         }
       }
       this.token = null

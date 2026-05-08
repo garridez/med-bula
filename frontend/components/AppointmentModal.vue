@@ -199,10 +199,15 @@ function openConsultation() {
   navigateTo(`/consulta/${props.appointment.id}`)
 }
 
+const auth = useAuthStore()
+
 const canStart = computed(() => {
   if (!props.appointment) return false
+  if (!auth.canStartConsultation) return false
   return ['scheduled', 'confirmed'].includes(props.appointment.status)
 })
+
+const canContinue = computed(() => auth.canStartConsultation)
 
 const isInProgress = computed(
   () => props.appointment?.status === 'in_progress'
@@ -405,7 +410,7 @@ const statusOptions: { value: AppointmentStatus; label: string }[] = [
         Fechar
       </button>
       <button
-        v-if="isEdit && isInProgress"
+        v-if="isEdit && isInProgress && canContinue"
         type="button"
         @click="openConsultation"
         class="btn-primary"
