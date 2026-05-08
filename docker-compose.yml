@@ -1,0 +1,93 @@
+# =====================================================================
+# med.bula — full stack
+#
+# Local dev:
+#   cp .env.example .env  (e ajuste se quiser)
+#   docker compose up -d --build
+#   → frontend  http://localhost:3000
+#   → backend   http://localhost:3333
+#
+# Coolify:
+#   - Crie um Project / Resource "Docker Compose"
+#   - Aponte pra esse repo
+#   - Configure os domínios (frontend em med.bula.com.br, backend em api.med.bula.com.br)
+#   - Configure env vars no painel (APP_KEY, DB_PASSWORD, FRONTEND_URL, NUXT_PUBLIC_API_BASE...)
+#   - Deploy
+# =====================================================================
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER:-med}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-med}
+      POSTGRES_DB: ${DB_DATABASE:-med_bula}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        ['CMD-SHELL', 'pg_isready -U ${DB_USER:-med} -d ${DB_DATABASE:-med_bula}']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      TZ: America/Sao_Paulo
+      NODE_ENV: production
+      PORT: 3333
+      HOST: 0.0.0.0
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      APP_KEY: ${APP_KEY}
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${DB_USER:-med}
+      DB_PASSWORD: ${DB_PASSWORD:-med}
+      DB_DATABASE: ${DB_DATABASE:-med_bula}
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000}
+      VIDAAS_BASE_URL: ${VIDAAS_BASE_URL:-}
+      VIDAAS_CLIENT_ID: ${VIDAAS_CLIENT_ID:-}
+      VIDAAS_CLIENT_SECRET: ${VIDAAS_CLIENT_SECRET:-}
+      VIDAAS_REDIRECT_URI: ${VIDAAS_REDIRECT_URI:-}
+      WHATSAPP_PROVIDER: ${WHATSAPP_PROVIDER:-mock}
+      RUN_SEED: ${RUN_SEED:-true}
+    ports:
+      - '${BACKEND_PORT:-3333}:3333'
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ['CMD', 'wget', '-q', '-O', '-', 'http://localhost:3333']
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      NITRO_PORT: 3000
+      NITRO_HOST: 0.0.0.0
+      NUXT_PUBLIC_API_BASE: ${NUXT_PUBLIC_API_BASE:-http://localhost:3333}
+    ports:
+      - '${FRONTEND_PORT:-3000}:3000'
+    depends_on:
+      - backend
+    healthcheck:
+      test: ['CMD', 'wget', '-q', '-O', '-', 'http://localhost:3000']
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  postgres_data:

@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.local
+.env.*.local
+signed/
+*.log
+.DS_Store
+.vscode/
+.idea/
+dist/
+build/
+.output/
+.nuxt/
+tmp/
