@@ -354,6 +354,15 @@ const statusOptions: { value: AppointmentStatus; label: string }[] = [
         </div>
       </div>
 
+      <!-- Pagamento manual (só edição) -->
+      <div v-if="isEdit && appointment">
+        <PaymentButtons
+          :appointment-id="appointment.id"
+          :initial-status="appointment.paymentStatus"
+          :initial-method="appointment.paymentMethod"
+        />
+      </div>
+
       <!-- Notas -->
       <div>
         <label class="label">Observações</label>

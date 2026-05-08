@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import { useDocuments, type Document } from '~/composables/useDocuments'
+import { useSignature } from '~/composables/useSignature'
 import { formatDateTimeBR } from '~/utils/format'
 
 const docsApi = useDocuments()
+const sig = useSignature()
 const documents = ref<Document[]>([])
 const loading = ref(true)
 const filterType = ref<string>('all')
+const sendingWa = ref<string | null>(null)
+const sigModalOpen = ref(false)
+const sigDocIds = ref<string[]>([])
 
 async function load() {
   loading.value = true
@@ -57,6 +62,38 @@ const statusBadge = (s: string) =>
     delivered: 'bg-blue-50 text-blue-700 ring-1 ring-blue-200',
     cancelled: 'bg-slate-50 text-slate-400 line-through',
   } as any)[s] || 'bg-slate-100'
+
+function openSignFor(doc: Document) {
+  sigDocIds.value = [doc.id]
+  sigModalOpen.value = true
+}
+
+function signAllPending() {
+  const ids = filtered.value
+    .filter((d) => d.status === 'awaiting_signature')
+    .map((d) => d.id)
+  if (ids.length === 0) return
+  sigDocIds.value = ids
+  sigModalOpen.value = true
+}
+
+async function sendWA(doc: Document) {
+  sendingWa.value = doc.id
+  try {
+    const res = await sig.sendToWhatsApp(doc.id)
+    alert(
+      `📱 WhatsApp (mock) disparado!\n\nLink:\n${res.data.url}\n\nVeja no terminal do backend pra ver a mensagem.`
+    )
+  } catch (e: any) {
+    alert(e?.data?.error || 'Erro ao enviar')
+  } finally {
+    sendingWa.value = null
+  }
+}
+
+const pendingCount = computed(
+  () => documents.value.filter((d) => d.status === 'awaiting_signature').length
+)
 </script>
 
 <template>
@@ -68,6 +105,13 @@ const statusBadge = (s: string) =>
           Receitas, pedidos de exame e atestados emitidos
         </p>
       </div>
+      <button
+        v-if="pendingCount > 0"
+        @click="signAllPending"
+        class="btn-primary"
+      >
+        Assinar {{ pendingCount }} pendente{{ pendingCount === 1 ? '' : 's' }}
+      </button>
     </div>
 
     <!-- Filtros -->
@@ -125,24 +169,49 @@ const statusBadge = (s: string) =>
               <span class="badge" :class="statusBadge(doc.status)">{{ statusLabel(doc.status) }}</span>
             </td>
             <td class="px-6 py-3 text-right whitespace-nowrap">
-              <a
-                :href="docsApi.pdfUrl(doc.id)"
-                target="_blank"
-                class="inline-flex items-center gap-1 text-xs font-medium text-bula-600 hover:text-bula-700"
-              >
-                Abrir PDF
-                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
+              <div class="inline-flex items-center gap-1">
+                <a
+                  :href="docsApi.pdfUrl(doc.id)"
+                  target="_blank"
+                  class="text-xs font-medium text-slate-600 hover:text-slate-900 px-2"
+                  title="Abrir PDF"
+                >
+                  PDF
+                </a>
+                <button
+                  v-if="doc.status === 'awaiting_signature'"
+                  @click="openSignFor(doc)"
+                  class="text-xs font-semibold text-bula-600 hover:text-bula-700 px-2"
+                >
+                  Assinar
+                </button>
+                <button
+                  v-if="doc.status === 'signed' || doc.status === 'delivered'"
+                  @click="sendWA(doc)"
+                  :disabled="sendingWa === doc.id"
+                  class="text-xs font-medium text-emerald-700 hover:text-emerald-800 px-2 disabled:opacity-50"
+                  title="Enviar via WhatsApp"
+                >
+                  {{ sendingWa === doc.id ? '…' : 'WhatsApp' }}
+                </button>
+              </div>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <p class="mt-4 text-xs text-slate-400 text-center">
-      No Drop 4 cada documento ganha botão "Assinar com Vidaas" e "Enviar pro paciente via WhatsApp".
-    </p>
+    <SignatureModal
+      :open="sigModalOpen"
+      :document-ids="sigDocIds"
+      default-provider="vidaas"
+      @close="sigModalOpen = false"
+      @signed="
+        () => {
+          sigModalOpen = false
+          load()
+        }
+      "
+    />
   </div>
 </template>

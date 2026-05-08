@@ -80,22 +80,11 @@ const isActive = (path: string) =>
 <template>
   <div class="min-h-screen flex bg-slate-50">
     <!-- Sidebar -->
-    <aside
-      class="w-64 bg-white border-r border-slate-200 flex flex-col"
-    >
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col">
       <!-- Logo -->
       <div class="px-6 py-5 border-b border-slate-100">
         <div class="flex items-center gap-2.5">
-          <div
-            class="w-9 h-9 bg-bula-500 rounded-lg flex items-center justify-center
-                   shadow-sm"
-          >
-            <svg viewBox="0 0 100 100" class="w-6 h-6" fill="white">
-              <path
-                d="M20 15 L20 85 L55 85 C72 85 80 75 80 60 C80 52 76 46 70 43 C75 40 78 35 78 28 C78 18 70 15 55 15 Z M35 28 L52 28 C58 28 62 31 62 36 C62 41 58 44 52 44 L35 44 Z M35 56 L54 56 C61 56 65 60 65 65 C65 70 61 73 54 73 L35 73 Z"
-              />
-            </svg>
-          </div>
+          <BulaLogo size="sm" rounded="lg" badge-class="shadow-sm" />
           <div>
             <div class="font-bold text-slate-900 text-base leading-tight">
               med.bula

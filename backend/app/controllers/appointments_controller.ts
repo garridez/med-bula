@@ -153,4 +153,57 @@ export default class AppointmentsController {
 
     return { ok: true }
   }
+
+  /**
+   * POST /api/appointments/:id/payment
+   * Body: { method: 'cash' | 'pix_manual' | 'card_manual' | 'deposit', status?: 'paid' | 'pending' }
+   *
+   * Endpoint dedicado pra secretária bater "recebido" no atendimento.
+   * Não passa dinheiro pelo SaaS — só registra.
+   */
+  async markPayment({ params, request, auth, response }: HttpContext) {
+    const method = request.input('method') as string
+    const status = (request.input('status') as 'paid' | 'pending') ?? 'paid'
+
+    const validMethods = ['cash', 'pix_manual', 'card_manual', 'deposit']
+    if (!validMethods.includes(method)) {
+      return response.badRequest({
+        error: `Método inválido. Use: ${validMethods.join(', ')}`,
+      })
+    }
+
+    const query = Appointment.query().where('id', Number(params.id))
+    scopeToClinic(query, { auth } as HttpContext)
+    const appointment = await query.first()
+    if (!appointment) {
+      return response.notFound({ error: 'Consulta não encontrada' })
+    }
+
+    appointment.paymentStatus = status
+    appointment.paymentMethod = method
+    await appointment.save()
+    await appointment.load('patient')
+    await appointment.load('doctor')
+
+    return { data: appointment }
+  }
+
+  /**
+   * DELETE /api/appointments/:id/payment
+   * Reverte pagamento (volta a none).
+   */
+  async clearPayment({ params, auth, response }: HttpContext) {
+    const query = Appointment.query().where('id', Number(params.id))
+    scopeToClinic(query, { auth } as HttpContext)
+    const appointment = await query.first()
+    if (!appointment) {
+      return response.notFound({ error: 'Consulta não encontrada' })
+    }
+
+    appointment.paymentStatus = 'none'
+    appointment.paymentMethod = null
+    await appointment.save()
+
+    return { data: appointment }
+  }
 }

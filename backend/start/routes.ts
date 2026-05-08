@@ -8,9 +8,26 @@ const ClinicsController = () => import('#controllers/clinics_controller')
 const MedicalRecordsController = () =>
   import('#controllers/medical_records_controller')
 const DocumentsController = () => import('#controllers/documents_controller')
+const SignatureController = () => import('#controllers/signature_controller')
+const DocumentDeliveryController = () =>
+  import('#controllers/document_delivery_controller')
 
-router.get('/', async () => ({ ok: true, app: 'med-bula', version: '0.3.0' }))
+router.get('/', async () => ({ ok: true, app: 'med-bula', version: '0.4.0' }))
 
+// ==========================================================================
+// PUBLIC — sem auth. Acesso por delivery_token + OTP do paciente OU CNPJ.
+// ==========================================================================
+router.get('/api/public/r/:token', [DocumentDeliveryController, 'preview'])
+router.post('/api/public/r/:token/verify', [DocumentDeliveryController, 'verify'])
+router.post('/api/public/r/:token/dispense', [DocumentDeliveryController, 'dispense'])
+router.get('/api/public/r/:token/pdf', [DocumentDeliveryController, 'pdf'])
+
+// Callback Vidaas — também público (UUID + expiração curta)
+router.get('/api/signature/callback', [SignatureController, 'callback'])
+
+// ==========================================================================
+// API
+// ==========================================================================
 router
   .group(() => {
     // ---------- Auth ----------
@@ -37,18 +54,35 @@ router
         router.post('/appointments', [AppointmentsController, 'store'])
         router.patch('/appointments/:id', [AppointmentsController, 'update'])
         router.delete('/appointments/:id', [AppointmentsController, 'destroy'])
+        router.post('/appointments/:id/payment', [
+          AppointmentsController,
+          'markPayment',
+        ])
+        router.delete('/appointments/:id/payment', [
+          AppointmentsController,
+          'clearPayment',
+        ])
 
-        // Prontuário (medical records)
+        // Prontuário
         router.get('/medical-records', [MedicalRecordsController, 'index'])
         router.get('/medical-records/:id', [MedicalRecordsController, 'show'])
         router.post('/medical-records', [MedicalRecordsController, 'upsert'])
 
-        // Documentos (receita / exame / atestado)
+        // Documentos
         router.get('/documents', [DocumentsController, 'index'])
         router.get('/documents/:id', [DocumentsController, 'show'])
         router.get('/documents/:id/pdf', [DocumentsController, 'pdf'])
         router.post('/documents', [DocumentsController, 'store'])
         router.delete('/documents/:id', [DocumentsController, 'destroy'])
+        router.post('/documents/:id/send-whatsapp', [
+          DocumentDeliveryController,
+          'sendToWhatsApp',
+        ])
+
+        // Assinatura digital
+        router.get('/signature/providers', [SignatureController, 'providers'])
+        router.post('/signature/sessions', [SignatureController, 'createSession'])
+        router.get('/signature/sessions/:id', [SignatureController, 'getSession'])
       })
       .use(middleware.auth())
   })

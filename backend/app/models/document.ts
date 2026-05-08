@@ -1,5 +1,6 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, belongsTo } from '@adonisjs/lucid/orm'
+import { randomUUID } from 'node:crypto'
+import { BaseModel, beforeCreate, column, belongsTo } from '@adonisjs/lucid/orm'
 import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 import Clinic from '#models/clinic'
 import Patient from '#models/patient'
@@ -46,6 +47,18 @@ export type DocumentPayload =
 export default class Document extends BaseModel {
   static selfAssignPrimaryKey = true
   static table = 'documents'
+
+  /**
+   * Gera UUID em JS antes do insert. Necessário porque selfAssignPrimaryKey=true
+   * faz o Lucid não ler de volta o gen_random_uuid() do Postgres, e o modelo
+   * fica com id undefined — quebrando qualquer .save() subsequente.
+   */
+  @beforeCreate()
+  static assignUuid(model: Document) {
+    if (!model.id) {
+      model.id = randomUUID()
+    }
+  }
 
   @column({ isPrimary: true })
   declare id: string

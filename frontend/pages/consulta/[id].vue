@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useApi } from '~/composables/useApi'
+import { useSignature } from '~/composables/useSignature'
 import {
   useMedicalRecords,
   type MedicalRecord,
@@ -61,6 +62,57 @@ const documents = ref<Document[]>([])
 const activeTab = ref<'prontuario' | 'prescription' | 'exam_request' | 'medical_certificate'>(
   'prontuario'
 )
+
+// Signature modal
+const sigModalOpen = ref(false)
+const sigDocumentIds = ref<string[]>([])
+
+function openSignature(docIds: string[]) {
+  sigDocumentIds.value = docIds
+  sigModalOpen.value = true
+}
+
+async function onSigned() {
+  sigModalOpen.value = false
+  // recarrega lista pra refletir status 'signed'
+  if (!appointment.value) return
+  const docsRes = await docsApi.listByAppointment(appointment.value.id)
+  documents.value = docsRes.data
+}
+
+const sig = useSignature()
+const sendingWa = ref<string | null>(null)
+async function sendWhatsApp(doc: Document) {
+  sendingWa.value = doc.id
+  try {
+    const res = await sig.sendToWhatsApp(doc.id)
+    alert(
+      `📱 WhatsApp (mock) disparado!\n\nLink:\n${res.data.url}\n\nVeja no terminal do backend pra ver o conteúdo da mensagem.`
+    )
+  } catch (e: any) {
+    alert(e?.data?.error || 'Erro ao enviar')
+  } finally {
+    sendingWa.value = null
+  }
+}
+
+const docStatusLabel = (s: string) =>
+  ({
+    draft: 'Rascunho',
+    awaiting_signature: 'Aguardando assinatura',
+    signed: 'Assinado',
+    delivered: 'Entregue',
+    cancelled: 'Cancelado',
+  } as any)[s] || s
+
+const docStatusColor = (s: string) =>
+  ({
+    draft: 'bg-slate-100 text-slate-700',
+    awaiting_signature: 'bg-amber-50 text-amber-700',
+    signed: 'bg-emerald-50 text-emerald-700',
+    delivered: 'bg-blue-50 text-blue-700',
+    cancelled: 'bg-slate-50 text-slate-400',
+  } as any)[s] || 'bg-slate-100'
 
 // ---- Prescription form state ----
 const prescriptionItems = ref<PrescriptionItem[]>([emptyPrescriptionItem()])
@@ -459,33 +511,74 @@ definePageMeta({ layout: false })
 
         <!-- Documentos emitidos -->
         <div v-if="documents.length">
-          <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
-            Documentos desta consulta ({{ documents.length }})
-          </h3>
-          <div class="space-y-1.5">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+              Documentos ({{ documents.length }})
+            </h3>
+            <button
+              v-if="documents.some((d) => d.status === 'awaiting_signature')"
+              @click="openSignature(documents.filter((d) => d.status === 'awaiting_signature').map((d) => d.id))"
+              class="text-[10px] font-semibold text-bula-600 hover:text-bula-700 uppercase"
+            >
+              Assinar todos
+            </button>
+          </div>
+          <div class="space-y-2">
             <div
               v-for="doc in documents"
               :key="doc.id"
-              class="flex items-center gap-2 p-2 bg-slate-50 rounded-md text-xs"
+              class="p-2.5 bg-slate-50 rounded-lg border border-slate-100"
             >
-              <svg class="w-4 h-4 text-bula-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="docTypeIcon(doc.type)" />
-              </svg>
-              <span class="flex-1 truncate font-medium text-slate-700">{{ docTypeLabel(doc.type) }}</span>
-              <a :href="docsApi.pdfUrl(doc.id)" target="_blank" class="text-bula-600 hover:text-bula-700" title="Abrir PDF">
-                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              <div class="flex items-center gap-2 mb-1.5">
+                <svg class="w-3.5 h-3.5 text-bula-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="docTypeIcon(doc.type)" />
                 </svg>
-              </a>
-              <button
-                @click="cancelDocument(doc)"
-                class="text-slate-400 hover:text-red-600"
-                title="Cancelar"
-              >
-                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
+                <span class="flex-1 text-xs font-semibold text-slate-700 truncate">
+                  {{ docTypeLabel(doc.type) }}
+                </span>
+                <span class="badge text-[9px] !px-1.5 !py-0" :class="docStatusColor(doc.status)">
+                  {{ docStatusLabel(doc.status) }}
+                </span>
+              </div>
+              <div class="flex items-center gap-1">
+                <a
+                  :href="docsApi.pdfUrl(doc.id)"
+                  target="_blank"
+                  class="flex-1 text-center text-[10px] font-medium text-slate-700
+                         bg-white border border-slate-200 rounded px-2 py-1
+                         hover:bg-slate-50"
+                >
+                  PDF
+                </a>
+                <button
+                  v-if="doc.status === 'awaiting_signature'"
+                  @click="openSignature([doc.id])"
+                  class="flex-1 text-[10px] font-semibold text-white bg-bula-500
+                         rounded px-2 py-1 hover:bg-bula-600"
+                  :disabled="sendingWa === doc.id"
+                >
+                  Assinar
+                </button>
+                <button
+                  v-if="doc.status === 'signed' || doc.status === 'delivered'"
+                  @click="sendWhatsApp(doc)"
+                  :disabled="sendingWa === doc.id"
+                  class="flex-1 text-[10px] font-semibold text-emerald-700 bg-emerald-50
+                         rounded px-2 py-1 hover:bg-emerald-100 disabled:opacity-50"
+                  title="Enviar via WhatsApp"
+                >
+                  {{ sendingWa === doc.id ? '...' : 'WhatsApp' }}
+                </button>
+                <button
+                  @click="cancelDocument(doc)"
+                  class="text-slate-400 hover:text-red-600 px-1"
+                  title="Cancelar"
+                >
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -697,6 +790,14 @@ definePageMeta({ layout: false })
         </Transition>
       </main>
     </div>
+
+    <SignatureModal
+      :open="sigModalOpen"
+      :document-ids="sigDocumentIds"
+      :default-provider="appointment?.doctor?.signatureProvider ?? 'vidaas'"
+      @close="sigModalOpen = false"
+      @signed="onSigned"
+    />
   </div>
 </template>
 

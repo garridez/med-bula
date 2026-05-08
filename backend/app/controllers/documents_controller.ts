@@ -1,5 +1,6 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import crypto from 'node:crypto'
+import env from '#start/env'
 import Document from '#models/document'
 import Patient from '#models/patient'
 import User from '#models/user'
@@ -107,11 +108,16 @@ export default class DocumentsController {
 
     // Gera PDF
     const pdfService = new PdfService()
+    const frontendUrl = env.get('FRONTEND_URL', 'http://localhost:3000').split(',')[0].trim()
+    // QR no PDF aponta pro fluxo de baixa (farmácia/lab/empresa, sem OTP).
+    // O paciente acessa pelo link do WhatsApp, que NÃO tem ?baixa=1.
+    const publicUrl = `${frontendUrl}/r/${document.deliveryToken}?baixa=1`
     const pdfBuffer = await pdfService.generate({
       document,
       patient,
       doctor,
       clinic,
+      publicUrl,
     })
     const pdfBase64 = pdfBuffer.toString('base64')
     const pdfHash = sha256Base64(pdfBuffer)

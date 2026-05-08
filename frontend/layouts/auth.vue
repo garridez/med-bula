@@ -5,45 +5,54 @@
       class="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-bula-500
              items-center justify-center p-12"
     >
-      <!-- Padrão decorativo -->
-      <div class="absolute inset-0 opacity-30">
+      <!-- Padrão decorativo + pulso cardíaco -->
+      <div class="absolute inset-0">
+        <!-- glows atmosféricos (estáticos) -->
         <div
           class="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full
                  blur-3xl"
-        ></div>
+        />
         <div
           class="absolute -bottom-24 -left-24 w-96 h-96 bg-white/10 rounded-full
                  blur-3xl"
-        ></div>
+        />
+
+        <!-- Anéis com pulso cardíaco (lub-dub).
+             O wrapper centra; o filho recebe o transform do animate, sem
+             conflitar com o translate de centralização. -->
         <div
-          class="absolute top-1/2 left-1/2 w-[600px] h-[600px] -translate-x-1/2
-                 -translate-y-1/2 border-[3px] border-white/10 rounded-full"
-        ></div>
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                 motion-safe:animate-heart-pulse"
+        >
+          <div class="w-[640px] h-[640px] border-[3px] border-white/15 rounded-full" />
+        </div>
         <div
-          class="absolute top-1/2 left-1/2 w-[400px] h-[400px] -translate-x-1/2
-                 -translate-y-1/2 border-[3px] border-white/10 rounded-full"
-        ></div>
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                 motion-safe:animate-heart-pulse"
+          style="animation-delay: 180ms"
+        >
+          <div class="w-[460px] h-[460px] border-[3px] border-white/15 rounded-full" />
+        </div>
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                 motion-safe:animate-heart-pulse"
+          style="animation-delay: 360ms"
+        >
+          <div class="w-[300px] h-[300px] border-[3px] border-white/15 rounded-full" />
+        </div>
+        <!-- ponto-foco central, batendo no mesmo ritmo -->
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                 motion-safe:animate-heart-pulse"
+          style="animation-delay: 540ms"
+        >
+          <div class="w-3 h-3 bg-white/30 rounded-full" />
+        </div>
       </div>
 
       <div class="relative z-10 max-w-md text-white">
         <div class="flex items-center gap-3 mb-12">
-          <!-- Logo SVG -->
-          <div
-            class="w-14 h-14 bg-white rounded-xl flex items-center justify-center
-                   shadow-lg"
-          >
-            <svg
-              viewBox="0 0 100 100"
-              class="w-9 h-9"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20 15 L20 85 L55 85 C72 85 80 75 80 60 C80 52 76 46 70 43 C75 40 78 35 78 28 C78 18 70 15 55 15 Z M35 28 L52 28 C58 28 62 31 62 36 C62 41 58 44 52 44 L35 44 Z M35 56 L54 56 C61 56 65 60 65 65 C65 70 61 73 54 73 L35 73 Z"
-                fill="#e53935"
-              />
-            </svg>
-          </div>
+          <BulaLogo size="lg" rounded="xl" badge-class="shadow-lg" />
           <div>
             <h2 class="text-3xl font-bold tracking-tight">med.bula</h2>
             <p class="text-bula-100 text-sm">gestão de consultório</p>
@@ -88,9 +97,7 @@
     </div>
 
     <!-- Painel direito (formulário) -->
-    <div
-      class="flex-1 flex items-center justify-center p-6 lg:p-12 bg-white"
-    >
+    <div class="flex-1 flex items-center justify-center p-6 lg:p-12 bg-white">
       <div class="w-full max-w-md animate-slide-up">
         <slot />
       </div>
