@@ -1,6 +1,6 @@
 {
   "name": "med-bula-backend",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "license": "UNLICENSED",
@@ -20,6 +20,7 @@
     "#models/*": "./app/models/*.js",
     "#validators/*": "./app/validators/*.js",
     "#services/*": "./app/services/*.js",
+    "#utils/*": "./app/utils/*.js",
     "#start/*": "./start/*.js",
     "#config/*": "./config/*.js",
     "#database/*": "./database/*.js"
@@ -32,6 +33,7 @@
     "@swc/core": "^1.7.26",
     "@types/luxon": "^3.4.2",
     "@types/node": "^22.7.4",
+    "@types/pdfkit": "^0.13.5",
     "eslint": "^9.11.1",
     "hot-hook": "^0.4.0",
     "pino-pretty": "^11.2.2",
@@ -46,6 +48,7 @@
     "@adonisjs/lucid": "^21.2.0",
     "@vinejs/vine": "^2.1.0",
     "luxon": "^3.5.0",
+    "pdfkit": "^0.15.1",
     "pg": "^8.13.0",
     "reflect-metadata": "^0.2.2"
   },

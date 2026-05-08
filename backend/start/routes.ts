@@ -5,8 +5,11 @@ const AuthController = () => import('#controllers/auth_controller')
 const PatientsController = () => import('#controllers/patients_controller')
 const AppointmentsController = () => import('#controllers/appointments_controller')
 const ClinicsController = () => import('#controllers/clinics_controller')
+const MedicalRecordsController = () =>
+  import('#controllers/medical_records_controller')
+const DocumentsController = () => import('#controllers/documents_controller')
 
-router.get('/', async () => ({ ok: true, app: 'med-bula', version: '0.2.0' }))
+router.get('/', async () => ({ ok: true, app: 'med-bula', version: '0.3.0' }))
 
 router
   .group(() => {
@@ -34,6 +37,18 @@ router
         router.post('/appointments', [AppointmentsController, 'store'])
         router.patch('/appointments/:id', [AppointmentsController, 'update'])
         router.delete('/appointments/:id', [AppointmentsController, 'destroy'])
+
+        // Prontuário (medical records)
+        router.get('/medical-records', [MedicalRecordsController, 'index'])
+        router.get('/medical-records/:id', [MedicalRecordsController, 'show'])
+        router.post('/medical-records', [MedicalRecordsController, 'upsert'])
+
+        // Documentos (receita / exame / atestado)
+        router.get('/documents', [DocumentsController, 'index'])
+        router.get('/documents/:id', [DocumentsController, 'show'])
+        router.get('/documents/:id/pdf', [DocumentsController, 'pdf'])
+        router.post('/documents', [DocumentsController, 'store'])
+        router.delete('/documents/:id', [DocumentsController, 'destroy'])
       })
       .use(middleware.auth())
   })

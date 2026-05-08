@@ -180,6 +180,34 @@ async function cancelAppointment() {
   }
 }
 
+async function startConsultation() {
+  if (!props.appointment) return
+  loading.value = true
+  try {
+    await appointments.update(props.appointment.id, { status: 'in_progress' })
+    emit('close')
+    await navigateTo(`/consulta/${props.appointment.id}`)
+  } catch (e: any) {
+    error.value = e?.message || 'Erro ao iniciar consulta'
+    loading.value = false
+  }
+}
+
+function openConsultation() {
+  if (!props.appointment) return
+  emit('close')
+  navigateTo(`/consulta/${props.appointment.id}`)
+}
+
+const canStart = computed(() => {
+  if (!props.appointment) return false
+  return ['scheduled', 'confirmed'].includes(props.appointment.status)
+})
+
+const isInProgress = computed(
+  () => props.appointment?.status === 'in_progress'
+)
+
 const statusOptions: { value: AppointmentStatus; label: string }[] = [
   { value: 'scheduled', label: 'Agendada' },
   { value: 'confirmed', label: 'Confirmada' },
@@ -368,9 +396,36 @@ const statusOptions: { value: AppointmentStatus; label: string }[] = [
         Fechar
       </button>
       <button
+        v-if="isEdit && isInProgress"
+        type="button"
+        @click="openConsultation"
+        class="btn-primary"
+        :disabled="loading"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9 5l7 7-7 7" />
+        </svg>
+        Continuar consulta
+      </button>
+      <button
+        v-else-if="isEdit && canStart"
+        type="button"
+        @click="startConsultation"
+        class="btn-primary"
+        :disabled="loading"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        Iniciar consulta
+      </button>
+      <button
         type="button"
         @click="submit"
-        class="btn-primary"
+        class="btn-secondary"
+        :class="{ 'btn-primary': !isEdit }"
         :disabled="loading"
       >
         {{ loading ? 'Salvando…' : isEdit ? 'Salvar alterações' : 'Agendar' }}
