@@ -52,9 +52,9 @@ export default class extends BaseSeeder {
       { email: 'medico@clinica.com.br' },
       {
         clinicId: clinic.id,
-        fullName: 'Dra. Ana Silva',
+        fullName: 'Gustavo Felipe',
         password: 'senha123',
-        cpf: '111.222.333-44',
+        cpf: '064.131.076-50',
         phone: '(31) 99999-0001',
         role: 'doctor',
         crm: '12345',

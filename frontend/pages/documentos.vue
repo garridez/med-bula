@@ -77,6 +77,14 @@ function signAllPending() {
   sigModalOpen.value = true
 }
 
+async function openPdf(doc: Document) {
+  try {
+    await docsApi.openPdf(doc.id)
+  } catch (e: any) {
+    alert(e?.message || 'Erro ao abrir PDF')
+  }
+}
+
 async function sendWA(doc: Document) {
   sendingWa.value = doc.id
   try {
@@ -170,14 +178,14 @@ const pendingCount = computed(
             </td>
             <td class="px-6 py-3 text-right whitespace-nowrap">
               <div class="inline-flex items-center gap-1">
-                <a
-                  :href="docsApi.pdfUrl(doc.id)"
-                  target="_blank"
+                <button
+                  @click="openPdf(doc)"
+                  type="button"
                   class="text-xs font-medium text-slate-600 hover:text-slate-900 px-2"
                   title="Abrir PDF"
                 >
                   PDF
-                </a>
+                </button>
                 <button
                   v-if="doc.status === 'awaiting_signature'"
                   @click="openSignFor(doc)"

@@ -5,6 +5,9 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   ssr: true,
   runtimeConfig: {
+    /** URL interna pra Nuxt server falar com o backend (dentro da network do Docker). */
+    backendInternalUrl:
+      process.env.BACKEND_INTERNAL_URL || 'http://backend:3333',
     public: {
       apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:3333',
     },
@@ -19,16 +22,8 @@ export default defineNuxtConfig({
           name: 'description',
           content: 'Sistema de gestão de consultório médico',
         },
-        // cor da barra do navegador no mobile / PWA
-        { name: 'theme-color', content: '#e53935' },
-        { name: 'apple-mobile-web-app-status-bar-style', content: '#e53935' },
       ],
-      link: [
-        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-        { rel: 'apple-touch-icon', href: '/favicon.png' },
-        // SVG da marca pra share/preview que aceitam SVG
-        { rel: 'mask-icon', href: '/logo.svg', color: '#e53935' },
-      ],
+      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     },
   },
   tailwindcss: {

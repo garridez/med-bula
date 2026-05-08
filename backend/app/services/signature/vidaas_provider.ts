@@ -26,11 +26,14 @@ export default class VidaasProvider implements SignatureProvider {
     id: 'vidaas',
     name: 'Vidaas (Soluti)',
     type: 'cloud_a3',
+    /**
+     * "Disponível" = tem credenciais OAuth básicas. O REDIRECT_URI é
+     * verificado em runtime, no momento de autorizar — pra dar erro
+     * específico que aponta exatamente o que falta.
+     */
     get available() {
       return Boolean(
-        env.get('VIDAAS_CLIENT_ID') &&
-          env.get('VIDAAS_CLIENT_SECRET') &&
-          env.get('VIDAAS_REDIRECT_URI')
+        env.get('VIDAAS_CLIENT_ID') && env.get('VIDAAS_CLIENT_SECRET')
       )
     },
   } as any
@@ -49,9 +52,19 @@ export default class VidaasProvider implements SignatureProvider {
   }
 
   buildAuthorization(params: AuthorizationParams) {
-    if (!this.clientId || !this.redirectUri) {
+    if (!this.clientId || !this.clientSecret) {
       throw new Error(
-        'Vidaas não configurado: defina VIDAAS_CLIENT_ID e VIDAAS_REDIRECT_URI'
+        'Vidaas: defina VIDAAS_CLIENT_ID e VIDAAS_CLIENT_SECRET no .env do backend.'
+      )
+    }
+    if (!this.redirectUri) {
+      throw new Error(
+        'VIDAAS_REDIRECT_URI não definida. Defina no .env do backend a URL pública ' +
+          'que o Vidaas vai chamar após autenticar (ex: ' +
+          'https://abc123.ngrok-free.app/api/signature/callback em dev, ou ' +
+          'https://api.med.bula.com.br/api/signature/callback em prod). ' +
+          'IMPORTANTE: essa URL precisa estar cadastrada como redirect_uri permitida ' +
+          'no console da Soluti pro seu CLIENT_ID.'
       )
     }
     const { codeVerifier, codeChallenge } = makePkce()
@@ -66,11 +79,17 @@ export default class VidaasProvider implements SignatureProvider {
     // signature_session é o scope recomendado pra assinar várias hashes na mesma sessão
     qs.set('scope', params.scope ?? 'signature_session')
     qs.set('state', state)
-    if (params.cpf) qs.set('login_hint', params.cpf)
+    if (params.cpf) {
+      // Vidaas espera CPF como só dígitos (sem máscara). Se vier com pontos/traço,
+      // a comparação com o CPF do certificado falha em "documento vinculado".
+      const cpfDigits = params.cpf.replace(/\D/g, '')
+      if (cpfDigits) qs.set('login_hint', cpfDigits)
+    }
 
     return {
       authorizeUrl: `${this.baseUrl}/v0/oauth/authorize?${qs.toString()}`,
       codeVerifier,
+      state,
     }
   }
 
@@ -113,7 +132,12 @@ export default class VidaasProvider implements SignatureProvider {
           hash: params.pdfHashBase64,
           hash_algorithm: '2.16.840.1.101.3.4.2.1', // SHA-256
           signature_format: 'PAdES_AD_RT',
-          pdf_signature_page: 'true',
+          // false = não adiciona página separada com info da assinatura.
+          // A assinatura criptográfica continua embutida e validável em
+          // Adobe Reader, validador.iti.gov.br, gov.br/assina, etc.
+          // O texto visível "Assinado digitalmente por..." é desenhado pelo
+          // próprio PdfService no rodapé.
+          pdf_signature_page: 'false',
           base64_content: params.pdfBase64,
         },
       ],

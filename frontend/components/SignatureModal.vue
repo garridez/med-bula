@@ -22,10 +22,13 @@ const sig = useSignature()
 const providers = ref<SignatureProviderMeta[]>([])
 const selectedProvider = ref<string>('')
 const session = ref<CreateSessionResult | null>(null)
-const status = ref<'idle' | 'pending' | 'authenticated' | 'signing' | 'signed' | 'failed' | 'expired'>('idle')
+const status = ref<
+  'idle' | 'pending' | 'authenticated' | 'signing' | 'signed' | 'failed' | 'expired'
+>('idle')
 const error = ref<string | null>(null)
 const loading = ref(false)
 let pollInterval: any = null
+let popupRef: Window | null = null
 
 watch(
   () => props.open,
@@ -35,6 +38,7 @@ watch(
       reset()
     } else {
       stopPolling()
+      closePopup()
     }
   }
 )
@@ -46,7 +50,7 @@ async function loadProviders() {
     selectedProvider.value =
       props.defaultProvider && providers.value.find((p) => p.id === props.defaultProvider)
         ? props.defaultProvider
-        : providers.value.find((p) => p.available)?.id ?? providers.value[0]?.id ?? ''
+        : providers.value[0]?.id ?? ''
   } catch (e: any) {
     error.value = e?.message || 'Erro ao listar provedores'
   }
@@ -58,11 +62,19 @@ function reset() {
   error.value = null
 }
 
-async function startSession() {
-  if (!selectedProvider.value) {
-    error.value = 'Escolha um provedor de assinatura'
-    return
+function closePopup() {
+  if (popupRef && !popupRef.closed) {
+    try {
+      popupRef.close()
+    } catch {
+      /* ignore */
+    }
   }
+  popupRef = null
+}
+
+async function startSession() {
+  if (!selectedProvider.value) return
   loading.value = true
   error.value = null
   try {
@@ -72,12 +84,42 @@ async function startSession() {
     })
     session.value = res.data
     status.value = 'pending'
+
+    // Abre a página de autenticação do Vidaas em um popup. O Vidaas mostra
+    // o próprio QR pra o médico escanear com o app dele. O redirect cai
+    // no /api/signature/callback do nosso backend.
+    openVidaasPopup(res.data.authorizeUrl)
     startPolling()
   } catch (e: any) {
     error.value = e?.data?.error || e?.message || 'Erro ao iniciar sessão'
   } finally {
     loading.value = false
   }
+}
+
+function openVidaasPopup(url: string) {
+  if (!import.meta.client) return
+  const w = 600
+  const h = 720
+  const left = Math.max(0, (window.screen.width - w) / 2)
+  const top = Math.max(0, (window.screen.height - h) / 2)
+  popupRef = window.open(
+    url,
+    'vidaas-auth',
+    `width=${w},height=${h},left=${left},top=${top},toolbar=0,menubar=0,status=0,location=1`
+  )
+
+  // Popup bloqueado pelo navegador
+  if (!popupRef || popupRef.closed) {
+    error.value =
+      'Pop-up bloqueado pelo navegador. Permita pop-ups deste site e tente de novo.'
+    status.value = 'failed'
+    stopPolling()
+  }
+}
+
+function reopenPopup() {
+  if (session.value) openVidaasPopup(session.value.authorizeUrl)
 }
 
 function startPolling() {
@@ -91,9 +133,11 @@ function startPolling() {
       if (res.data.error) error.value = res.data.error
       if (s === 'signed') {
         stopPolling()
+        closePopup()
         emit('signed', props.documentIds)
       } else if (s === 'failed' || s === 'expired') {
         stopPolling()
+        closePopup()
       }
     } catch (e: any) {
       console.error(e)
@@ -106,14 +150,17 @@ function stopPolling() {
   pollInterval = null
 }
 
-onBeforeUnmount(stopPolling)
+onBeforeUnmount(() => {
+  stopPolling()
+  closePopup()
+})
 
 const statusLabel = computed(() => {
   switch (status.value) {
     case 'idle':
       return ''
     case 'pending':
-      return 'Aguardando autenticação no celular…'
+      return 'Aguardando autenticação no Vidaas…'
     case 'authenticated':
       return 'Autenticado! Iniciando assinatura…'
     case 'signing':
@@ -128,12 +175,9 @@ const statusLabel = computed(() => {
 })
 
 const isFinished = computed(() => ['signed', 'failed', 'expired'].includes(status.value))
-
-function copyAuthUrl() {
-  if (!session.value || !import.meta.client) return
-  navigator.clipboard.writeText(session.value.authorizeUrl)
-  alert('URL copiada!')
-}
+const inProgress = computed(() =>
+  ['pending', 'authenticated', 'signing'].includes(status.value)
+)
 </script>
 
 <template>
@@ -161,18 +205,12 @@ function copyAuthUrl() {
             class="input"
             :disabled="loading || providers.length === 0"
           >
-            <option
-              v-for="p in providers"
-              :key="p.id"
-              :value="p.id"
-              :disabled="!p.available"
-            >
+            <option v-for="p in providers" :key="p.id" :value="p.id">
               {{ p.name }}
-              {{ !p.available ? ' (não configurado)' : '' }}
             </option>
           </select>
           <p class="text-xs text-slate-500 mt-1.5">
-            Mais provedores (Bird ID, SafeWeb…) podem ser adicionados pelo seu admin.
+            Use seu certificado pessoal cadastrado no provedor escolhido.
           </p>
         </div>
 
@@ -184,41 +222,36 @@ function copyAuthUrl() {
         </div>
       </div>
 
-      <!-- Estado: QR code + polling -->
-      <div v-else-if="!isFinished" class="space-y-4 text-center">
-        <div class="inline-block p-3 bg-white border-2 border-slate-200 rounded-xl">
-          <img :src="session.qrDataUrl" alt="QR code" class="w-56 h-56" />
+      <!-- Estado: aguardando popup do Vidaas -->
+      <div v-else-if="inProgress" class="space-y-5 text-center py-4">
+        <div class="relative w-16 h-16 mx-auto">
+          <div class="absolute inset-0 rounded-full border-4 border-slate-100"></div>
+          <div
+            class="absolute inset-0 rounded-full border-4 border-bula-500 border-t-transparent animate-spin"
+          ></div>
         </div>
+
         <div>
-          <h3 class="font-semibold text-slate-900 text-base">
-            Escaneie com o celular
-          </h3>
-          <p class="text-sm text-slate-600 mt-1">
-            Abra o app <strong>{{ session.provider.name }}</strong> no celular,
-            escaneie o QR e autentique. Pode usar a câmera do celular também.
+          <h3 class="font-semibold text-slate-900 text-base">{{ statusLabel }}</h3>
+          <p v-if="status === 'pending'" class="text-sm text-slate-600 mt-2 px-4">
+            Uma janela do <strong>{{ session.provider.name }}</strong> foi aberta.
+            Autentique e aprove a assinatura no seu celular pelo app Vidaas.
+          </p>
+          <p v-else-if="status === 'authenticated'" class="text-sm text-slate-600 mt-2">
+            O médico autenticou. Enviando documentos pra assinatura…
+          </p>
+          <p v-else-if="status === 'signing'" class="text-sm text-slate-600 mt-2">
+            Aplicando assinatura ICP-Brasil PAdES_AD_RT.
           </p>
         </div>
 
-        <div class="flex items-center justify-center gap-2 text-sm">
-          <div
-            class="w-2 h-2 rounded-full"
-            :class="
-              status === 'pending'
-                ? 'bg-amber-400 animate-pulse'
-                : status === 'authenticated'
-                  ? 'bg-blue-400 animate-pulse'
-                  : 'bg-bula-500 animate-pulse'
-            "
-          />
-          <span class="text-slate-600">{{ statusLabel }}</span>
-        </div>
-
         <button
-          @click="copyAuthUrl"
+          v-if="status === 'pending'"
           type="button"
+          @click="reopenPopup"
           class="text-xs text-slate-500 hover:text-slate-900 underline"
         >
-          Copiar link em vez do QR
+          Não abriu? Clique pra reabrir a janela
         </button>
       </div>
 
@@ -241,7 +274,7 @@ function copyAuthUrl() {
           </svg>
         </div>
         <h3 class="text-lg font-semibold text-slate-900">{{ statusLabel }}</h3>
-        <p v-if="error" class="text-sm text-red-600">{{ error }}</p>
+        <p v-if="error" class="text-sm text-red-600 px-4">{{ error }}</p>
       </div>
     </div>
 
@@ -265,12 +298,7 @@ function copyAuthUrl() {
         {{ loading ? 'Iniciando…' : 'Iniciar assinatura' }}
       </button>
 
-      <button
-        v-else-if="!isFinished"
-        type="button"
-        @click="emit('close')"
-        class="btn-secondary"
-      >
+      <button v-else-if="inProgress" type="button" @click="emit('close')" class="btn-secondary">
         Cancelar
       </button>
 
@@ -282,12 +310,7 @@ function copyAuthUrl() {
       >
         Concluir
       </button>
-      <button
-        v-else
-        type="button"
-        @click="reset"
-        class="btn-primary"
-      >
+      <button v-else type="button" @click="reset" class="btn-primary">
         Tentar de novo
       </button>
     </template>

@@ -82,6 +82,15 @@ async function onSigned() {
 
 const sig = useSignature()
 const sendingWa = ref<string | null>(null)
+
+async function openPdf(doc: Document) {
+  try {
+    await docsApi.openPdf(doc.id)
+  } catch (e: any) {
+    error.value = e?.message || 'Erro ao abrir PDF'
+  }
+}
+
 async function sendWhatsApp(doc: Document) {
   sendingWa.value = doc.id
   try {
@@ -541,15 +550,15 @@ definePageMeta({ layout: false })
                 </span>
               </div>
               <div class="flex items-center gap-1">
-                <a
-                  :href="docsApi.pdfUrl(doc.id)"
-                  target="_blank"
+                <button
+                  @click="openPdf(doc)"
+                  type="button"
                   class="flex-1 text-center text-[10px] font-medium text-slate-700
                          bg-white border border-slate-200 rounded px-2 py-1
                          hover:bg-slate-50"
                 >
                   PDF
-                </a>
+                </button>
                 <button
                   v-if="doc.status === 'awaiting_signature'"
                   @click="openSignature([doc.id])"

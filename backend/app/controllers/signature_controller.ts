@@ -42,11 +42,6 @@ export default class SignatureController {
     if (!provider) {
       return response.badRequest({ error: `Provedor '${data.provider}' não disponível` })
     }
-    if (!provider.info.available) {
-      return response.badRequest({
-        error: `Provedor ${provider.info.name} não está configurado neste servidor`,
-      })
-    }
 
     // Verifica que todos os documentos existem na clínica e têm hash gerado
     const docs = await Document.query()
@@ -64,14 +59,25 @@ export default class SignatureController {
     }
 
     // Monta URL de autorização (PKCE)
-    const { authorizeUrl, codeVerifier } = provider.buildAuthorization({
-      cpf: data.cpf ?? user.cpf,
-      scope: 'signature_session',
-      documentHashes: docs.map((d) => d.pdfUnsignedSha256!),
-    })
+    let authResult: { authorizeUrl: string; codeVerifier: string; state: string }
+    try {
+      authResult = provider.buildAuthorization({
+        // login_hint = CPF do médico. Vidaas amarra a autenticação a esse CPF
+        // e só aceita certificados desse titular. Garante que outro médico não
+        // assine usando a sessão errada por engano.
+        cpf: data.cpf ?? user.cpf,
+        scope: 'signature_session',
+        documentHashes: docs.map((d) => d.pdfUnsignedSha256!),
+      })
+    } catch (e: any) {
+      return response.badRequest({ error: e?.message ?? 'Erro ao iniciar autorização' })
+    }
+    const { authorizeUrl, codeVerifier, state } = authResult
 
-    // Persiste sessão
+    // Persiste sessão. O state UUID gerado dentro do provider é usado como
+    // PK da sessão — assim o callback consegue achar pelo state que volta na URL.
     const session = await SignatureSession.create({
+      id: state,
       userId: user.id,
       provider: provider.info.id,
       codeVerifier,

@@ -78,6 +78,10 @@ services:
       NITRO_PORT: 3000
       NITRO_HOST: 0.0.0.0
       NUXT_PUBLIC_API_BASE: ${NUXT_PUBLIC_API_BASE:-http://localhost:3333}
+      # URL interna pro frontend Nuxt falar com o backend dentro do Docker
+      # (usada pelo proxy do /vidaas/callback). NÃO confundir com NUXT_PUBLIC_API_BASE,
+      # que é a URL pública usada pelo navegador.
+      BACKEND_INTERNAL_URL: http://backend:3333
     ports:
       - '${FRONTEND_PORT:-3000}:3000'
     depends_on:

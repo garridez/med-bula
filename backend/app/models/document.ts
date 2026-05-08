@@ -90,13 +90,13 @@ export default class Document extends BaseModel {
   })
   declare payload: DocumentPayload
 
-  @column({ serializeAs: null })
+  @column({ serializeAs: null, columnName: 'pdf_unsigned_base64' })
   declare pdfUnsignedBase64: string | null
 
-  @column()
+  @column({ columnName: 'pdf_unsigned_sha256' })
   declare pdfUnsignedSha256: string | null
 
-  @column({ serializeAs: null })
+  @column({ serializeAs: null, columnName: 'pdf_signed_base64' })
   declare pdfSignedBase64: string | null
 
   @column()

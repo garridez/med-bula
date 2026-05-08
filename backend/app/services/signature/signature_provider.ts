@@ -54,6 +54,7 @@ export interface SignatureProvider {
   buildAuthorization(params: AuthorizationParams): {
     authorizeUrl: string
     codeVerifier: string
+    state: string
   }
 
   exchangeCode(params: {

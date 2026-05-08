@@ -21,7 +21,22 @@ export default class Patient extends BaseModel {
   @column()
   declare rg: string | null
 
-  @column.date()
+  @column.date({
+    /**
+     * Aceita string ISO ('1986-11-02') ou luxon.DateTime no input. O frontend
+     * manda string vinda de <input type="date">, o seeder pode mandar DateTime.
+     * Sem esse prepare, Lucid rejeita strings com "must be an instance of DateTime".
+     */
+    prepare: (v: any) => {
+      if (!v) return null
+      if (typeof v === 'string') return DateTime.fromISO(v)
+      if (v instanceof DateTime) return v
+      // Se vier como Date nativo (do vine.date()), converte
+      if (v instanceof Date) return DateTime.fromJSDate(v)
+      return v
+    },
+    serialize: (v: DateTime | null) => v?.toISODate() ?? null,
+  })
   declare birthDate: DateTime | null
 
   @column()
