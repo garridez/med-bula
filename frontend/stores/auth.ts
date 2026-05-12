@@ -47,8 +47,8 @@ export const useAuthStore = defineStore('auth', {
      */
     homeRoute(): string {
       const role = this.user?.role
+      if (role === 'super_admin') return '/admin/clinicas'
       if (role === 'admin') return '/financeiro'
-      if (role === 'super_admin') return '/configuracoes'
       // doctor + secretary → agenda
       return '/agenda'
     },

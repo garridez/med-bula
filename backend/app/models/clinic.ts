@@ -29,6 +29,24 @@ export default class Clinic extends BaseModel {
   @column()
   declare primaryColor: string
 
+  // ===== Drop 5e — Assinatura/cobrança da plataforma =====
+  @column()
+  declare subscriptionStatus: 'active' | 'past_due' | 'cancelled' | 'trial'
+
+  @column({
+    consume: (v) => (v == null ? null : Number(v)),
+  })
+  declare monthlyFee: number | null
+
+  @column.dateTime()
+  declare subscriptionStartedAt: import('luxon').DateTime | null
+
+  @column.dateTime()
+  declare nextBillingAt: import('luxon').DateTime | null
+
+  @column.dateTime()
+  declare trialEndsAt: import('luxon').DateTime | null
+
   @column()
   declare isActive: boolean
 

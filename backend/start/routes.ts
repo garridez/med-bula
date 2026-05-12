@@ -15,6 +15,7 @@ const ProfileController = () => import('#controllers/profile_controller')
 const InsurancesController = () => import('#controllers/insurances_controller')
 const ReportsController = () => import('#controllers/reports_controller')
 const UsersController = () => import('#controllers/users_controller')
+const AdminController = () => import('#controllers/admin_controller')
 
 router.get('/', async () => ({ ok: true, app: 'med-bula', version: '0.5.0a' }))
 
@@ -71,6 +72,19 @@ router
             ])
           })
           .use(middleware.role(['doctor', 'admin', 'super_admin']))
+
+        // ---- Super admin (painel do dono do SaaS) ----
+        router
+          .group(() => {
+            router.get('/admin/metrics', [AdminController, 'metrics'])
+            router.get('/admin/clinics', [AdminController, 'listClinics'])
+            router.get('/admin/clinics/:id', [AdminController, 'showClinic'])
+            router.post('/admin/clinics', [AdminController, 'createClinic'])
+            router.patch('/admin/clinics/:id', [AdminController, 'updateClinic'])
+            router.delete('/admin/clinics/:id', [AdminController, 'destroyClinic'])
+            router.post('/admin/impersonate', [AdminController, 'impersonate'])
+          })
+          .use(middleware.role(['super_admin']))
 
         // ---- Convênios ----
         // Leitura: todo mundo autenticado (secretária precisa pra agendar)

@@ -25,6 +25,16 @@ export default class extends BaseSeeder {
         isActive: true,
       }
     )
+    // Drop 5e — assinatura. Defensivo, atualiza só se faltando.
+    if (!(clinic as any).monthlyFee) {
+      clinic.merge({
+        subscriptionStatus: 'active',
+        monthlyFee: 99 as any,
+        subscriptionStartedAt: DateTime.now().minus({ months: 2 }) as any,
+        nextBillingAt: DateTime.now().plus({ days: 15 }) as any,
+      } as any)
+      await clinic.save()
+    }
 
     // 2. Super admin
     await User.firstOrCreate(
@@ -223,6 +233,15 @@ export default class extends BaseSeeder {
         plan: 'clinica',
       } as any
     )
+    if (!(multiClinic as any).monthlyFee) {
+      multiClinic.merge({
+        subscriptionStatus: 'active',
+        monthlyFee: 299 as any,
+        subscriptionStartedAt: DateTime.now().minus({ months: 1 }) as any,
+        nextBillingAt: DateTime.now().plus({ days: 10 }) as any,
+      } as any)
+      await multiClinic.save()
+    }
 
     await User.firstOrCreate(
       { email: 'admin@multi.com.br' },
