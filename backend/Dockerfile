@@ -9,7 +9,10 @@ WORKDIR /app
 
 # Install deps (incl. dev — needed for build)
 COPY package*.json ./
-RUN npm install
+# Strip UTF-8 BOM se algum editor Windows salvou o arquivo com bom.
+# Node.js recusa parsear JSON com BOM e cospe "Invalid package config".
+RUN sed -i '1s/^\xEF\xBB\xBF//' package.json && \
+    npm install
 
 # Copy source and build
 COPY . .
@@ -28,9 +31,14 @@ RUN apk add --no-cache tini wget
 COPY --from=builder /app/build /app/
 COPY --from=builder /app/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
+# Strip BOM defensivo (caso o build tenha propagado)
+RUN find /app -maxdepth 3 -name '*.json' -type f \
+    -exec sed -i '1s/^\xEF\xBB\xBF//' {} \;
+
 # Install only production deps (Adonis emits a self-contained build/)
 RUN npm install --omit=dev --ignore-scripts && \
     npm cache clean --force && \
+    sed -i 's/\r$//' /usr/local/bin/docker-entrypoint.sh && \
     chmod +x /usr/local/bin/docker-entrypoint.sh
 
 EXPOSE 3333

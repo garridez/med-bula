@@ -4,6 +4,8 @@ import Clinic from '#models/clinic'
 import User from '#models/user'
 import Patient from '#models/patient'
 import Appointment from '#models/appointment'
+import Insurance from '#models/insurance'
+import DoctorInsurance from '#models/doctor_insurance'
 
 /**
  * Idempotente — pode rodar em todo container start sem quebrar.
@@ -167,6 +169,130 @@ export default class extends BaseSeeder {
           paymentStatus: 'pending',
           reminderSent: false,
         },
+      ])
+    }
+
+    // 7. Convênios de exemplo (Drop 5b)
+    const insuranceCount = await Insurance.query()
+      .where('clinic_id', clinic.id)
+      .count('* as total')
+      .first()
+    if (Number(insuranceCount?.$extras.total ?? 0) === 0) {
+      const unimed = await Insurance.create({
+        clinicId: clinic.id,
+        name: 'Unimed',
+        isActive: true,
+      })
+      const bradesco = await Insurance.create({
+        clinicId: clinic.id,
+        name: 'Bradesco Saúde',
+        isActive: true,
+      })
+      await DoctorInsurance.createMany([
+        { doctorId: doctor.id, insuranceId: unimed.id, price: 90, isActive: true },
+        {
+          doctorId: doctor.id,
+          insuranceId: bradesco.id,
+          price: 110,
+          isActive: true,
+        },
+      ])
+    }
+
+    // 8. Drop 5d — Clínica multi-médico de exemplo
+    const multiClinic = await Clinic.firstOrCreate(
+      { name: 'Clínica Multi Especialidades' },
+      {
+        name: 'Clínica Multi Especialidades',
+        cnpj: '98.765.432/0001-10',
+        phone: '(31) 3000-0001',
+        address: 'Rua das Acácias, 200 - Belo Horizonte/MG',
+        plan: 'clinica',
+      } as any
+    )
+
+    await User.firstOrCreate(
+      { email: 'admin@multi.com.br' },
+      {
+        clinicId: multiClinic.id,
+        fullName: 'Mariana Souza',
+        email: 'admin@multi.com.br',
+        password: 'senha123',
+        role: 'admin',
+        phone: '(31) 99999-1000',
+        isActive: true,
+      } as any
+    )
+
+    const doc1 = await User.firstOrCreate(
+      { email: 'rafael@multi.com.br' },
+      {
+        clinicId: multiClinic.id,
+        fullName: 'Rafael Mendes',
+        email: 'rafael@multi.com.br',
+        password: 'senha123',
+        cpf: '111.222.333-44',
+        phone: '(31) 99999-1001',
+        role: 'doctor',
+        crm: '54321',
+        crmUf: 'MG',
+        specialty: 'Cardiologia',
+        consultationPrice: 350,
+        signatureProvider: 'vidaas',
+        splitType: 'percentual',
+        splitValue: 30, // clínica fica com 30%
+        isActive: true,
+      } as any
+    )
+
+    const doc2 = await User.firstOrCreate(
+      { email: 'beatriz@multi.com.br' },
+      {
+        clinicId: multiClinic.id,
+        fullName: 'Beatriz Lima',
+        email: 'beatriz@multi.com.br',
+        password: 'senha123',
+        cpf: '222.333.444-55',
+        phone: '(31) 99999-1002',
+        role: 'doctor',
+        crm: '67890',
+        crmUf: 'MG',
+        specialty: 'Pediatria',
+        consultationPrice: 300,
+        signatureProvider: 'vidaas',
+        splitType: 'absoluto',
+        splitValue: 80, // clínica fica com R$80 fixos
+        isActive: true,
+      } as any
+    )
+
+    await User.firstOrCreate(
+      { email: 'sec.multi@multi.com.br' },
+      {
+        clinicId: multiClinic.id,
+        fullName: 'Camila Ferreira',
+        email: 'sec.multi@multi.com.br',
+        password: 'senha123',
+        phone: '(31) 99999-1003',
+        role: 'secretary',
+        isActive: true,
+      } as any
+    )
+
+    // Convênios da clínica multi
+    const multiUnimedCount = await Insurance.query()
+      .where('clinic_id', multiClinic.id)
+      .count('* as total')
+      .first()
+    if (Number(multiUnimedCount?.$extras.total ?? 0) === 0) {
+      const multiUnimed = await Insurance.create({
+        clinicId: multiClinic.id,
+        name: 'Unimed',
+        isActive: true,
+      })
+      await DoctorInsurance.createMany([
+        { doctorId: doc1.id, insuranceId: multiUnimed.id, price: 130, isActive: true },
+        { doctorId: doc2.id, insuranceId: multiUnimed.id, price: 100, isActive: true },
       ])
     }
 

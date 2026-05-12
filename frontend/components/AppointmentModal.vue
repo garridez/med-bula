@@ -6,12 +6,12 @@ import {
   type AppointmentStatus,
 } from '~/composables/useAppointments'
 import { usePatients, type Patient } from '~/composables/usePatients'
+import { useInsurances, type InsuranceForDoctor } from '~/composables/useInsurances'
+import { useAuthStore } from '~/stores/auth'
 
 const props = defineProps<{
   open: boolean
-  /** Se passar, modo edição. Senão, criação. */
   appointment?: Appointment | null
-  /** Slot inicial pra criação rápida (clicou na agenda) */
   initialSlot?: { date: string; doctorId?: number } | null
 }>()
 
@@ -24,29 +24,37 @@ const emit = defineEmits<{
 const appointments = useAppointments()
 const doctorsApi = useDoctors()
 const patientsApi = usePatients()
+const insurancesApi = useInsurances()
+const auth = useAuthStore()
 
 const isEdit = computed(() => !!props.appointment)
 const loading = ref(false)
 const error = ref<string | null>(null)
-const doctors = ref<{ id: number; fullName: string }[]>([])
+const doctors = ref<{ id: number; fullName: string; consultationPrice?: number | null }[]>([])
 const patients = ref<Patient[]>([])
 const patientQuery = ref('')
 const showPatientDropdown = ref(false)
+const insuranceOptions = ref<InsuranceForDoctor[]>([])
 
 const form = reactive({
   doctorId: 0,
   patientId: 0,
   patientName: '',
-  date: '', // YYYY-MM-DD
-  time: '', // HH:mm
+  /** 0 = Particular; senão = id do convênio */
+  insuranceId: 0,
+  date: '',
+  time: '',
   durationMinutes: 30,
   reason: '',
   notes: '',
   price: '' as string,
+  copayAmount: '' as string,
   status: 'scheduled' as AppointmentStatus,
 })
 
-// Reset / hydrate when modal opens
+const isPaticular = computed(() => form.insuranceId === 0)
+
+// Hydrate
 watch(
   () => props.open,
   async (open) => {
@@ -60,17 +68,20 @@ watch(
       form.doctorId = a.doctorId
       form.patientId = a.patientId
       form.patientName = a.patient?.fullName ?? ''
+      form.insuranceId = a.insuranceId ?? 0
       form.date = dt.toISOString().slice(0, 10)
       form.time = dt.toTimeString().slice(0, 5)
       form.durationMinutes = a.durationMinutes
       form.reason = a.reason ?? ''
       form.notes = a.notes ?? ''
       form.price = a.price !== null ? String(a.price) : ''
+      form.copayAmount = a.copayAmount !== null ? String(a.copayAmount) : ''
       form.status = a.status
     } else {
       form.doctorId = props.initialSlot?.doctorId ?? doctors.value[0]?.id ?? 0
       form.patientId = 0
       form.patientName = ''
+      form.insuranceId = 0
       const slot = props.initialSlot?.date
         ? new Date(props.initialSlot.date)
         : new Date()
@@ -80,17 +91,81 @@ watch(
       form.reason = ''
       form.notes = ''
       form.price = ''
+      form.copayAmount = ''
       form.status = 'scheduled'
     }
+    await loadInsurancesForDoctor()
+    if (!isEdit.value) autoFillPrice()
+  }
+)
+
+// Quando troca o médico (não na edição inicial), recarrega convênios e refaz auto-fill
+watch(
+  () => form.doctorId,
+  async (newId, oldId) => {
+    if (!props.open) return
+    if (oldId === undefined || newId === oldId) return
+    await loadInsurancesForDoctor()
+    // Se convênio atual não pertence ao novo médico, volta pra particular
+    if (form.insuranceId !== 0) {
+      const exists = insuranceOptions.value.some(
+        (i) => i.insuranceId === form.insuranceId
+      )
+      if (!exists) form.insuranceId = 0
+    }
+    autoFillPrice()
+  }
+)
+
+watch(
+  () => form.insuranceId,
+  () => {
+    if (!props.open) return
+    autoFillPrice()
   }
 )
 
 async function loadDoctors() {
   try {
     const res = await doctorsApi.list()
-    doctors.value = res.data
+    doctors.value = res.data as any
   } catch (e) {
     console.error(e)
+  }
+}
+
+async function loadInsurancesForDoctor() {
+  if (!form.doctorId) {
+    insuranceOptions.value = []
+    return
+  }
+  try {
+    const res = await insurancesApi.byDoctor(form.doctorId)
+    insuranceOptions.value = res.data
+  } catch (e) {
+    console.error(e)
+    insuranceOptions.value = []
+  }
+}
+
+/**
+ * Preenche price+copay automaticamente quando muda médico/convênio.
+ * Sempre sobreescreve o que tinha no form, pois é UX esperado: trocar
+ * o tipo deve refletir no valor.
+ */
+function autoFillPrice() {
+  if (form.insuranceId === 0) {
+    // Particular
+    const doc = doctors.value.find((d) => d.id === form.doctorId) as any
+    const defaultPrice = doc?.consultationPrice ?? null
+    form.price = defaultPrice != null ? String(defaultPrice) : ''
+    form.copayAmount = defaultPrice != null ? String(defaultPrice) : ''
+  } else {
+    const opt = insuranceOptions.value.find((i) => i.insuranceId === form.insuranceId)
+    if (opt) {
+      form.price = String(opt.price)
+      form.copayAmount = '0'
+    }
   }
 }
 
@@ -138,11 +213,13 @@ async function submit() {
   const payload = {
     doctorId: form.doctorId,
     patientId: form.patientId,
+    insuranceId: form.insuranceId === 0 ? null : form.insuranceId,
     scheduledAt,
     durationMinutes: form.durationMinutes,
     reason: form.reason || null,
     notes: form.notes || null,
-    price: form.price ? Number(form.price) : null,
+    price: form.price !== '' ? Number(form.price) : null,
+    copayAmount: form.copayAmount !== '' ? Number(form.copayAmount) : null,
     status: form.status,
   }
 
@@ -150,7 +227,7 @@ async function submit() {
   try {
     let res
     if (isEdit.value && props.appointment) {
-      res = await appointments.update(props.appointment.id, payload)
+      res = await appointments.update(props.appointment.id, payload as any)
     } else {
       res = await appointments.create(payload as any)
     }
@@ -199,19 +276,13 @@ function openConsultation() {
   navigateTo(`/consulta/${props.appointment.id}`)
 }
 
-const auth = useAuthStore()
-
 const canStart = computed(() => {
   if (!props.appointment) return false
   if (!auth.canStartConsultation) return false
   return ['scheduled', 'confirmed'].includes(props.appointment.status)
 })
-
 const canContinue = computed(() => auth.canStartConsultation)
-
-const isInProgress = computed(
-  () => props.appointment?.status === 'in_progress'
-)
+const isInProgress = computed(() => props.appointment?.status === 'in_progress')
 
 const statusOptions: { value: AppointmentStatus; label: string }[] = [
   { value: 'scheduled', label: 'Agendada' },
@@ -230,7 +301,7 @@ const statusOptions: { value: AppointmentStatus; label: string }[] = [
     @close="emit('close')"
   >
     <form @submit.prevent="submit" class="p-6 space-y-5">
-      <!-- Paciente: busca/autocomplete -->
+      <!-- Paciente -->
       <div class="relative">
         <label class="label">Paciente *</label>
         <input
@@ -278,7 +349,7 @@ const statusOptions: { value: AppointmentStatus; label: string }[] = [
       <!-- Médico -->
       <div>
         <label class="label">Médico *</label>
-        <select v-model="form.doctorId" class="input" :disabled="loading">
+        <select v-model.number="form.doctorId" class="input" :disabled="loading">
           <option :value="0">—</option>
           <option v-for="d in doctors" :key="d.id" :value="d.id">
             {{ d.fullName }}
@@ -297,7 +368,7 @@ const statusOptions: { value: AppointmentStatus; label: string }[] = [
           <input v-model="form.time" type="time" class="input" :disabled="loading" />
         </div>
         <div>
-          <label class="label">Duração (min)</label>
+          <label class="label">Duração</label>
           <select
             v-model.number="form.durationMinutes"
             class="input"
@@ -312,19 +383,32 @@ const statusOptions: { value: AppointmentStatus; label: string }[] = [
         </div>
       </div>
 
-      <!-- Motivo + Preço -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div class="sm:col-span-2">
-          <label class="label">Motivo</label>
-          <input
-            v-model="form.reason"
-            type="text"
-            placeholder="Consulta de rotina, retorno…"
+      <!-- Tipo + Valor + Copay -->
+      <div class="grid grid-cols-1 sm:grid-cols-12 gap-4">
+        <div class="sm:col-span-6">
+          <label class="label">Tipo de atendimento *</label>
+          <select
+            v-model.number="form.insuranceId"
             class="input"
             :disabled="loading"
-          />
+          >
+            <option :value="0">Particular</option>
+            <option
+              v-for="opt in insuranceOptions"
+              :key="opt.insuranceId"
+              :value="opt.insuranceId"
+            >
+              {{ opt.insuranceName }}
+            </option>
+          </select>
+          <p
+            v-if="!isPaticular && insuranceOptions.length === 0"
+            class="mt-1 text-[11px] text-amber-700"
+          >
+            O médico ainda não tem convênios cadastrados.
+          </p>
         </div>
-        <div>
+        <div class="sm:col-span-3">
           <label class="label">Valor (R$)</label>
           <input
             v-model="form.price"
@@ -336,9 +420,38 @@ const statusOptions: { value: AppointmentStatus; label: string }[] = [
             :disabled="loading"
           />
         </div>
+        <div class="sm:col-span-3">
+          <label class="label">
+            {{ isPaticular ? 'Paciente paga' : 'Suplemento $' }}
+          </label>
+          <input
+            v-model="form.copayAmount"
+            type="number"
+            step="0.01"
+            min="0"
+            placeholder="0,00"
+            class="input"
+            :disabled="loading"
+          />
+          <p v-if="!isPaticular" class="mt-1 text-[11px] text-slate-500">
+            Valor que o paciente paga em mãos além do convênio.
+          </p>
+        </div>
       </div>
 
-      <!-- Status (só edição) -->
+      <!-- Motivo -->
+      <div>
+        <label class="label">Motivo</label>
+        <input
+          v-model="form.reason"
+          type="text"
+          placeholder="Consulta de rotina, retorno…"
+          class="input"
+          :disabled="loading"
+        />
+      </div>
+
+      <!-- Status (edição) -->
       <div v-if="isEdit">
         <label class="label">Status</label>
         <div class="flex flex-wrap gap-2">
@@ -359,7 +472,7 @@ const statusOptions: { value: AppointmentStatus; label: string }[] = [
         </div>
       </div>
 
-      <!-- Pagamento manual (só edição) -->
+      <!-- Pagamento manual (edição) -->
       <div v-if="isEdit && appointment">
         <PaymentButtons
           :appointment-id="appointment.id"

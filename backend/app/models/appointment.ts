@@ -4,6 +4,7 @@ import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 import Clinic from '#models/clinic'
 import User from '#models/user'
 import Patient from '#models/patient'
+import Insurance from '#models/insurance'
 
 export type AppointmentStatus =
   | 'scheduled'
@@ -14,6 +15,11 @@ export type AppointmentStatus =
   | 'no_show'
 
 export type PaymentStatus = 'none' | 'pending' | 'paid' | 'refunded'
+
+const decimalConsumer = {
+  consume: (v: any) => (v == null ? null : Number(v)),
+  serialize: (v: any) => (v == null ? null : Number(v)),
+}
 
 export default class Appointment extends BaseModel {
   @column({ isPrimary: true })
@@ -27,6 +33,9 @@ export default class Appointment extends BaseModel {
 
   @column()
   declare patientId: number
+
+  @column()
+  declare insuranceId: number | null
 
   @column.dateTime()
   declare scheduledAt: DateTime
@@ -43,8 +52,13 @@ export default class Appointment extends BaseModel {
   @column()
   declare notes: string | null
 
-  @column()
+  /** Valor total acordado pra consulta (snapshot, editável). */
+  @column(decimalConsumer)
   declare price: number | null
+
+  /** Suplemento em dinheiro do paciente quando convênio. */
+  @column(decimalConsumer)
+  declare copayAmount: number | null
 
   @column()
   declare paymentStatus: PaymentStatus
@@ -75,4 +89,7 @@ export default class Appointment extends BaseModel {
 
   @belongsTo(() => Patient)
   declare patient: BelongsTo<typeof Patient>
+
+  @belongsTo(() => Insurance)
+  declare insurance: BelongsTo<typeof Insurance>
 }

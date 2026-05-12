@@ -429,7 +429,7 @@ export default class PdfService {
     }
     doc.fontSize(7.5).fillColor(COLOR_PRIMARY).font('Helvetica-Bold')
     doc.text(
-      'Em bula.com.br você recebe parte do dinheiro de volta na compra de medicamentos. Acesse →',
+      'Em bula.com.br você recebe parte do dinheiro de volta na compra de medicamentos. Acesse!',
       PAGE_LEFT + 28,
       AD_STRIP_Y + 8,
       { width: CONTENT_WIDTH - 36 }

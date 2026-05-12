@@ -39,7 +39,8 @@ export const useAuthStore = defineStore('auth', {
   getters: {
     isAuthenticated: (s) => !!s.token && !!s.user,
     role: (s) => s.user?.role,
-    clinicPlan: (s) => s.user?.clinic?.plan ?? 'consultorio',
+    clinicPlan: (s): 'consultorio' | 'clinica' | null =>
+      (s.user?.clinic?.plan as any) ?? null,
     isSecretary: (s) => s.user?.role === 'secretary',
     isDoctor: (s) => s.user?.role === 'doctor',
     isAdmin: (s) => s.user?.role === 'admin',

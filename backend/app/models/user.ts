@@ -60,6 +60,15 @@ export default class User extends compose(BaseModel, AuthFinder) {
   @column()
   declare signatureProvider: string | null
 
+  /** Drop 5d — split de retenção da clínica */
+  @column()
+  declare splitType: 'percentual' | 'absoluto' | null
+
+  @column({
+    consume: (v) => (v == null ? null : Number(v)),
+  })
+  declare splitValue: number | null
+
   @column({
     prepare: (v) => (v ? JSON.stringify(v) : null),
     consume: (v) => (typeof v === 'string' ? JSON.parse(v) : v),

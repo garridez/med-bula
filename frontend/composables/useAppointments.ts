@@ -19,33 +19,44 @@ export interface Doctor {
   specialty: string | null
 }
 
+export interface AppointmentInsurance {
+  id: number
+  name: string
+  isActive: boolean
+}
+
 export interface Appointment {
   id: number
   clinicId: number
   doctorId: number
   patientId: number
+  insuranceId: number | null
   scheduledAt: string
   durationMinutes: number
   status: AppointmentStatus
   reason: string | null
   notes: string | null
   price: number | null
+  copayAmount: number | null
   paymentStatus: PaymentStatus
   paymentMethod: string | null
   reminderSent: boolean
   createdAt: string
   patient?: Patient
   doctor?: Doctor
+  insurance?: AppointmentInsurance | null
 }
 
 export interface AppointmentInput {
   doctorId: number
   patientId: number
+  insuranceId?: number | null
   scheduledAt: string // ISO
   durationMinutes?: number
   reason?: string | null
   notes?: string | null
   price?: number | null
+  copayAmount?: number | null
   status?: AppointmentStatus
 }
 
@@ -62,7 +73,10 @@ export function useAppointments() {
     },
     create: (body: AppointmentInput) =>
       api.post<{ data: Appointment }>('/api/appointments', body),
-    update: (id: number, body: Partial<AppointmentInput> & { paymentStatus?: PaymentStatus }) =>
+    update: (
+      id: number,
+      body: Partial<AppointmentInput> & { paymentStatus?: PaymentStatus }
+    ) =>
       api.patch<{ data: Appointment }>(`/api/appointments/${id}`, body),
     cancel: (id: number) =>
       api.delete<{ ok: true }>(`/api/appointments/${id}`),
@@ -71,7 +85,12 @@ export function useAppointments() {
 
 export function useDoctors() {
   const api = useApi()
+  const list = () => api.get<{ data: Doctor[] }>('/api/clinics/doctors')
   return {
-    list: () => api.get<{ data: Doctor[] }>('/api/clinics/doctors'),
+    list,
+    fetchDoctors: async () => {
+      const res = await list()
+      return res.data
+    },
   }
 }

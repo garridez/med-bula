@@ -24,5 +24,4 @@ fi
 
 echo "🚀 Starting AdonisJS server..."
 echo ""
-
 exec node bin/server.js

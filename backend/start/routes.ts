@@ -12,6 +12,9 @@ const SignatureController = () => import('#controllers/signature_controller')
 const DocumentDeliveryController = () =>
   import('#controllers/document_delivery_controller')
 const ProfileController = () => import('#controllers/profile_controller')
+const InsurancesController = () => import('#controllers/insurances_controller')
+const ReportsController = () => import('#controllers/reports_controller')
+const UsersController = () => import('#controllers/users_controller')
 
 router.get('/', async () => ({ ok: true, app: 'med-bula', version: '0.5.0a' }))
 
@@ -46,6 +49,56 @@ router
         router.get('/clinics/doctors', [ClinicsController, 'doctors'])
         router.get('/clinic/me', [ClinicsController, 'showMine'])
         router.patch('/clinic/me', [ClinicsController, 'update']) // forbid secretary in controller
+
+        // ---- Relatórios financeiros (médico ou admin) ----
+        router
+          .group(() => {
+            router.get('/reports/financial', [ReportsController, 'financial'])
+          })
+          .use(middleware.role(['doctor', 'admin', 'super_admin']))
+
+        // ---- Gestão de usuários (admin clínica + doctor consultório) ----
+        router
+          .group(() => {
+            router.get('/users', [UsersController, 'index'])
+            router.get('/users/:id', [UsersController, 'show'])
+            router.post('/users', [UsersController, 'store'])
+            router.patch('/users/:id', [UsersController, 'update'])
+            router.delete('/users/:id', [UsersController, 'destroy'])
+            router.post('/users/:id/reset-password', [
+              UsersController,
+              'resetPassword',
+            ])
+          })
+          .use(middleware.role(['doctor', 'admin', 'super_admin']))
+
+        // ---- Convênios ----
+        // Leitura: todo mundo autenticado (secretária precisa pra agendar)
+        router.get('/insurances', [InsurancesController, 'index'])
+        router.get('/insurances/by-doctor/:doctorId', [
+          InsurancesController,
+          'byDoctor',
+        ])
+        // Escrita: bloqueio extra de role já no próprio controller
+        router
+          .group(() => {
+            router.post('/insurances', [InsurancesController, 'store'])
+            router.patch('/insurances/:id', [InsurancesController, 'update'])
+            router.delete('/insurances/:id', [InsurancesController, 'destroy'])
+            router.post('/insurances/:id/doctors', [
+              InsurancesController,
+              'upsertDoctorInsurance',
+            ])
+            router.patch('/doctor-insurances/:id', [
+              InsurancesController,
+              'updateDoctorInsurance',
+            ])
+            router.delete('/doctor-insurances/:id', [
+              InsurancesController,
+              'destroyDoctorInsurance',
+            ])
+          })
+          .use(middleware.role(['doctor', 'admin', 'super_admin']))
 
         // ---- Pacientes (médico + secretária) ----
         router.get('/patients', [PatientsController, 'index'])

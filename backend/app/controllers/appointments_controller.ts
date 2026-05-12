@@ -1,6 +1,8 @@
 import { DateTime } from 'luxon'
 import type { HttpContext } from '@adonisjs/core/http'
 import Appointment from '#models/appointment'
+import DoctorInsurance from '#models/doctor_insurance'
+import User from '#models/user'
 import {
   createAppointmentValidator,
   updateAppointmentValidator,
@@ -13,6 +15,27 @@ function scopeToClinic(query: any, ctx: HttpContext) {
     query.where('clinic_id', user.clinicId!)
   }
   return query
+}
+
+/**
+ * Resolve preço default da consulta dado médico + (opcional) convênio.
+ * - Convênio: busca em doctor_insurances. Se não tiver, retorna null.
+ * - Particular: usa users.consultation_price.
+ */
+async function resolveDefaultPrice(
+  doctorId: number,
+  insuranceId: number | null
+): Promise<number | null> {
+  if (insuranceId) {
+    const di = await DoctorInsurance.query()
+      .where('doctor_id', doctorId)
+      .where('insurance_id', insuranceId)
+      .where('is_active', true)
+      .first()
+    return di ? Number(di.price) : null
+  }
+  const doctor = await User.find(doctorId)
+  return doctor?.consultationPrice != null ? Number(doctor.consultationPrice) : null
 }
 
 export default class AppointmentsController {
@@ -36,6 +59,7 @@ export default class AppointmentsController {
       .orderBy('scheduled_at', 'asc')
       .preload('patient')
       .preload('doctor')
+      .preload('insurance')
 
     scopeToClinic(query, { auth } as HttpContext)
 
@@ -57,6 +81,7 @@ export default class AppointmentsController {
       .where('id', Number(params.id))
       .preload('patient')
       .preload('doctor')
+      .preload('insurance')
     scopeToClinic(query, { auth } as HttpContext)
     const appointment = await query.first()
     if (!appointment) {
@@ -67,6 +92,14 @@ export default class AppointmentsController {
 
   /**
    * POST /api/appointments
+   *
+   * Auto-fill regra:
+   * - Se cliente NÃO mandou price: busca default (consultation_price ou
+   *   doctor_insurances.price).
+   * - Se cliente NÃO mandou copayAmount:
+   *     - Particular → copay = price (paciente paga tudo)
+   *     - Convênio → copay = 0 (paciente não paga, só convênio)
+   * Cliente pode override qualquer valor.
    */
   async store({ request, auth, response }: HttpContext) {
     const data = await request.validateUsing(createAppointmentValidator)
@@ -76,15 +109,27 @@ export default class AppointmentsController {
       return response.badRequest({ error: 'Usuário sem clínica associada' })
     }
 
+    const insuranceId = data.insuranceId ?? null
+    let price = data.price ?? null
+    if (price == null) {
+      price = await resolveDefaultPrice(data.doctorId, insuranceId)
+    }
+    let copayAmount = data.copayAmount ?? null
+    if (copayAmount == null) {
+      copayAmount = insuranceId ? 0 : price
+    }
+
     const appointment = await Appointment.create({
       clinicId: user.clinicId!,
       doctorId: data.doctorId,
       patientId: data.patientId,
+      insuranceId,
       scheduledAt: DateTime.fromJSDate(data.scheduledAt),
       durationMinutes: data.durationMinutes ?? 30,
       reason: data.reason ?? null,
       notes: data.notes ?? null,
-      price: data.price ?? null,
+      price,
+      copayAmount,
       status: data.status ?? 'scheduled',
       paymentStatus: 'none',
       reminderSent: false,
@@ -92,12 +137,16 @@ export default class AppointmentsController {
 
     await appointment.load('patient')
     await appointment.load('doctor')
+    await appointment.load('insurance')
 
     return response.created({ data: appointment })
   }
 
   /**
    * PATCH /api/appointments/:id
+   *
+   * Se mudar `insuranceId` SEM mandar price, recalcula price + copay defaults.
+   * Se mandar price/copay junto, usa os valores enviados (override explícito).
    */
   async update({ params, request, auth, response }: HttpContext) {
     const data = await request.validateUsing(updateAppointmentValidator)
@@ -112,15 +161,38 @@ export default class AppointmentsController {
     if (data.scheduledAt) {
       appointment.scheduledAt = DateTime.fromJSDate(data.scheduledAt)
     }
+
+    // Recalcula price/copay se mudou insurance ou doctor sem price explícito
+    let nextInsuranceId =
+      data.insuranceId !== undefined ? data.insuranceId : appointment.insuranceId
+    let nextDoctorId = data.doctorId ?? appointment.doctorId
+    let nextPrice = data.price !== undefined ? data.price : appointment.price
+    let nextCopay =
+      data.copayAmount !== undefined ? data.copayAmount : appointment.copayAmount
+
+    const insuranceChanged =
+      data.insuranceId !== undefined && data.insuranceId !== appointment.insuranceId
+    const doctorChanged =
+      data.doctorId !== undefined && data.doctorId !== appointment.doctorId
+
+    if ((insuranceChanged || doctorChanged) && data.price === undefined) {
+      nextPrice = await resolveDefaultPrice(nextDoctorId, nextInsuranceId)
+    }
+    if ((insuranceChanged || doctorChanged) && data.copayAmount === undefined) {
+      nextCopay = nextInsuranceId ? 0 : nextPrice
+    }
+
     appointment.merge({
       ...(data.doctorId !== undefined && { doctorId: data.doctorId }),
       ...(data.patientId !== undefined && { patientId: data.patientId }),
+      insuranceId: nextInsuranceId,
       ...(data.durationMinutes !== undefined && {
         durationMinutes: data.durationMinutes,
       }),
       ...(data.reason !== undefined && { reason: data.reason as any }),
       ...(data.notes !== undefined && { notes: data.notes as any }),
-      ...(data.price !== undefined && { price: data.price as any }),
+      price: nextPrice as any,
+      copayAmount: nextCopay as any,
       ...(data.status !== undefined && { status: data.status }),
       ...(data.paymentStatus !== undefined && {
         paymentStatus: data.paymentStatus,
@@ -133,6 +205,7 @@ export default class AppointmentsController {
     await appointment.save()
     await appointment.load('patient')
     await appointment.load('doctor')
+    await appointment.load('insurance')
 
     return { data: appointment }
   }
@@ -158,7 +231,8 @@ export default class AppointmentsController {
    * POST /api/appointments/:id/payment
    * Body: { method: 'cash' | 'pix_manual' | 'card_manual' | 'deposit', status?: 'paid' | 'pending' }
    *
-   * Endpoint dedicado pra secretária bater "recebido" no atendimento.
+   * Marca o COPAY como recebido (a parte que o paciente paga em mãos).
+   * O valor pago pelo convênio é tracked separadamente (futuro Drop 5c).
    * Não passa dinheiro pelo SaaS — só registra.
    */
   async markPayment({ params, request, auth, response }: HttpContext) {
@@ -184,6 +258,7 @@ export default class AppointmentsController {
     await appointment.save()
     await appointment.load('patient')
     await appointment.load('doctor')
+    await appointment.load('insurance')
 
     return { data: appointment }
   }
