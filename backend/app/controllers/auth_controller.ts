@@ -30,6 +30,7 @@ export default class AuthController {
 
     user.lastLoginAt = DateTime.now()
     await user.save()
+    if (user.clinicId) await user.load('clinic')
 
     const token = await User.accessTokens.create(user, ['*'], {
       name: 'web',
@@ -39,7 +40,10 @@ export default class AuthController {
     return response.ok({
       token: token.value!.release(),
       expiresAt: token.expiresAt,
-      user: user.serialize(),
+      user: {
+        ...user.serialize(),
+        clinic: user.clinic ? user.clinic.serialize() : null,
+      },
     })
   }
 
@@ -48,8 +52,13 @@ export default class AuthController {
    */
   async me({ auth, response }: HttpContext) {
     const user = auth.getUserOrFail()
-    await user.load('clinic')
-    return response.ok({ user: user.serialize() })
+    if (user.clinicId) await user.load('clinic')
+    return response.ok({
+      user: {
+        ...user.serialize(),
+        clinic: user.clinic ? user.clinic.serialize() : null,
+      },
+    })
   }
 
   /**

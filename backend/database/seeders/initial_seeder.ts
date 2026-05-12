@@ -69,6 +69,19 @@ export default class extends BaseSeeder {
         isActive: true,
       }
     )
+    // Force-update campos que podem ter ficado nulos em seeder runs anteriores
+    // (firstOrCreate só preenche na criação; se o user já existia antes do drop 5a,
+    // consultationPrice/address ficaram null).
+    if (doctor.consultationPrice == null || doctor.address == null) {
+      doctor.consultationPrice = 250
+      doctor.address =
+        'Avenida Professor Manoel Martins, 687 - Conselheiro Lafaiete/MG'
+      doctor.crm = doctor.crm ?? '12345'
+      doctor.crmUf = doctor.crmUf ?? 'MG'
+      doctor.specialty = doctor.specialty ?? 'Clínica Geral'
+      doctor.signatureProvider = doctor.signatureProvider ?? 'vidaas'
+      await doctor.save()
+    }
 
     // 5. Secretária
     await User.firstOrCreate(
