@@ -106,6 +106,10 @@ router
         router.post('/patients', [PatientsController, 'store'])
         router.patch('/patients/:id', [PatientsController, 'update'])
         router.delete('/patients/:id', [PatientsController, 'destroy'])
+        // Histórico clínico — médico/admin only (secretária não vê SOAP)
+        router
+          .get('/patients/:id/history', [PatientsController, 'history'])
+          .use(middleware.role(['doctor', 'admin', 'super_admin']))
 
         // ---- Consultas (médico + secretária) ----
         router.get('/appointments', [AppointmentsController, 'index'])

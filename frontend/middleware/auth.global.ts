@@ -48,7 +48,7 @@ export default defineNuxtRouteMiddleware((to) => {
   for (const [prefix, allow] of Object.entries(ROUTE_RULES)) {
     if (to.path === prefix || to.path.startsWith(prefix + '/')) {
       if (!allow(auth)) {
-        return navigateTo('/agenda')
+        return navigateTo(auth.homeRoute)
       }
       break
     }

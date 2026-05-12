@@ -592,14 +592,17 @@ definePageMeta({ layout: false })
           </div>
         </div>
 
-        <!-- Histórico (placeholder) -->
+        <!-- Histórico de consultas anteriores -->
         <div>
           <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
             Últimas consultas
           </h3>
-          <p class="text-xs text-slate-400">
-            Histórico aparece aqui no Drop 4.
-          </p>
+          <PatientHistoryList
+            v-if="appointment?.patientId"
+            :patient-id="appointment.patientId"
+            :exclude-appointment-id="Number(route.params.id)"
+            :limit="10"
+          />
         </div>
       </aside>
 

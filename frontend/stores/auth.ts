@@ -41,6 +41,17 @@ export const useAuthStore = defineStore('auth', {
     role: (s) => s.user?.role,
     clinicPlan: (s): 'consultorio' | 'clinica' | null =>
       (s.user?.clinic?.plan as any) ?? null,
+    /**
+     * Pra onde mandar o usuário quando ele cair em "/" ou quando uma rota
+     * bloqueada precisa redirecionar. Cada papel tem seu home natural.
+     */
+    homeRoute(): string {
+      const role = this.user?.role
+      if (role === 'admin') return '/financeiro'
+      if (role === 'super_admin') return '/configuracoes'
+      // doctor + secretary → agenda
+      return '/agenda'
+    },
     isSecretary: (s) => s.user?.role === 'secretary',
     isDoctor: (s) => s.user?.role === 'doctor',
     isAdmin: (s) => s.user?.role === 'admin',
@@ -55,14 +66,14 @@ export const useAuthStore = defineStore('auth', {
         (this.role === 'doctor' && this.clinicPlan === 'consultorio')
       )
     },
-    canAccessAgenda: (s) => !!s.user && s.user.role !== 'super_admin',
+    canAccessAgenda: (s) =>
+      !!s.user && (s.user.role === 'doctor' || s.user.role === 'secretary'),
     canAccessProntuario: (s) =>
       !!s.user &&
       (s.user.role === 'doctor' ||
         s.user.role === 'admin' ||
         s.user.role === 'super_admin'),
-    canAccessDocumentos: (s) =>
-      !!s.user && (s.user.role === 'doctor' || s.user.role === 'admin'),
+    canAccessDocumentos: (s) => !!s.user && s.user.role === 'doctor',
     canStartConsultation: (s) => s.user?.role === 'doctor',
   },
   actions: {

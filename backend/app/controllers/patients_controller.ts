@@ -1,5 +1,8 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import Patient from '#models/patient'
+import Appointment from '#models/appointment'
+import MedicalRecord from '#models/medical_record'
+import Document from '#models/document'
 import {
   createPatientValidator,
   updatePatientValidator,
@@ -111,5 +114,94 @@ export default class PatientsController {
     await patient.save()
 
     return { ok: true }
+  }
+
+  /**
+   * GET /api/patients/:id/history?limit=10&excludeAppointmentId=N
+   *
+   * Retorna últimas consultas do paciente, com SOAP + documentos aninhados.
+   * Usado pela sala de consulta pra mostrar histórico na sidebar direita.
+   *
+   * excludeAppointmentId: se passado, omite essa consulta (a atual). Evita
+   * mostrar "histórico" da consulta em andamento.
+   */
+  async history({ params, request, auth, response }: HttpContext) {
+    const user = auth.getUserOrFail()
+    const limit = Math.min(Number(request.input('limit', 10)), 50)
+    const exclude = Number(request.input('excludeAppointmentId', 0))
+
+    const patient = await Patient.find(params.id)
+    if (!patient || (user.role !== 'super_admin' && patient.clinicId !== user.clinicId)) {
+      return response.notFound({ error: 'Paciente não encontrado' })
+    }
+
+    // Carrega consultas + médico + record SOAP + documentos
+    const appointmentsQuery = Appointment.query()
+      .where('patient_id', patient.id)
+      .where('clinic_id', patient.clinicId)
+      .whereNot('status', 'cancelled')
+      .orderBy('scheduled_at', 'desc')
+      .limit(limit)
+      .preload('doctor', (q) => q.select('id', 'fullName', 'crm', 'crmUf', 'specialty'))
+      .preload('insurance')
+    if (exclude) appointmentsQuery.whereNot('id', exclude)
+
+    const appointments = await appointmentsQuery
+    const apptIds = appointments.map((a) => a.id)
+    if (apptIds.length === 0) {
+      return { data: [] }
+    }
+
+    const records = await MedicalRecord.query().whereIn('appointment_id', apptIds)
+    const recordsByAppt = new Map(records.map((r) => [r.appointmentId, r]))
+
+    const documents = await Document.query()
+      .whereIn('appointment_id', apptIds)
+      .orderBy('created_at', 'asc')
+    const docsByAppt = new Map<number, Document[]>()
+    for (const d of documents) {
+      // Já filtrado por whereIn(appointment_id, apptIds), então != null
+      const apptId = d.appointmentId!
+      const list = docsByAppt.get(apptId) ?? []
+      list.push(d)
+      docsByAppt.set(apptId, list)
+    }
+
+    const data = appointments.map((a) => {
+      const rec = recordsByAppt.get(a.id)
+      return {
+        id: a.id,
+        scheduledAt: a.scheduledAt,
+        status: a.status,
+        reason: a.reason,
+        doctor: a.doctor
+          ? {
+              id: a.doctor.id,
+              fullName: a.doctor.fullName,
+              crm: a.doctor.crm,
+              crmUf: a.doctor.crmUf,
+              specialty: a.doctor.specialty,
+            }
+          : null,
+        insurance: a.insurance ? { id: a.insurance.id, name: a.insurance.name } : null,
+        record: rec
+          ? {
+              subjective: rec.subjective,
+              objective: rec.objective,
+              assessment: rec.assessment,
+              plan: rec.plan,
+              vitals: rec.vitals,
+            }
+          : null,
+        documents: (docsByAppt.get(a.id) ?? []).map((d) => ({
+          id: d.id,
+          type: d.type,
+          status: d.status,
+          createdAt: d.createdAt,
+        })),
+      }
+    })
+
+    return { data }
   }
 }
