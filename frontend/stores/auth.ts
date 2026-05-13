@@ -58,11 +58,15 @@ export const useAuthStore = defineStore('auth', {
     isSuperAdmin: (s) => s.user?.role === 'super_admin',
     isConsultorio: (s) => s.user?.clinic?.plan === 'consultorio',
     isClinica: (s) => s.user?.clinic?.plan === 'clinica',
-    /** Médico em consultório age como admin da própria clínica. */
+    /**
+     * "Admin da clínica" no sentido operacional: quem manda dentro de
+     * UMA clínica específica. Super_admin NÃO entra aqui — ele opera a
+     * plataforma toda de fora, e quando quer atuar dentro de uma clínica
+     * usa "Personificar" pra entrar como algum usuário dela.
+     */
     isClinicAdmin(): boolean {
       return (
         this.role === 'admin' ||
-        this.role === 'super_admin' ||
         (this.role === 'doctor' && this.clinicPlan === 'consultorio')
       )
     },
