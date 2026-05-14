@@ -13,6 +13,7 @@ const props = defineProps<{
   open: boolean
   appointment?: Appointment | null
   initialSlot?: { date: string; doctorId?: number } | null
+  initialPatient?: { id: number; fullName: string } | null
 }>()
 
 const emit = defineEmits<{
@@ -79,8 +80,8 @@ watch(
       form.status = a.status
     } else {
       form.doctorId = props.initialSlot?.doctorId ?? doctors.value[0]?.id ?? 0
-      form.patientId = 0
-      form.patientName = ''
+      form.patientId = props.initialPatient?.id ?? 0
+      form.patientName = props.initialPatient?.fullName ?? ''
       form.insuranceId = 0
       const slot = props.initialSlot?.date
         ? new Date(props.initialSlot.date)

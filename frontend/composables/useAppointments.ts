@@ -71,6 +71,15 @@ export function useAppointments() {
         `/api/appointments?${qs.toString()}`
       )
     },
+    list: (params: { patientId?: number; doctorId?: number } = {}) => {
+      const qs = new URLSearchParams()
+      if (params.patientId) qs.set('patientId', String(params.patientId))
+      if (params.doctorId) qs.set('doctorId', String(params.doctorId))
+      const q = qs.toString()
+      return api.get<{ data: Appointment[] }>(
+        `/api/appointments${q ? '?' + q : ''}`
+      )
+    },
     create: (body: AppointmentInput) =>
       api.post<{ data: Appointment }>('/api/appointments', body),
     update: (

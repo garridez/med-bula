@@ -1,5 +1,12 @@
 import { useApi } from '~/composables/useApi'
 
+export interface PatientDiagnosis {
+  code: string
+  description: string
+  recordedAt?: string
+  recordedBy?: number
+}
+
 export interface Patient {
   id: number
   clinicId: number
@@ -18,6 +25,14 @@ export interface Patient {
   zipcode: string | null
   notes: string | null
   extra: Record<string, unknown> | null
+  // Drop P — Dados clínicos independentes de consulta
+  clinicalHistory: string | null
+  surgicalHistory: string | null
+  familyHistory: string | null
+  habits: string | null
+  allergies: string | null
+  medicationsInUse: string | null
+  diagnoses: PatientDiagnosis[] | null
   isActive: boolean
   createdAt: string
   updatedAt: string | null

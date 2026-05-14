@@ -49,17 +49,27 @@ export default class AppointmentsController {
       data: request.qs(),
     })
 
-    const from =
-      data.from ?? DateTime.now().startOf('week').toJSDate()
-    const to =
-      data.to ?? DateTime.now().endOf('week').toJSDate()
-
     const query = Appointment.query()
-      .whereBetween('scheduled_at', [from as any, to as any])
-      .orderBy('scheduled_at', 'asc')
+      .orderBy('scheduled_at', 'desc')
       .preload('patient')
       .preload('doctor')
       .preload('insurance')
+
+    // Filtro de data:
+    //  - Se filtra por paciente (Patient360), traz histórico completo
+    //  - Caso contrário, default = semana atual (visão de agenda)
+    let from: Date | null = null
+    let to: Date | null = null
+    if (!data.patientId) {
+      from = (data.from ?? DateTime.now().startOf('week').toJSDate()) as Date
+      to = (data.to ?? DateTime.now().endOf('week').toJSDate()) as Date
+      query.whereBetween('scheduled_at', [from as any, to as any])
+    } else if (data.from || data.to) {
+      from = (data.from ??
+        DateTime.now().minus({ years: 5 }).toJSDate()) as Date
+      to = (data.to ?? DateTime.now().plus({ years: 5 }).toJSDate()) as Date
+      query.whereBetween('scheduled_at', [from as any, to as any])
+    }
 
     scopeToClinic(query, { auth } as HttpContext)
 
@@ -69,7 +79,7 @@ export default class AppointmentsController {
     const appointments = await query
     return {
       data: appointments,
-      range: { from: from, to: to },
+      range: from && to ? { from, to } : null,
     }
   }
 

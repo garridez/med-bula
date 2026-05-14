@@ -67,10 +67,25 @@ interface PositionedAppointment {
   appt: Appointment
   top: number
   height: number
+  /** Coluna lateral (0..totalColumns-1) — usado pra dividir overlaps lado-a-lado */
+  column: number
+  /** Quantas colunas o cluster de sobreposição ocupa */
+  totalColumns: number
 }
 
+/**
+ * Coloca os appointments do dia em "lanes" laterais quando há sobreposição
+ * de horário. Algoritmo greedy:
+ *   1. Ordena por scheduledAt asc
+ *   2. Agrupa em clusters contínuos de sobreposição
+ *   3. Dentro do cluster, encaixa cada apt na primeira lane que já terminou
+ *      antes do seu início; se nenhuma couber, abre lane nova
+ *   4. totalColumns do cluster = número de lanes abertas
+ */
 function appointmentsForDay(day: Date): PositionedAppointment[] {
-  return props.appointments
+  type Item = PositionedAppointment & { start: number; end: number }
+
+  const items: Item[] = props.appointments
     .filter((a) => isSameDay(new Date(a.scheduledAt), day))
     .map((a) => {
       const dt = new Date(a.scheduledAt)
@@ -78,8 +93,67 @@ function appointmentsForDay(day: Date): PositionedAppointment[] {
         (dt.getHours() - startHour.value) * 60 + dt.getMinutes()
       const top = (minutes / 60) * PX_PER_HOUR
       const height = (a.durationMinutes / 60) * PX_PER_HOUR
-      return { appt: a, top, height }
+      const start = dt.getTime()
+      const end = start + a.durationMinutes * 60000
+      return {
+        appt: a,
+        top,
+        height,
+        start,
+        end,
+        column: 0,
+        totalColumns: 1,
+      }
     })
+    .sort((a, b) => a.start - b.start)
+
+  if (items.length === 0) return []
+
+  let cluster: Item[] = []
+  let clusterEnd = -Infinity
+  let lanes: number[] = [] // ms do fim de cada lane ativa
+
+  const flushCluster = () => {
+    if (cluster.length === 0) return
+    const total = lanes.length
+    for (const c of cluster) c.totalColumns = total
+  }
+
+  for (const item of items) {
+    if (item.start >= clusterEnd) {
+      flushCluster()
+      cluster = []
+      lanes = []
+      clusterEnd = item.end
+    } else {
+      clusterEnd = Math.max(clusterEnd, item.end)
+    }
+
+    // Encaixa numa lane que já terminou; se nenhuma, abre nova
+    let placed = false
+    for (let i = 0; i < lanes.length; i++) {
+      if (item.start >= lanes[i]) {
+        item.column = i
+        lanes[i] = item.end
+        placed = true
+        break
+      }
+    }
+    if (!placed) {
+      item.column = lanes.length
+      lanes.push(item.end)
+    }
+    cluster.push(item)
+  }
+  flushCluster()
+
+  return items.map(({ appt, top, height, column, totalColumns }) => ({
+    appt,
+    top,
+    height,
+    column,
+    totalColumns,
+  }))
 }
 
 function statusStyle(s: AppointmentStatus) {
@@ -233,7 +307,7 @@ const nowLineTop = computed(() => {
           :key="pa.appt.id"
           type="button"
           @click="emit('appointmentClick', pa.appt)"
-          class="absolute left-1 right-1 rounded-md text-left px-2 py-1
+          class="absolute rounded-md text-left px-2 py-1
                  border-l-[3px] hover:shadow-soft transition-all overflow-hidden
                  cursor-pointer z-[5]"
           :class="statusStyle(pa.appt.status)"
@@ -241,6 +315,8 @@ const nowLineTop = computed(() => {
             top: `${pa.top}px`,
             height: `${Math.max(pa.height, 28)}px`,
             minHeight: '28px',
+            left: `calc(${(pa.column / pa.totalColumns) * 100}% + 2px)`,
+            width: `calc(${100 / pa.totalColumns}% - 4px)`,
           }"
         >
           <div class="text-[10px] font-semibold leading-tight">

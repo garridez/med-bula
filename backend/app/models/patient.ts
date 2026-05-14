@@ -69,6 +69,40 @@ export default class Patient extends BaseModel {
   @column()
   declare notes: string | null
 
+  // Drop P — Dados clínicos independentes de consulta
+  @column({ columnName: 'clinical_history' })
+  declare clinicalHistory: string | null
+
+  @column({ columnName: 'surgical_history' })
+  declare surgicalHistory: string | null
+
+  @column({ columnName: 'family_history' })
+  declare familyHistory: string | null
+
+  @column()
+  declare habits: string | null
+
+  @column()
+  declare allergies: string | null
+
+  @column({ columnName: 'medications_in_use' })
+  declare medicationsInUse: string | null
+
+  /**
+   * Lista de CID-10 do paciente.
+   * [{ code: 'E11', description: 'Diabetes tipo 2', recordedAt: ISO, recordedBy: userId }]
+   */
+  @column({
+    prepare: (v) => (v ? JSON.stringify(v) : null),
+    consume: (v) => (typeof v === 'string' ? JSON.parse(v) : v),
+  })
+  declare diagnoses: Array<{
+    code: string
+    description: string
+    recordedAt: string
+    recordedBy?: number
+  }> | null
+
   @column({
     prepare: (v) => (v ? JSON.stringify(v) : null),
     consume: (v) => (typeof v === 'string' ? JSON.parse(v) : v),
