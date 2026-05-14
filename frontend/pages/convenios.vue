@@ -193,7 +193,7 @@ function fmtBRL(v: number) {
 
 <template>
   <div class="p-8">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-7xl mx-auto">
       <!-- Header -->
       <div class="flex items-center justify-between mb-6">
         <div>

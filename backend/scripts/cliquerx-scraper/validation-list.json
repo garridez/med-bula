@@ -1,0 +1,196 @@
+{
+  "description": "Lista de validação: princípios ativos (DCBs) + marcas top do Brasil. Usada pelo validate.mjs pra medir cobertura do BFS e preencher lacunas.",
+  "_generated_at": "2026-05-13",
+  "_sources": "ANVISA DCB + top brand list curado manualmente",
+  "names": [
+    "paracetamol", "dipirona", "ibuprofeno", "nimesulida", "ácido acetilsalicílico",
+    "diclofenaco", "cetoprofeno", "naproxeno", "meloxicam", "celecoxibe",
+    "piroxicam", "tenoxicam", "etoricoxibe", "indometacina", "aceclofenaco",
+
+    "losartana", "valsartana", "olmesartana", "telmisartana", "candesartana",
+    "enalapril", "captopril", "lisinopril", "ramipril", "perindopril",
+    "propranolol", "atenolol", "metoprolol", "carvedilol", "bisoprolol", "nebivolol",
+    "anlodipino", "nifedipino", "verapamil", "diltiazem", "felodipino",
+    "hidroclorotiazida", "furosemida", "espironolactona", "indapamida", "clortalidona",
+    "sinvastatina", "atorvastatina", "rosuvastatina", "pravastatina", "ezetimiba",
+    "fenofibrato", "ciprofibrato", "bezafibrato",
+    "amiodarona", "digoxina", "ivabradina", "sacubitril",
+
+    "metformina", "glibenclamida", "gliclazida", "glimepirida", "glipizida",
+    "sitagliptina", "vildagliptina", "linagliptina", "saxagliptina",
+    "empagliflozina", "dapagliflozina", "canagliflozina",
+    "liraglutida", "semaglutida", "dulaglutida",
+    "insulina glargina", "insulina lispro", "insulina aspart", "insulina detemir",
+    "insulina degludeca", "pioglitazona", "acarbose",
+
+    "omeprazol", "pantoprazol", "esomeprazol", "lansoprazol", "rabeprazol",
+    "dexlansoprazol", "ranitidina", "famotidina",
+    "domperidona", "bromoprida", "metoclopramida", "ondansetrona",
+    "sucralfato", "dimeticona", "simeticona", "alginato de sódio",
+    "loperamida", "racecadotrila", "lactulose", "macrogol",
+    "mesalazina", "sulfassalazina",
+
+    "sertralina", "fluoxetina", "paroxetina", "escitalopram", "citalopram",
+    "venlafaxina", "duloxetina", "bupropiona", "mirtazapina", "trazodona",
+    "vortioxetina", "desvenlafaxina", "agomelatina",
+    "amitriptilina", "nortriptilina", "clomipramina", "imipramina",
+    "alprazolam", "clonazepam", "diazepam", "bromazepam", "lorazepam",
+    "midazolam", "flurazepam", "cloxazolam", "zolpidem", "zopiclona", "eszopiclona",
+    "quetiapina", "risperidona", "olanzapina", "aripiprazol", "ziprasidona",
+    "clozapina", "haloperidol", "clorpromazina", "lurasidona", "paliperidona",
+    "lítio", "ácido valproico", "valproato de sódio", "lamotrigina",
+    "carbamazepina", "oxcarbazepina", "topiramato",
+    "metilfenidato", "lisdexanfetamina", "atomoxetina",
+    "memantina", "donepezila", "rivastigmina", "galantamina",
+
+    "amoxicilina", "amoxicilina clavulanato", "ampicilina", "penicilina benzatina",
+    "azitromicina", "claritromicina", "eritromicina",
+    "cefalexina", "cefadroxila", "cefaclor", "ceftriaxona", "cefuroxima", "cefepime",
+    "ciprofloxacino", "levofloxacino", "moxifloxacino", "norfloxacino", "ofloxacino",
+    "sulfametoxazol", "trimetoprima", "clindamicina", "doxiciclina", "minociclina",
+    "tetraciclina", "metronidazol", "tinidazol", "secnidazol",
+    "nitrofurantoína", "fosfomicina", "vancomicina",
+    "rifampicina", "isoniazida", "etambutol", "pirazinamida",
+    "aciclovir", "valaciclovir", "ganciclovir", "oseltamivir",
+    "tenofovir", "lamivudina", "efavirenz", "dolutegravir",
+    "fluconazol", "itraconazol", "cetoconazol", "voriconazol",
+    "nistatina", "miconazol", "clotrimazol", "terbinafina", "griseofulvina",
+    "albendazol", "mebendazol", "ivermectina", "praziquantel",
+
+    "loratadina", "desloratadina", "cetirizina", "levocetirizina",
+    "fexofenadina", "ebastina", "rupatadina", "bilastina",
+    "dexclorfeniramina", "prometazina", "hidroxizina",
+
+    "salbutamol", "fenoterol", "terbutalina", "formoterol", "salmeterol", "indacaterol",
+    "vilanterol", "budesonida", "beclometasona", "fluticasona", "ciclesonida",
+    "mometasona", "ipratrópio", "tiotrópio", "umeclidínio", "glicopirrônio",
+    "montelucaste", "zafirlucaste", "teofilina", "roflumilaste",
+    "omalizumabe", "mepolizumabe", "dupilumabe",
+
+    "levotiroxina", "liotironina", "propiltiouracila", "metimazol",
+    "prednisona", "prednisolona", "deflazacort", "metilprednisolona",
+    "betametasona", "dexametasona", "hidrocortisona", "triancinolona",
+    "testosterona", "tamoxifeno", "letrozol", "anastrozol", "exemestano",
+    "estradiol", "estriol", "progesterona", "didrogesterona", "noretisterona",
+    "dienogeste", "drospirenona", "etinilestradiol", "levonorgestrel",
+    "desogestrel", "gestodeno", "ciproterona", "norelgestromina",
+
+    "varfarina", "rivaroxabana", "dabigatrana", "apixabana", "edoxabana",
+    "enoxaparina", "heparina", "clopidogrel", "ticagrelor", "prasugrel",
+    "ácido tranexâmico",
+
+    "alopurinol", "febuxostate", "colchicina",
+    "sildenafila", "tadalafila", "vardenafila", "avanafila",
+    "finasterida", "dutasterida", "tansulosina", "alfuzosina", "silodosina",
+    "solifenacina", "oxibutinina", "tolterodina", "mirabegrona",
+
+    "fenitoína", "fenobarbital", "gabapentina", "pregabalina", "levetiracetam",
+    "vigabatrina", "primidona", "etossuximida",
+    "levodopa", "carbidopa", "pramipexol", "ropinirol", "rasagilina",
+    "selegilina", "amantadina", "entacapona", "biperideno",
+
+    "sumatriptano", "rizatriptano", "zolmitriptano", "naratriptano",
+    "topiramato", "flunarizina", "cinarizina", "betahistina",
+
+    "tramadol", "codeína", "morfina", "metadona", "oxicodona", "fentanil",
+    "buprenorfina", "tapentadol",
+
+    "metilprednisolona", "ciclosporina", "tacrolimo", "azatioprina",
+    "metotrexato", "leflunomida", "hidroxicloroquina", "cloroquina",
+    "adalimumabe", "etanercepte", "infliximabe", "rituximabe", "tocilizumabe",
+    "abatacepte", "secuquinumabe", "ustequinumabe", "ixequizumabe",
+
+    "ácido fólico", "ácido ascórbico", "vitamina D", "colecalciferol",
+    "ergocalciferol", "vitamina B12", "cianocobalamina", "metilcobalamina",
+    "tiamina", "piridoxina", "riboflavina", "biotina",
+    "sulfato ferroso", "ferripolimaltose", "sacarato férrico",
+    "carbonato de cálcio", "citrato de cálcio", "óxido de magnésio",
+    "cloreto de magnésio", "sulfato de magnésio",
+    "ômega 3", "ácidos graxos", "coenzima Q10",
+
+    "Tylenol", "Dorflex", "Buscopan", "Neosaldina", "Cataflam", "Voltaren",
+    "Advil", "Aspirina", "Doril", "Naldecon", "Resfenol", "Engov", "Vick",
+    "Dorsal", "Tylex", "Migraliv", "Maxalt", "Naramig", "Sumax", "Zomig",
+
+    "Allegra", "Polaramine", "Histamin", "Loratamed", "Claritin", "Cetinax",
+    "Zyrtec", "Telfast", "Polaryn",
+
+    "Selozok", "Concor", "Atensina", "Adalat", "Norvasc", "Lopressor",
+    "Cordarone", "Tenoretic", "Atenol", "Lopid", "Renitec", "Vasopril",
+    "Diovan", "Cozaar", "Aprovel", "Micardis",
+    "Crestor", "Vytorin", "Zetia", "Zocor", "Lipitor",
+
+    "Glifage", "Glucophage", "Galvus", "Janumet", "Forxiga", "Jardiance",
+    "Trayenta", "Onglyza", "Saxenda", "Victoza", "Ozempic", "Trulicity",
+    "Lantus", "Humalog", "Tresiba", "Levemir",
+
+    "Losec", "Pantozol", "Nexium", "Prazol", "Pariet", "Tecta",
+    "Motilium", "Plasil", "Vonau", "Bromopride", "Mylanta",
+    "Imosec", "Tiorfan", "Lactopurga",
+
+    "Cipralex", "Lexapro", "Daforin", "Prozac", "Zoloft", "Pondera",
+    "Efexor", "Wellbutrin", "Pristiq", "Aropax", "Pamelor", "Tryptanol",
+    "Remeron", "Cymbalta", "Anafranil",
+    "Frontal", "Lexotan", "Rivotril", "Valium", "Lorax", "Stilnox",
+    "Risperdal", "Seroquel", "Zyprexa", "Abilify", "Trileptal",
+    "Depakote", "Lamictal",
+    "Ritalina", "Venvanse", "Strattera",
+    "Ebix", "Eranz", "Exelon",
+
+    "Amoxil", "Velamox", "Clavulin", "Bactrim", "Zitromax", "Zimax", "Clarix",
+    "Keflex", "Cefalexina", "Ceclor", "Rocefin",
+    "Cipro", "Levaquin", "Tavanic", "Floxacin",
+    "Flagyl", "Annita", "Stamicin", "Macrodantina",
+    "Zovirax", "Tamiflu", "Cidofovir",
+    "Zoltec", "Sporanox", "Nizoral", "Daktarin", "Mycostatin", "Lamisil",
+
+    "Aerolin", "Bricanyl", "Foradil", "Serevent", "Onbrize",
+    "Symbicort", "Seretide", "Vannair", "Pulmicort", "Clenil", "Flixotide",
+    "Atrovent", "Spiriva", "Anoro", "Trelegy",
+    "Singulair", "Accolate", "Daxas",
+
+    "Puran T4", "Synthroid", "Levoid", "Euthyrox", "Tapazol",
+
+    "Decadron", "Celestone", "Meticorten", "Predsim", "Diprospan", "Triancil",
+
+    "Yasmin", "Yaz", "Allurene", "Tâmisa", "Selene", "Diane", "Cerazette",
+    "Belara", "Mirena", "Iumi", "Stezza", "Qlaira",
+
+    "Tegretol", "Trileptal", "Lamictal", "Depakene", "Neurontin", "Lyrica",
+    "Keppra", "Sabril",
+
+    "Prolopa", "Sinemet", "Stalevo", "Sifrol", "Requip", "Azilect",
+    "Akineton",
+
+    "Lasix", "Higroton", "Aldactone", "Diurix",
+    "Marevan", "Xarelto", "Pradaxa", "Eliquis", "Plavix", "Brilinta",
+    "Clexane",
+
+    "Zyloric", "Uloric", "Colchis",
+    "Viagra", "Cialis", "Levitra", "Spedra",
+    "Proscar", "Avodart", "Secotex", "Mictonorm",
+
+    "Tramal", "Codein", "Dimorf", "MST",
+
+    "Aradois", "Spironol", "Furosemida", "Hidroclorotiazida",
+    "Sinvastatin", "Atorvastatin", "Pravacol",
+
+    "Donaren", "Olcadil",
+
+    "Centrum", "Pharmaton", "Berocca", "Caltrate", "Calcitran",
+    "Ferronyl", "Combiron", "Noripurum", "Sulfato Ferroso",
+    "Addera D3", "DePura", "Vita D", "Niferex",
+
+    "Bepantol", "Hipoglós", "Cicaplast", "Cicalfate", "Caladryl",
+    "Caladerm",
+
+    "Sustanon", "Durateston", "Deposteron", "Androgel",
+    "Premarin", "Estradot", "Climen", "Trinordiol",
+
+    "Aciclovir", "Tamiflu", "Mycostatin",
+
+    "Allegra D", "Loratamed D", "Decongestin",
+
+    "Tylenol Sinus", "Dorsal Cafeína", "Cibalena"
+  ]
+}

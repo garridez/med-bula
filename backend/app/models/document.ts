@@ -16,8 +16,47 @@ export type DocumentStatus =
   | 'delivered'
   | 'cancelled'
 
+export type PrescriptionType =
+  | 'simples'
+  | 'duas_vias'
+  | 'controle_especial'
+  | 'controle_antimicrobiano'
+
+export type UsageType =
+  | 'nao_informada'
+  | 'uso_continuo'
+  | 'comprimidos'
+  | 'embalagens'
+  | 'unidades'
+
+/**
+ * Drop C — Item de prescrição com autocomplete.
+ *
+ * Modo 1 — medicamento do catálogo: medicationId + medicationTitle + posology
+ * Modo 2 — texto livre: freeText
+ *
+ * Campos legados mantidos como optional pra renderizar receitas antigas.
+ */
 export interface PrescriptionItem {
-  name: string
+  // Catálogo
+  medicationId?: string | null
+  medicationTitle?: string | null
+  activeIngredient?: string | null
+  laboratoryName?: string | null
+  category?: string | null
+  unit?: string | null
+
+  // Texto livre
+  freeText?: string | null
+
+  // Comum
+  posology?: string | null
+  prescriptionType?: PrescriptionType
+  usageType?: UsageType
+  usageQuantity?: number | null
+
+  // Legados
+  name?: string
   dose?: string
   route?: string
   frequency?: string

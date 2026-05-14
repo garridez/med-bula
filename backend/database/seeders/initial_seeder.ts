@@ -123,11 +123,21 @@ export default class extends BaseSeeder {
         heightCm: 175,
         phone: '(31) 98888-1234', // OTP: 1234
         email: 'joao@example.com',
+        address: 'Rua das Margaridas, 245, Apto 302',
         city: 'Belo Horizonte',
         state: 'MG',
+        zipcode: '30130-110',
         isActive: true,
       }
     )
+    // Patch defensivo: se paciente já existia sem endereço, força update
+    if (!(patient1 as any).address) {
+      patient1.merge({
+        address: 'Rua das Margaridas, 245, Apto 302',
+        zipcode: '30130-110',
+      } as any)
+      await patient1.save()
+    }
 
     const patient2 = await Patient.firstOrCreate(
       { clinicId: clinic.id, cpf: '888.777.666-55' },
@@ -139,11 +149,20 @@ export default class extends BaseSeeder {
         heightCm: 165,
         phone: '(31) 97777-5678', // OTP: 5678
         email: 'maria@example.com',
+        address: 'Avenida Afonso Pena, 1500, Sala 12',
         city: 'Belo Horizonte',
         state: 'MG',
+        zipcode: '30130-005',
         isActive: true,
       }
     )
+    if (!(patient2 as any).address) {
+      patient2.merge({
+        address: 'Avenida Afonso Pena, 1500, Sala 12',
+        zipcode: '30130-005',
+      } as any)
+      await patient2.save()
+    }
 
     // 7. Consultas — só cria se ainda não tiver nenhuma na clínica
     const apptCount = await Appointment.query()

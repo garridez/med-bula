@@ -77,7 +77,10 @@ async function onSigned() {
   // recarrega lista pra refletir status 'signed'
   if (!appointment.value) return
   const docsRes = await docsApi.listByAppointment(appointment.value.id)
-  documents.value = docsRes.data
+  // Guardrail: backend já filtra mas reforça pra evitar leak de docs de outra consulta
+  documents.value = docsRes.data.filter(
+    (d: any) => d.appointmentId === appointment.value?.id
+  )
 }
 
 const sig = useSignature()
@@ -126,7 +129,17 @@ const docStatusColor = (s: string) =>
 // ---- Prescription form state ----
 const prescriptionItems = ref<PrescriptionItem[]>([emptyPrescriptionItem()])
 function emptyPrescriptionItem(): PrescriptionItem {
-  return { name: '', dose: '', frequency: '', duration: '', route: 'Oral', notes: '', controlled: false }
+  return {
+    medicationId: null,
+    medicationTitle: null,
+    activeIngredient: null,
+    laboratoryName: null,
+    category: null,
+    freeText: null,
+    posology: null,
+    prescriptionType: 'simples',
+    usageType: 'nao_informada',
+  }
 }
 
 // ---- Exam form state ----
@@ -166,7 +179,9 @@ async function loadAll() {
 
     // Existing documents
     const docsRes = await docsApi.listByAppointment(appointmentId.value)
-    documents.value = docsRes.data
+    documents.value = docsRes.data.filter(
+      (d: any) => d.appointmentId === appointmentId.value
+    )
   } catch (e: any) {
     error.value = e?.message || 'Erro ao carregar consulta'
   } finally {
@@ -242,9 +257,14 @@ watch([soap, vitals], () => {
 // --- Document emission ---
 async function emitPrescription() {
   if (!appointment.value) return
-  const valid = prescriptionItems.value.filter((i) => i.name.trim())
+  // Item válido = tem medicamento do catálogo OU texto livre preenchido
+  const valid = prescriptionItems.value.filter((i: any) => {
+    if (i.medicationId && i.medicationTitle) return true
+    if (i.freeText && i.freeText.trim()) return true
+    return false
+  })
   if (valid.length === 0) {
-    error.value = 'Adicione pelo menos um medicamento'
+    error.value = 'Adicione pelo menos um item à receita'
     return
   }
   saving.value = true
@@ -259,6 +279,8 @@ async function emitPrescription() {
     })
     documents.value.unshift(res.data)
     prescriptionItems.value = [emptyPrescriptionItem()]
+    // Drop C — abre modal de assinatura imediatamente com a receita recém-emitida
+    openSignature([res.data.id])
   } catch (e: any) {
     error.value = e?.data?.errors?.[0]?.message || e?.message || 'Erro ao emitir receita'
   } finally {
@@ -628,7 +650,7 @@ definePageMeta({ layout: false })
         <Transition name="fade" mode="out-in">
           <div :key="activeTab">
             <!-- Prontuário SOAP -->
-            <div v-if="activeTab === 'prontuario'" class="space-y-4 max-w-3xl">
+            <div v-if="activeTab === 'prontuario'" class="space-y-4 max-w-6xl">
               <div>
                 <label class="label">
                   <span class="font-bold text-bula-600">S</span>ubjetivo
@@ -667,50 +689,23 @@ definePageMeta({ layout: false })
             </div>
 
             <!-- Receita -->
-            <div v-else-if="activeTab === 'prescription'" class="space-y-4 max-w-3xl">
+            <div v-else-if="activeTab === 'prescription'" class="space-y-3 max-w-6xl">
               <p class="text-sm text-slate-600">
-                Adicione os medicamentos e clique em <strong>Emitir receita</strong>. Cada
+                Adicione os medicamentos do catálogo (autocomplete) ou texto livre. Cada
                 emissão gera um PDF independente.
               </p>
 
-              <div
+              <PrescriptionItemEditor
                 v-for="(item, idx) in prescriptionItems"
                 :key="idx"
-                class="card p-4 space-y-3"
-              >
-                <div class="flex items-center justify-between">
-                  <span class="text-xs font-semibold text-slate-500 uppercase">
-                    Medicamento {{ idx + 1 }}
-                  </span>
-                  <button
-                    v-if="prescriptionItems.length > 1"
-                    @click="removePrescriptionItem(idx)"
-                    class="text-slate-400 hover:text-red-600"
-                  >
-                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-                <input v-model="item.name" type="text" placeholder="Nome do medicamento" class="input" />
-                <div class="grid grid-cols-2 gap-3">
-                  <input v-model="item.dose" type="text" placeholder="Dosagem (500mg, 1g…)" class="input" />
-                  <input v-model="item.route" type="text" placeholder="Via (Oral, IV, IM…)" class="input" />
-                </div>
-                <div class="grid grid-cols-2 gap-3">
-                  <input v-model="item.frequency" type="text" placeholder="Posologia (a cada 8h…)" class="input" />
-                  <input v-model="item.duration" type="text" placeholder="Duração (5 dias, contínuo…)" class="input" />
-                </div>
-                <textarea v-model="item.notes" rows="2" placeholder="Observações" class="input resize-none" />
-                <label class="flex items-center gap-2 text-sm">
-                  <input v-model="item.controlled" type="checkbox" class="rounded text-bula-500" />
-                  <span class="text-slate-700">Medicamento controlado</span>
-                </label>
-              </div>
+                v-model="prescriptionItems[idx]"
+                :index="idx"
+                @remove="removePrescriptionItem(idx)"
+              />
 
               <div class="flex gap-2">
                 <button @click="addPrescriptionItem" type="button" class="btn-secondary">
-                  + Adicionar medicamento
+                  + Adicionar item
                 </button>
                 <button @click="emitPrescription" type="button" class="btn-primary" :disabled="saving">
                   {{ saving ? 'Emitindo…' : 'Emitir receita' }}
@@ -719,7 +714,7 @@ definePageMeta({ layout: false })
             </div>
 
             <!-- Exame -->
-            <div v-else-if="activeTab === 'exam_request'" class="space-y-4 max-w-3xl">
+            <div v-else-if="activeTab === 'exam_request'" class="space-y-4 max-w-6xl">
               <p class="text-sm text-slate-600">
                 Liste os exames a solicitar e clique em <strong>Emitir pedido</strong>.
               </p>

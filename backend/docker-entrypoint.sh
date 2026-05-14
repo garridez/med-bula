@@ -1,27 +1,20 @@
 #!/bin/sh
-# =====================================================================
-# Backend entrypoint
-#   1. roda migrations (idempotente, Adonis trackea)
-#   2. roda seed se RUN_SEED=true (idempotente via firstOrCreate)
-#   3. starta o servidor
-# =====================================================================
+# docker-entrypoint.sh — boot sequence pro Coolify
+#
+# IMPORTANTE: arquivo precisa ter line endings LF (não CRLF) e estar
+# sem BOM UTF-8 — o Dockerfile já trata isso, mas se editar no Windows,
+# converta antes (no VSCode: bottom-right "CRLF" → "LF").
 set -e
 
-echo ""
-echo "================================================"
-echo "  med.bula backend — starting"
-echo "================================================"
-
-echo "🔄 Running migrations..."
+echo "🔧 Aplicando migrations pendentes..."
 node ace migration:run --force
 
-if [ "${RUN_SEED:-true}" = "true" ]; then
-  echo "🌱 Running seeders (idempotent)..."
-  node ace db:seed || echo "⚠️  Seed step ended with non-zero — continuing."
-else
-  echo "⏭  RUN_SEED=false, skipping seed."
-fi
+echo "💊 Importando catálogo de medicamentos (skip se hash bater)..."
+node ace medications:import --by=auto || {
+  # Se o import falhar, AVISA mas não bloqueia o boot.
+  # O app ainda funciona com o catálogo da última importação válida.
+  echo "⚠️  Import de medicamentos falhou — seguindo com catálogo atual."
+}
 
-echo "🚀 Starting AdonisJS server..."
-echo ""
+echo "🚀 Iniciando servidor..."
 exec node bin/server.js

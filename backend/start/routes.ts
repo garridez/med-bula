@@ -16,6 +16,8 @@ const InsurancesController = () => import('#controllers/insurances_controller')
 const ReportsController = () => import('#controllers/reports_controller')
 const UsersController = () => import('#controllers/users_controller')
 const AdminController = () => import('#controllers/admin_controller')
+const MedicationsController = () =>
+  import('#controllers/medications_controller')
 
 router.get('/', async () => ({ ok: true, app: 'med-bula', version: '0.5.0a' }))
 
@@ -85,6 +87,22 @@ router
             router.post('/admin/impersonate', [AdminController, 'impersonate'])
           })
           .use(middleware.role(['super_admin']))
+
+        // ---- Catálogo de medicamentos (autocomplete de prescrição) ----
+        // Secretária NÃO acessa — só quem prescreve.
+        router
+          .group(() => {
+            router.get('/medications/search', [
+              MedicationsController,
+              'search',
+            ])
+            router.get('/medications/:id', [MedicationsController, 'show'])
+            router.get('/medications/:id/posologies', [
+              MedicationsController,
+              'posologies',
+            ])
+          })
+          .use(middleware.role(['doctor', 'admin', 'super_admin']))
 
         // ---- Convênios ----
         // Leitura: todo mundo autenticado (secretária precisa pra agendar)

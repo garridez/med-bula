@@ -51,7 +51,7 @@ function splitLabel(u: ManagedUser): string {
 
 <template>
   <div class="p-8">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-7xl mx-auto">
       <div class="flex items-center justify-between mb-6">
         <div>
           <h1 class="text-2xl font-bold text-slate-900">Médicos</h1>

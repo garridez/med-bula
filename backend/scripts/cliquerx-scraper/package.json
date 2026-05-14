@@ -1,0 +1,38 @@
+{
+  "name": "cliquerx-scraper",
+  "version": "1.0.0",
+  "description": "Scraper do catálogo Cliquerx (medicamentos + posologias) pra popular med.bula.com.br",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "probe": "node --env-file=.env probe.mjs",
+    "stress": "node --env-file=.env stress-test.mjs",
+    "scrape": "node --env-file=.env scrape.mjs",
+    "scrape:reset": "node --env-file=.env scrape.mjs --reset",
+    "validate": "node --env-file=.env validate.mjs",
+    "validate:v2": "node --env-file=.env validate.mjs --list=validation-list-v2.json",
+    "validate:v3": "node --env-file=.env validate.mjs --list=validation-list-v3.json",
+    "validate:v4": "node --env-file=.env validate.mjs --list=validation-list-v4.json",
+    "gen-list:v5": "node gen-full-list.mjs",
+    "validate:v5": "node --env-file=.env validate.mjs --list=validation-list-v5-full.json",
+    "validate:v3-fixed": "node --env-file=.env validate.mjs --list=validation-list-v3-fixed.json",
+    "deep-fill": "node --env-file=.env deep-fill.mjs",
+    "inspect-pos": "node --env-file=.env inspect-pos.mjs",
+    "search": "node search.mjs",
+    "audit-brands": "node audit-brands.mjs",
+    "audit-brands:detail": "node audit-brands.mjs --detail",
+    "audit-brands:export": "node audit-brands.mjs --export",
+    "refetch-pos": "node --env-file=.env refetch-pos.mjs",
+    "refetch-pos:dry": "node --env-file=.env refetch-pos.mjs --dry",
+    "refetch-pos:all": "node --env-file=.env refetch-pos.mjs --all",
+    "import": "node --env-file=.env import.mjs",
+    "stats": "node --env-file=.env scrape.mjs --stats"
+  },
+  "dependencies": {
+    "pg": "^8.13.1",
+    "pg-copy-streams": "^6.0.6"
+  }
+}

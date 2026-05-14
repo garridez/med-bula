@@ -11,3 +11,13 @@ coverage
 .vscode
 .idea
 README.md
+scripts/cliquerx-scraper/node_modules
+scripts/cliquerx-scraper/.env
+scripts/cliquerx-scraper/data/.scrape-state.json
+scripts/cliquerx-scraper/data/.no-pos-meds.json
+scripts/cliquerx-scraper/data/*.bak*
+scripts/cliquerx-scraper/data/*.tmp
+scripts/cliquerx-scraper/data/validation-report*.json
+scripts/cliquerx-scraper/data/refetch-pos-report.json
+scripts/cliquerx-scraper/data/deep-fill-report.json
+scripts/cliquerx-scraper/missing-brands.json

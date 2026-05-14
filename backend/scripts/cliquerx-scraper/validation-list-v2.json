@@ -1,0 +1,168 @@
+{
+  "description": "Lista de validação V2 — categorias COMPLEMENTARES à v1. Foco em dermato, oftálmica, ORL, fitoterápicos, suplementos, hormônios, reumatologia avançada e marcas não-tier-1.",
+  "_generated_at": "2026-05-13",
+  "_strategy": "preencher gaps em classes terapêuticas que a v1 não cobria. Cada nome aqui DEVE ser diferente dos 637 da v1.",
+  "names": [
+    "tretinoína", "isotretinoína", "adapaleno", "peróxido de benzoíla",
+    "ácido salicílico", "ácido glicólico", "ácido azelaico", "ácido mandélico",
+    "ácido retinoico", "hidroquinona", "niacinamida", "ácido hialurônico",
+    "ácido kójico", "resveratrol", "bakuchiol", "retinol", "DMAE",
+    "ureia 10%", "ureia 20%", "lactato de amônio", "vitamina C tópica",
+    "minoxidil", "espironolactona tópica", "ácido tranexâmico tópico",
+
+    "lubrificante ocular", "lágrima artificial", "carmelose", "hipromelose",
+    "polietilenoglicol", "trealose", "brimonidina", "timolol", "latanoprosta",
+    "bimatoprosta", "travoprosta", "tafluprosta", "dorzolamida", "brinzolamida",
+    "acetazolamida", "pilocarpina", "atropina oftálmica", "tropicamida",
+    "fenilefrina oftálmica", "olopatadina", "cromoglicato", "cetotifeno",
+    "tobramicina oftálmica", "cloranfenicol oftálmico", "sulfacetamida",
+    "ciprofloxacino oftálmico", "moxifloxacino oftálmico", "nepafenaco",
+    "diclofenaco oftálmico", "cetorolaco", "lifitegraste",
+
+    "oximetazolina", "xilometazolina", "fenilefrina nasal", "soro fisiológico",
+    "cloreto de sódio", "acetilcisteína", "carbocisteína", "ambroxol",
+    "bromexina", "guaifenesina", "dextrometorfano", "clobutinol",
+    "levodropropizina", "neltenexina", "erdosteína", "sobrerol",
+    "mometasona nasal", "fluticasona nasal", "budesonida nasal", "azelastina",
+
+    "trimetazidina", "mononitrato de isossorbida", "dinitrato de isossorbida",
+    "nitroglicerina", "propafenona", "sotalol", "disopiramida", "adenosina",
+    "milrinona", "dobutamina", "noradrenalina", "vasopressina", "midodrina",
+
+    "bromocriptina", "cabergolina", "octreotida", "lanreotida", "somatropina",
+    "calcitonina", "teriparatida", "denosumabe", "alendronato", "risedronato",
+    "ibandronato", "ácido zoledrônico", "raloxifeno", "bazedoxifeno",
+    "tibolona", "estriol vaginal", "promestrieno", "dehidroepiandrosterona",
+
+    "eritropoetina", "darbepoetina", "filgrastim", "pegfilgrastim",
+    "lenograstim", "ferro sacarose", "ferro carboximaltose",
+    "fator VIII", "fator IX", "imunoglobulina",
+
+    "bicalutamida", "flutamida", "nilutamida", "leuprorrelina", "gosserrelina",
+    "triptorrelina", "degarelix", "abiraterona", "enzalutamida",
+    "imatinibe", "dasatinibe", "nilotinibe", "ponatinibe", "ruxolitinibe",
+    "erlotinibe", "gefitinibe", "afatinibe", "osimertinibe",
+    "sorafenibe", "sunitinibe", "pazopanibe", "regorafenibe",
+    "trastuzumabe", "pertuzumabe", "bevacizumabe", "cetuximabe",
+    "panitumumabe", "nivolumabe", "pembrolizumabe", "atezolizumabe",
+
+    "micofenolato de mofetila", "micofenolato sódico", "everolimo", "sirolimo",
+    "tofacitinibe", "baricitinibe", "upadacitinibe", "filgotinibe",
+    "anakinra", "canaquinumabe", "guselcumabe", "risanquizumabe", "tirzepatida",
+
+    "lidocaína", "prilocaína", "bupivacaína", "ropivacaína",
+    "EMLA", "benzocaína", "tetracaína", "articaína", "mepivacaína",
+    "propofol", "etomidato", "cetamina", "tiopental",
+    "rocurônio", "atracúrio", "cisatracúrio", "succinilcolina", "pancurônio",
+
+    "nitazoxanida", "niclosamida", "pirantel", "levamizol", "tiabendazol",
+    "espiramicina", "primaquina", "artemeter", "lumefantrina", "mefloquina",
+
+    "lactobacillus", "saccharomyces boulardii", "bifidobacterium",
+    "florax", "reuteri", "pancreatina", "lipase",
+    "bromelina", "papaína", "queratinase",
+
+    "vitamina A", "retinol palmitato", "vitamina E", "tocoferol",
+    "vitamina K", "fitomenadiona", "menadiona",
+    "niacina", "pantotenato", "inositol", "colina", "betaína",
+    "selênio", "cromo picolinato", "manganês", "molibdênio", "boro",
+    "iodeto de potássio", "iodo", "cobre", "zinco quelato",
+    "creatina", "BCAA", "glutamina", "beta-alanina", "taurina",
+    "carnitina", "L-arginina", "L-citrulina", "leucina",
+    "colágeno", "colágeno tipo II", "ácido hialurônico oral",
+
+    "ginkgo biloba", "valeriana", "passiflora", "camomila",
+    "hipérico", "erva-doce", "boldo", "espinheira-santa",
+    "cáscara sagrada", "sene", "tamarindo", "ameixa",
+    "pygeum africanum", "saw palmetto", "serenoa repens",
+    "maca peruana", "ginseng", "panax ginseng", "ginseng coreano",
+    "equinácea", "aloe vera", "babosa", "calêndula", "arnica",
+    "hamamélis", "garcínia cambogia", "guaraná", "centella asiatica",
+    "alcachofra", "cártamo", "chá verde", "cúrcuma", "curcumina",
+    "uncaria tomentosa", "unha de gato", "carqueja",
+
+    "ácido tióctico", "ácido alfa lipóico", "coenzima Q10 ubiquinol",
+    "luteína", "zeaxantina", "astaxantina", "licopeno",
+    "resveratrol", "quercetina", "rutina", "hesperidina",
+    "diosmina", "rutosídeo",
+
+    "sulfato de glicosamina", "cloridrato de glicosamina",
+    "condroitina", "metilsulfonilmetano", "MSM",
+    "ácidos graxos essenciais", "linhaça",
+
+    "Diane 35", "Selene", "Allurene", "Yasminelle", "Aliane",
+    "Naturetti", "Tamarine", "Lacto-purga", "Sene Composto",
+    "Eparema", "Hepatilon", "Estomazil", "Sonrisal", "Eno",
+    "Sal de Andrews", "Estomalcin", "Pepsamar", "Mylanta Plus",
+    "Cetoconazol shampoo", "Nizoral shampoo", "Pielus",
+    "Caspar", "Pirisept", "Selsun",
+
+    "Atroveran", "Anador", "Migral", "Lisador", "Profenid",
+    "Sucralox", "Hipoglós", "Bepantol Derma", "Bepantol Baby",
+    "Trofodermin", "Cicatricure", "Contractubex",
+
+    "Cataflam Pro", "Cataflam Gotas", "Voltaren Emulgel",
+    "Calminex Diclofenaco", "Algi-Reumatril",
+
+    "Aciclo", "Herpesil", "Zovirax creme",
+
+    "Avamys", "Nasonex", "Nasacort", "Rhinocort",
+    "Veramyst", "Sonrisal Limão", "Otrivina", "Sorine",
+    "Sinex", "Naridrin",
+
+    "Sonrisal", "Estomazil", "Mylanta",
+
+    "Berotec", "Berodual", "Bricanyl Turbohaler",
+    "Onbrize Breezhaler", "Seebri", "Daliresp",
+    "Aerogold", "Asmalium", "Pulmoflux",
+
+    "Saúde da Mulher", "Aspirina Prevent", "AAS Protect",
+    "Cardizem", "Pressat", "Atenoblok", "Cardilol",
+
+    "Carduran", "Minipress", "Hytrin", "Cardura",
+
+    "Insulina NPH", "Glargina U300", "Toujeo",
+    "Soliqua", "Xultophy", "Trijardy",
+
+    "Yasmin Flex", "Stezza",
+
+    "Provera", "Cyclacur", "Climen",
+
+    "Hidrosec",
+
+    "Mucosolvan", "Fluimucil", "Bisolvon", "Acelbrofeno",
+    "Hytos Plus", "Notuss", "Toplexil",
+
+    "Reuquinol", "Plaquinol", "Quensyl",
+
+    "Pamelor", "Cebralat", "Carbolitium",
+
+    "Akathin", "Akineton",
+
+    "Atensina LP", "Lyrica CR", "Trileptal CR", "Depakote ER",
+    "Ritalina LA", "Concerta", "Adderall",
+
+    "Donaren Retard", "Trittico",
+
+    "Olcadil", "Lexotan SL",
+
+    "Pirisept", "Octenisept", "Riodeine",
+
+    "Cicaplast Baume", "Toleriane", "Effaclar",
+    "Anthelios", "Capital Soleil", "Photoderm",
+    "Mineral 89", "Liftactiv", "Aqualia",
+    "Caudalie", "Eucerin Atopicontrol", "Eucerin AntiPigment",
+
+    "Skinceuticals", "Vitamine E",
+
+    "Lipless", "Lopid", "Caduet",
+
+    "Premarin Conjugado", "Trinordiol", "Microvlar",
+
+    "Ginlactil", "Floralax",
+
+    "Nopaxen", "Etna", "Tylex 30",
+
+    "Toragesic", "Algi-tanderil"
+  ]
+}

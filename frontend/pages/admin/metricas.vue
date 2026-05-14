@@ -35,7 +35,7 @@ const newDelta = computed(() => {
 
 <template>
   <div class="p-8">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-7xl mx-auto">
       <h1 class="text-2xl font-bold text-slate-900 mb-1">Métricas globais</h1>
       <p class="text-sm text-slate-500 mb-6">
         Visão da plataforma — todas as clínicas.

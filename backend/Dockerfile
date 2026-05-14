@@ -27,15 +27,16 @@ WORKDIR /app
 # tini for proper signal handling (Ctrl+C, SIGTERM from Coolify)
 RUN apk add --no-cache tini wget
 
-# Copy built app + entrypoint
+# Copy built app + entrypoint + scraper data
 COPY --from=builder /app/build /app/
 COPY --from=builder /app/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+COPY --from=builder /app/scripts/cliquerx-scraper/data /app/scripts/cliquerx-scraper/data
 
-# Strip BOM defensivo (caso o build tenha propagado)
+# Strip BOM defensivo
 RUN find /app -maxdepth 3 -name '*.json' -type f \
     -exec sed -i '1s/^\xEF\xBB\xBF//' {} \;
 
-# Install only production deps (Adonis emits a self-contained build/)
+# Install only production deps
 RUN npm install --omit=dev --ignore-scripts && \
     npm cache clean --force && \
     sed -i 's/\r$//' /usr/local/bin/docker-entrypoint.sh && \
@@ -43,4 +44,4 @@ RUN npm install --omit=dev --ignore-scripts && \
 
 EXPOSE 3333
 
-ENTRYPOINT ["/sbin/tini", "--", "docker-entrypoint.sh"]
+ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/docker-entrypoint.sh"]

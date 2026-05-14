@@ -26,6 +26,8 @@ const BLACK = '#000000'
 const COLOR_LINE = '#d1d5db'
 const COLOR_STRIP_BG = '#f3f4f6'
 const COLOR_AD_BG = '#fef2f2'
+const COLOR_GREEN_BG = '#d1fae5'
+const COLOR_GREEN_DARK = '#065f46'
 
 const PAGE_LEFT = 50
 const PAGE_RIGHT = 545
@@ -36,7 +38,7 @@ const CONTENT_WIDTH = PAGE_RIGHT - PAGE_LEFT
 const FOOTER_TOP_Y = 680 // início da faixa cinza com info do médico
 const FOOTER_STRIP_HEIGHT = 55
 const SIGNATURE_LINE_Y = FOOTER_TOP_Y + FOOTER_STRIP_HEIGHT + 8 // 743
-const AD_STRIP_Y = 760
+const AD_STRIP_Y = 775 // faixa rosa (puxada pra dar lugar à verde acima)
 const AD_STRIP_HEIGHT = 22
 const ITEMS_MAX_Y = FOOTER_TOP_Y - 8 // 672 — a partir daqui addPage
 
@@ -60,8 +62,7 @@ export default class PdfService {
     this.writeHeader(doc, ctx.clinic)
 
     const items = ((ctx.document.payload as any)?.items ?? []) as PrescriptionItem[]
-    const hasControlled = items.some((it) => it.controlled)
-    const title = hasControlled ? 'RECEITA DE CONTROLE ESPECIAL' : 'RECEITUÁRIO MÉDICO'
+    const title = this.computePrescriptionTitle(items)
 
     this.writeTitle(doc, title)
     this.writePatientBlock(doc, ctx.patient, ctx.document)
@@ -77,6 +78,27 @@ export default class PdfService {
 
     await this.writeFooter(doc, ctx)
     return this.streamToBuffer(doc)
+  }
+
+  /**
+   * Define o título da receita pelo tipo mais restritivo entre os itens.
+   * Ordem de prioridade: controle_especial > antimicrobiano > duas_vias > simples.
+   * Suporta payload legado (campo `controlled: true` → controle especial).
+   */
+  private computePrescriptionTitle(items: PrescriptionItem[]): string {
+    const has = (t: string) =>
+      items.some((it) => (it as any).prescriptionType === t)
+
+    if (has('controle_especial') || items.some((it) => (it as any).controlled)) {
+      return 'RECEITA DE CONTROLE ESPECIAL'
+    }
+    if (has('controle_antimicrobiano')) {
+      return 'RECEITA DE CONTROLE ANTIMICROBIANO'
+    }
+    if (has('duas_vias')) {
+      return 'RECEITUÁRIO MÉDICO (2 VIAS)'
+    }
+    return 'RECEITUÁRIO MÉDICO'
   }
 
   // ========== Pedido de exame ==========
@@ -251,10 +273,34 @@ export default class PdfService {
     doc.text('Paciente: ', PAGE_LEFT, 120, { continued: true })
     doc.font('Helvetica').text(patient.fullName)
 
-    // CPF
+    // CPF (linha própria)
     if (patient.cpf) {
       doc.font('Helvetica-Bold').text('CPF: ', PAGE_LEFT, doc.y, { continued: true })
       doc.font('Helvetica').text(patient.cpf)
+    }
+
+    // Data de nascimento (linha própria)
+    if ((patient as any).birthDate) {
+      const bd = DateTime.fromISO(
+        (patient as any).birthDate.toString()
+      ).setZone('America/Sao_Paulo')
+      if (bd.isValid) {
+        doc.font('Helvetica-Bold').text('Nascimento: ', PAGE_LEFT, doc.y, {
+          continued: true,
+        })
+        doc.font('Helvetica').text(bd.toFormat('dd/LL/yyyy'))
+      }
+    }
+
+    // Endereço (concatena address + city/state + zipcode quando disponível)
+    const addressLine = this.buildPatientAddress(patient)
+    if (addressLine) {
+      doc.font('Helvetica-Bold').text('Endereço: ', PAGE_LEFT, doc.y, {
+        continued: true,
+      })
+      doc.font('Helvetica').text(addressLine, {
+        width: CONTENT_WIDTH - 320, // deixa espaço pra "Emissão" à direita
+      })
     }
 
     // Emissão à direita do bloco do paciente
@@ -293,31 +339,75 @@ export default class PdfService {
 
     const startY = doc.y
 
+    // Define o "nome principal" do item conforme o modo:
+    //  - Catálogo: medicationTitle
+    //  - Texto livre: freeText (primeira linha)
+    //  - Legado: name
+    const primaryName =
+      item.medicationTitle ??
+      (item.freeText ? item.freeText.split('\n')[0] : null) ??
+      item.name ??
+      ''
+
     // Número à esquerda
     doc.fontSize(10).fillColor(BLACK).font('Helvetica-Bold')
     doc.text(`${idx}.`, PAGE_LEFT, startY, { width: 18, lineBreak: false })
 
     // Nome em maiúsculas
     doc.fontSize(10).fillColor(BLACK).font('Helvetica-Bold')
-    doc.text(item.name.toUpperCase(), PAGE_LEFT + 18, startY, {
+    doc.text(primaryName.toUpperCase(), PAGE_LEFT + 18, startY, {
       width: CONTENT_WIDTH - 18,
     })
 
     let y = doc.y + 1
 
-    const detailLine = (label: string, value: string | null | undefined) => {
-      if (!value) return
-      doc.fontSize(9).fillColor(BLACK).font('Helvetica-Bold')
-      doc.text(`${label}: `, PAGE_LEFT + 18, y, { continued: true })
-      doc.font('Helvetica').text(value)
+    // Princípio ativo / laboratório (linha secundária, cinza-ish)
+    const subtitleParts: string[] = []
+    if (
+      item.activeIngredient &&
+      item.activeIngredient.toLowerCase() !== primaryName.toLowerCase()
+    ) {
+      subtitleParts.push(item.activeIngredient)
+    }
+    if (item.laboratoryName) subtitleParts.push(item.laboratoryName)
+    if (item.category) subtitleParts.push(item.category)
+    if (subtitleParts.length > 0) {
+      doc.fontSize(8).fillColor(BLACK).font('Helvetica-Oblique')
+      doc.text(subtitleParts.join(' · '), PAGE_LEFT + 18, y, {
+        width: CONTENT_WIDTH - 18,
+      })
       y = doc.y
     }
 
-    detailLine('Dosagem', item.dose ?? null)
-    detailLine('Via', item.route ?? null)
-    detailLine('Posologia', item.frequency ?? null)
-    detailLine('Duração', item.duration ?? null)
+    // Posologia (preferida sobre legados)
+    const posologyText =
+      item.posology ||
+      [item.dose, item.frequency, item.duration].filter(Boolean).join(', ')
+    if (posologyText) {
+      doc.fontSize(9.5).fillColor(BLACK).font('Helvetica')
+      doc.text(`→ ${posologyText}`, PAGE_LEFT + 18, y + 2, {
+        width: CONTENT_WIDTH - 18,
+      })
+      y = doc.y
+    }
 
+    // Tipo de uso (badge textual)
+    const usageLabel = this.usageTypeLabel(item.usageType)
+    const usageQty = item.usageQuantity
+    if (usageLabel || usageQty != null) {
+      const parts: string[] = []
+      if (usageQty != null && usageQty > 0) {
+        parts.push(`Quantidade: ${usageQty}`)
+      }
+      if (usageLabel) parts.push(`Uso: ${usageLabel}`)
+      doc.fontSize(8).fillColor(BLACK).font('Helvetica')
+      doc.text(parts.join('   ·   '), PAGE_LEFT + 18, y + 1, {
+        width: CONTENT_WIDTH - 18,
+      })
+      y = doc.y
+    }
+
+    // Notes legadas
     if (item.notes) {
       doc.fontSize(8.5).fillColor(BLACK).font('Helvetica-Oblique')
       doc.text(item.notes, PAGE_LEFT + 18, y, { width: CONTENT_WIDTH - 18 })
@@ -329,13 +419,26 @@ export default class PdfService {
     doc.y = y + 6
   }
 
+  private usageTypeLabel(t: PrescriptionItem['usageType']): string | null {
+    if (!t || t === 'nao_informada') return null
+    const labels: Record<string, string> = {
+      uso_continuo: 'uso contínuo',
+      comprimidos: 'comprimidos',
+      embalagens: 'embalagens',
+      unidades: 'unidades',
+    }
+    return labels[t] ?? null
+  }
+
   private estimateItemLines(item: PrescriptionItem): number {
     let n = 1 // nome
-    if (item.dose) n++
-    if (item.route) n++
-    if (item.frequency) n++
-    if (item.duration) n++
-    if (item.notes) n += Math.max(1, Math.ceil((item.notes?.length ?? 0) / 90))
+    if (item.activeIngredient || item.laboratoryName) n++
+    if (item.posology || item.dose || item.frequency || item.duration) {
+      const len = (item.posology ?? '').length
+      n += Math.max(1, Math.ceil(len / 80))
+    }
+    if (item.usageType && item.usageType !== 'nao_informada') n++
+    if (item.notes) n += Math.max(1, Math.ceil(item.notes.length / 90))
     return n
   }
 
@@ -400,6 +503,24 @@ export default class PdfService {
       } catch {
         /* ignore */
       }
+
+      // Código de retirada (últimos 4 dígitos do telefone do paciente).
+      // É o mesmo OTP do fluxo /r/:token, mostrado visualmente pra paciente
+      // não precisar adivinhar quando abrir o link.
+      const decodeKey = this.extractDecodeKey((ctx.patient as any).phone)
+      if (decodeKey) {
+        const keyX = PAGE_RIGHT - 60 - 12
+        doc.fontSize(6.5).fillColor(BLACK).font('Helvetica')
+        doc.text('Código de retirada', keyX, FOOTER_TOP_Y + 1, {
+          width: 60,
+          align: 'right',
+        })
+        doc.fontSize(11).fillColor(COLOR_PRIMARY).font('Helvetica-Bold')
+        doc.text(decodeKey, keyX, FOOTER_TOP_Y + 11, {
+          width: 60,
+          align: 'right',
+        })
+      }
     }
 
     // Linha de assinatura digital — sempre mostra o assinante (iClinicRx style).
@@ -415,6 +536,36 @@ export default class PdfService {
       align: 'center',
     })
 
+    // Faixa verde — banner "Assinado digitalmente na plataforma med.bula".
+    // Símbolo de check desenhado em vetor (sem fonte custom).
+    const GREEN_Y = AD_STRIP_Y - 22
+    const GREEN_HEIGHT = 18
+    doc
+      .save()
+      .fillColor(COLOR_GREEN_BG)
+      .rect(PAGE_LEFT, GREEN_Y, CONTENT_WIDTH, GREEN_HEIGHT)
+      .fill()
+      .restore()
+    // Check vetorial
+    const checkX = PAGE_LEFT + 10
+    const checkY = GREEN_Y + GREEN_HEIGHT / 2
+    doc
+      .save()
+      .strokeColor(COLOR_GREEN_DARK)
+      .lineWidth(1.5)
+      .moveTo(checkX, checkY)
+      .lineTo(checkX + 3, checkY + 3)
+      .lineTo(checkX + 9, checkY - 4)
+      .stroke()
+      .restore()
+    doc.fontSize(7.5).fillColor(COLOR_GREEN_DARK).font('Helvetica-Bold')
+    doc.text(
+      'ASSINADO DIGITALMENTE NA PLATAFORMA MED.BULA.COM.BR',
+      checkX + 14,
+      GREEN_Y + 5,
+      { width: CONTENT_WIDTH - 30 }
+    )
+
     // Faixa de propaganda bula.com.br — texto único sem split
     doc
       .save()
@@ -429,11 +580,45 @@ export default class PdfService {
     }
     doc.fontSize(7.5).fillColor(COLOR_PRIMARY).font('Helvetica-Bold')
     doc.text(
-      'Em bula.com.br você recebe parte do dinheiro de volta na compra de medicamentos. Acesse!',
+      'Em bula.com.br você recebe parte do dinheiro de volta na compra de medicamentos. Acesse →',
       PAGE_LEFT + 28,
       AD_STRIP_Y + 8,
       { width: CONTENT_WIDTH - 36 }
     )
+  }
+
+  /**
+   * Últimos 4 dígitos numéricos do telefone do paciente. Mesmo OTP
+   * usado em /r/:token.
+   */
+  private extractDecodeKey(phone: string | null | undefined): string | null {
+    if (!phone) return null
+    const digits = phone.replace(/\D/g, '')
+    if (digits.length < 4) return null
+    return digits.slice(-4)
+  }
+
+  /**
+   * Monta o endereço do paciente a partir dos campos disponíveis no
+   * model: address (rua/número/complemento), city, state, zipcode.
+   *
+   * Resultado: "Rua X, 100 - Belo Horizonte/MG - CEP 30000-000"
+   * Qualquer campo vazio é ignorado sem quebrar a string.
+   */
+  private buildPatientAddress(patient: Patient): string | null {
+    const street = (patient as any).address?.trim() || ''
+    const city = (patient as any).city?.trim() || ''
+    const state = (patient as any).state?.trim() || ''
+    const zip = (patient as any).zipcode?.trim() || ''
+
+    const parts: string[] = []
+    if (street) parts.push(street)
+    if (city && state) parts.push(`${city}/${state}`)
+    else if (city) parts.push(city)
+    else if (state) parts.push(state)
+    if (zip) parts.push(`CEP ${zip}`)
+
+    return parts.length > 0 ? parts.join(' - ') : null
   }
 
   private numberWord(n: number): string {

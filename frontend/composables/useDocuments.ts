@@ -8,8 +8,36 @@ export type DocumentStatus =
   | 'delivered'
   | 'cancelled'
 
+export type PrescriptionType =
+  | 'simples'
+  | 'duas_vias'
+  | 'controle_especial'
+  | 'controle_antimicrobiano'
+
+export type UsageType =
+  | 'nao_informada'
+  | 'uso_continuo'
+  | 'comprimidos'
+  | 'embalagens'
+  | 'unidades'
+
 export interface PrescriptionItem {
-  name: string
+  // Modo catálogo
+  medicationId?: string | null
+  medicationTitle?: string | null
+  activeIngredient?: string | null
+  laboratoryName?: string | null
+  category?: string | null
+  unit?: string | null
+  // Modo texto livre
+  freeText?: string | null
+  // Comum
+  posology?: string | null
+  prescriptionType?: PrescriptionType
+  usageType?: UsageType
+  usageQuantity?: number | null
+  // Legados (retrocompat de receitas antigas)
+  name?: string
   dose?: string | null
   route?: string | null
   frequency?: string | null

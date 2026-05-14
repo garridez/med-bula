@@ -1,0 +1,24 @@
+node_modules/
+.env
+
+# State e arquivos temporários do scraping (não commitar)
+data/.scrape-state.json
+data/.no-pos-meds.json
+data/*.bak*
+data/*.tmp
+
+# Relatórios das validações (gerados por análise, não pelos scripts em produção)
+data/validation-report*.json
+data/deep-fill-report.json
+data/refetch-pos-report.json
+
+# Logs
+*.log
+
+# IMPORTANTE: medications.json e posologies.json SÃO commitados
+# pra que o build do Coolify tenha acesso no entrypoint.
+# Eles representam o snapshot atual do catálogo (~30-50 MB).
+# Atualize esses arquivos rodando o scraper localmente e fazendo commit.
+
+# missing-brands.json é só artefato de auditoria, não commitar
+missing-brands.json
