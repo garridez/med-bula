@@ -1,0 +1,109 @@
+{
+  "generatedAt": "2026-05-13T17:23:32.710Z",
+  "summary": {
+    "cappedNames": 147,
+    "queriesRun": 2058,
+    "productsReturnedTotal": 1330,
+    "newMedsAdded": 72,
+    "emptyQueries": 1914,
+    "medsBefore": 22229,
+    "medsAfter": 22301
+  },
+  "topGains": [
+    {
+      "name": "paracetamol",
+      "filled": 14,
+      "queries": 14
+    },
+    {
+      "name": "cetoconazol",
+      "filled": 8,
+      "queries": 14
+    },
+    {
+      "name": "dexclorfeniramina",
+      "filled": 8,
+      "queries": 14
+    },
+    {
+      "name": "diclofenaco",
+      "filled": 7,
+      "queries": 14
+    },
+    {
+      "name": "clonazepam",
+      "filled": 6,
+      "queries": 14
+    },
+    {
+      "name": "escitalopram",
+      "filled": 5,
+      "queries": 14
+    },
+    {
+      "name": "ciprofloxacino",
+      "filled": 4,
+      "queries": 14
+    },
+    {
+      "name": "ácido ascórbico",
+      "filled": 4,
+      "queries": 14
+    },
+    {
+      "name": "estradiol",
+      "filled": 3,
+      "queries": 14
+    },
+    {
+      "name": "fluoxetina",
+      "filled": 2,
+      "queries": 14
+    },
+    {
+      "name": "levofloxacino",
+      "filled": 2,
+      "queries": 14
+    },
+    {
+      "name": "tramadol",
+      "filled": 2,
+      "queries": 14
+    },
+    {
+      "name": "cetoprofeno",
+      "filled": 1,
+      "queries": 14
+    },
+    {
+      "name": "metoprolol",
+      "filled": 1,
+      "queries": 14
+    },
+    {
+      "name": "ondansetrona",
+      "filled": 1,
+      "queries": 14
+    },
+    {
+      "name": "memantina",
+      "filled": 1,
+      "queries": 14
+    },
+    {
+      "name": "aciclovir",
+      "filled": 1,
+      "queries": 14
+    },
+    {
+      "name": "colecalciferol",
+      "filled": 1,
+      "queries": 14
+    },
+    {
+      "name": "Vita D",
+      "filled": 1,
+      "queries": 14
+    }
+  ]
+}

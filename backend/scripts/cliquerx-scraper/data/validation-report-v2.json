@@ -1,0 +1,2826 @@
+{
+  "generatedAt": "2026-05-13T17:31:40.065Z",
+  "summary": {
+    "namesTotal": 431,
+    "namesWithResults": 340,
+    "namesEmpty": 91,
+    "namesError": 0,
+    "productsReturnedTotal": 4702,
+    "productsAlreadyHad": 4569,
+    "productsFilled": 133,
+    "coveragePercent": 97.17,
+    "medsBefore": 22301,
+    "medsAfter": 22434,
+    "medsAdded": 133
+  },
+  "namesNotFoundInCliquerx": [
+    "ácido retinoico",
+    "lactato de amônio",
+    "espironolactona tópica",
+    "ácido tranexâmico tópico",
+    "lubrificante ocular",
+    "lágrima artificial",
+    "lifitegraste",
+    "xilometazolina",
+    "clobutinol",
+    "neltenexina",
+    "erdosteína",
+    "sobrerol",
+    "disopiramida",
+    "milrinona",
+    "noradrenalina",
+    "vasopressina",
+    "midodrina",
+    "dehidroepiandrosterona",
+    "darbepoetina",
+    "lenograstim",
+    "ferro sacarose",
+    "nilutamida",
+    "filgotinibe",
+    "anakinra",
+    "articaína",
+    "cetamina",
+    "succinilcolina",
+    "niclosamida",
+    "pirantel",
+    "mefloquina",
+    "queratinase",
+    "menadiona",
+    "L-citrulina",
+    "pygeum africanum",
+    "saw palmetto",
+    "ginseng coreano",
+    "equinácea",
+    "unha de gato",
+    "carqueja",
+    "ácido alfa lipóico",
+    "coenzima Q10 ubiquinol",
+    "cloridrato de glicosamina",
+    "Yasminelle",
+    "Aliane",
+    "Sene Composto",
+    "Sal de Andrews",
+    "Estomalcin",
+    "Nizoral shampoo",
+    "Pirisept",
+    "Selsun",
+    "Sucralox",
+    "Voltaren Emulgel",
+    "Algi-Reumatril",
+    "Rhinocort",
+    "Veramyst",
+    "Otrivina",
+    "Berodual",
+    "Bricanyl Turbohaler",
+    "Onbrize Breezhaler",
+    "Daliresp",
+    "Asmalium",
+    "Atenoblok",
+    "Hytrin",
+    "Glargina U300",
+    "Trijardy",
+    "Yasmin Flex",
+    "Cyclacur",
+    "Hidrosec",
+    "Acelbrofeno",
+    "Hytos Plus",
+    "Toplexil",
+    "Quensyl",
+    "Akathin",
+    "Atensina LP",
+    "Lyrica CR",
+    "Trileptal CR",
+    "Adderall",
+    "Trittico",
+    "Olcadil",
+    "Lexotan SL",
+    "Octenisept",
+    "Riodeine",
+    "Aqualia",
+    "Caudalie",
+    "Eucerin Atopicontrol",
+    "Eucerin AntiPigment",
+    "Trinordiol",
+    "Caduet",
+    "Ginlactil",
+    "Nopaxen",
+    "Algi-tanderil"
+  ],
+  "errors": [],
+  "topGaps": [
+    {
+      "name": "risedronato",
+      "filled": 14,
+      "returned": 40
+    },
+    {
+      "name": "Pressat",
+      "filled": 14,
+      "returned": 14
+    },
+    {
+      "name": "propafenona",
+      "filled": 8,
+      "returned": 30
+    },
+    {
+      "name": "ropivacaína",
+      "filled": 8,
+      "returned": 13
+    },
+    {
+      "name": "tretinoína",
+      "filled": 7,
+      "returned": 34
+    },
+    {
+      "name": "acetilcisteína",
+      "filled": 7,
+      "returned": 41
+    },
+    {
+      "name": "budesonida nasal",
+      "filled": 7,
+      "returned": 23
+    },
+    {
+      "name": "ácido zoledrônico",
+      "filled": 6,
+      "returned": 12
+    },
+    {
+      "name": "raloxifeno",
+      "filled": 6,
+      "returned": 11
+    },
+    {
+      "name": "mononitrato de isossorbida",
+      "filled": 5,
+      "returned": 16
+    },
+    {
+      "name": "Profenid",
+      "filled": 5,
+      "returned": 12
+    },
+    {
+      "name": "ruxolitinibe",
+      "filled": 4,
+      "returned": 4
+    },
+    {
+      "name": "propofol",
+      "filled": 4,
+      "returned": 36
+    },
+    {
+      "name": "cloreto de sódio",
+      "filled": 3,
+      "returned": 40
+    },
+    {
+      "name": "carbocisteína",
+      "filled": 3,
+      "returned": 38
+    },
+    {
+      "name": "sulfato de glicosamina",
+      "filled": 3,
+      "returned": 33
+    },
+    {
+      "name": "Sinex",
+      "filled": 3,
+      "returned": 5
+    },
+    {
+      "name": "Fluimucil",
+      "filled": 3,
+      "returned": 8
+    },
+    {
+      "name": "minoxidil",
+      "filled": 2,
+      "returned": 40
+    },
+    {
+      "name": "tropicamida",
+      "filled": 2,
+      "returned": 4
+    },
+    {
+      "name": "bromocriptina",
+      "filled": 2,
+      "returned": 2
+    },
+    {
+      "name": "passiflora",
+      "filled": 2,
+      "returned": 40
+    },
+    {
+      "name": "isotretinoína",
+      "filled": 1,
+      "returned": 14
+    },
+    {
+      "name": "ácido glicólico",
+      "filled": 1,
+      "returned": 40
+    },
+    {
+      "name": "retinol",
+      "filled": 1,
+      "returned": 40
+    },
+    {
+      "name": "bazedoxifeno",
+      "filled": 1,
+      "returned": 1
+    },
+    {
+      "name": "promestrieno",
+      "filled": 1,
+      "returned": 6
+    },
+    {
+      "name": "imunoglobulina",
+      "filled": 1,
+      "returned": 40
+    },
+    {
+      "name": "rocurônio",
+      "filled": 1,
+      "returned": 4
+    },
+    {
+      "name": "lactobacillus",
+      "filled": 1,
+      "returned": 42
+    }
+  ],
+  "perName": {
+    "adapaleno": {
+      "returned": 19,
+      "alreadyHad": 19,
+      "filled": 0,
+      "posOk": 0
+    },
+    "peróxido de benzoíla": {
+      "returned": 17,
+      "alreadyHad": 17,
+      "filled": 0,
+      "posOk": 0
+    },
+    "isotretinoína": {
+      "returned": 14,
+      "alreadyHad": 13,
+      "filled": 1,
+      "posOk": 1
+    },
+    "ácido salicílico": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácido azelaico": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácido mandélico": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácido glicólico": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "ácido retinoico": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "hidroquinona": {
+      "returned": 33,
+      "alreadyHad": 33,
+      "filled": 0,
+      "posOk": 0
+    },
+    "niacinamida": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácido hialurônico": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bakuchiol": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácido kójico": {
+      "returned": 17,
+      "alreadyHad": 17,
+      "filled": 0,
+      "posOk": 0
+    },
+    "resveratrol": {
+      "returned": 26,
+      "alreadyHad": 26,
+      "filled": 0,
+      "posOk": 0
+    },
+    "DMAE": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tretinoína": {
+      "returned": 34,
+      "alreadyHad": 27,
+      "filled": 7,
+      "posOk": 7
+    },
+    "ureia 10%": {
+      "returned": 18,
+      "alreadyHad": 18,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ureia 20%": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "retinol": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "lactato de amônio": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "espironolactona tópica": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "vitamina C tópica": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácido tranexâmico tópico": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lubrificante ocular": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lágrima artificial": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "carmelose": {
+      "returned": 32,
+      "alreadyHad": 32,
+      "filled": 0,
+      "posOk": 0
+    },
+    "hipromelose": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "polietilenoglicol": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "minoxidil": {
+      "returned": 40,
+      "alreadyHad": 38,
+      "filled": 2,
+      "posOk": 2
+    },
+    "trealose": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "brimonidina": {
+      "returned": 36,
+      "alreadyHad": 36,
+      "filled": 0,
+      "posOk": 0
+    },
+    "timolol": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "latanoprosta": {
+      "returned": 15,
+      "alreadyHad": 15,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bimatoprosta": {
+      "returned": 38,
+      "alreadyHad": 38,
+      "filled": 0,
+      "posOk": 0
+    },
+    "travoprosta": {
+      "returned": 14,
+      "alreadyHad": 14,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tafluprosta": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dorzolamida": {
+      "returned": 22,
+      "alreadyHad": 22,
+      "filled": 0,
+      "posOk": 0
+    },
+    "acetazolamida": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "brinzolamida": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pilocarpina": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "atropina oftálmica": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "olopatadina": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fenilefrina oftálmica": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cromoglicato": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cetotifeno": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cloranfenicol oftálmico": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tobramicina oftálmica": {
+      "returned": 24,
+      "alreadyHad": 24,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sulfacetamida": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tropicamida": {
+      "returned": 4,
+      "alreadyHad": 2,
+      "filled": 2,
+      "posOk": 2
+    },
+    "moxifloxacino oftálmico": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ciprofloxacino oftálmico": {
+      "returned": 23,
+      "alreadyHad": 23,
+      "filled": 0,
+      "posOk": 0
+    },
+    "nepafenaco": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "diclofenaco oftálmico": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lifitegraste": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cetorolaco": {
+      "returned": 42,
+      "alreadyHad": 42,
+      "filled": 0,
+      "posOk": 0
+    },
+    "oximetazolina": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "xilometazolina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fenilefrina nasal": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "soro fisiológico": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ambroxol": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bromexina": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cloreto de sódio": {
+      "returned": 40,
+      "alreadyHad": 37,
+      "filled": 3,
+      "posOk": 3
+    },
+    "dextrometorfano": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "guaifenesina": {
+      "returned": 35,
+      "alreadyHad": 35,
+      "filled": 0,
+      "posOk": 0
+    },
+    "carbocisteína": {
+      "returned": 38,
+      "alreadyHad": 35,
+      "filled": 3,
+      "posOk": 3
+    },
+    "clobutinol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "neltenexina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levodropropizina": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "erdosteína": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sobrerol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "mometasona nasal": {
+      "returned": 13,
+      "alreadyHad": 13,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fluticasona nasal": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "azelastina": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "acetilcisteína": {
+      "returned": 41,
+      "alreadyHad": 34,
+      "filled": 7,
+      "posOk": 7
+    },
+    "dinitrato de isossorbida": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "trimetazidina": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "nitroglicerina": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sotalol": {
+      "returned": 13,
+      "alreadyHad": 13,
+      "filled": 0,
+      "posOk": 0
+    },
+    "disopiramida": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "adenosina": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "mononitrato de isossorbida": {
+      "returned": 16,
+      "alreadyHad": 11,
+      "filled": 5,
+      "posOk": 5
+    },
+    "milrinona": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dobutamina": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "noradrenalina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "budesonida nasal": {
+      "returned": 23,
+      "alreadyHad": 16,
+      "filled": 7,
+      "posOk": 7
+    },
+    "vasopressina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "midodrina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cabergolina": {
+      "returned": 30,
+      "alreadyHad": 30,
+      "filled": 0,
+      "posOk": 0
+    },
+    "octreotida": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lanreotida": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "propafenona": {
+      "returned": 30,
+      "alreadyHad": 22,
+      "filled": 8,
+      "posOk": 8
+    },
+    "bromocriptina": {
+      "returned": 2,
+      "alreadyHad": 0,
+      "filled": 2,
+      "posOk": 2
+    },
+    "somatropina": {
+      "returned": 36,
+      "alreadyHad": 36,
+      "filled": 0,
+      "posOk": 0
+    },
+    "calcitonina": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "teriparatida": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "denosumabe": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "alendronato": {
+      "returned": 33,
+      "alreadyHad": 33,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ibandronato": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bazedoxifeno": {
+      "returned": 1,
+      "alreadyHad": 0,
+      "filled": 1,
+      "posOk": 1
+    },
+    "tibolona": {
+      "returned": 23,
+      "alreadyHad": 23,
+      "filled": 0,
+      "posOk": 0
+    },
+    "estriol vaginal": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácido zoledrônico": {
+      "returned": 12,
+      "alreadyHad": 6,
+      "filled": 6,
+      "posOk": 6
+    },
+    "promestrieno": {
+      "returned": 6,
+      "alreadyHad": 5,
+      "filled": 1,
+      "posOk": 1
+    },
+    "raloxifeno": {
+      "returned": 11,
+      "alreadyHad": 5,
+      "filled": 6,
+      "posOk": 6
+    },
+    "dehidroepiandrosterona": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "eritropoetina": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "darbepoetina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "filgrastim": {
+      "returned": 20,
+      "alreadyHad": 20,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pegfilgrastim": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lenograstim": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ferro sacarose": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ferro carboximaltose": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fator VIII": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fator IX": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bicalutamida": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "flutamida": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "nilutamida": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "imunoglobulina": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "leuprorrelina": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "gosserrelina": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "triptorrelina": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "degarelix": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "risedronato": {
+      "returned": 40,
+      "alreadyHad": 26,
+      "filled": 14,
+      "posOk": 14
+    },
+    "abiraterona": {
+      "returned": 14,
+      "alreadyHad": 14,
+      "filled": 0,
+      "posOk": 0
+    },
+    "enzalutamida": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dasatinibe": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "imatinibe": {
+      "returned": 29,
+      "alreadyHad": 29,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ponatinibe": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "nilotinibe": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "erlotinibe": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "gefitinibe": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "afatinibe": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "osimertinibe": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sorafenibe": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sunitinibe": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pazopanibe": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "regorafenibe": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "trastuzumabe": {
+      "returned": 22,
+      "alreadyHad": 22,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pertuzumabe": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bevacizumabe": {
+      "returned": 18,
+      "alreadyHad": 18,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ruxolitinibe": {
+      "returned": 4,
+      "alreadyHad": 0,
+      "filled": 4,
+      "posOk": 4
+    },
+    "cetuximabe": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "panitumumabe": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "nivolumabe": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pembrolizumabe": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "atezolizumabe": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "micofenolato de mofetila": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "micofenolato sódico": {
+      "returned": 13,
+      "alreadyHad": 13,
+      "filled": 0,
+      "posOk": 0
+    },
+    "everolimo": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sirolimo": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tofacitinibe": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "baricitinibe": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "upadacitinibe": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "filgotinibe": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "anakinra": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "canaquinumabe": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "guselcumabe": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "risanquizumabe": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tirzepatida": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "prilocaína": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bupivacaína": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lidocaína": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "EMLA": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "benzocaína": {
+      "returned": 17,
+      "alreadyHad": 17,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tetracaína": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "articaína": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "mepivacaína": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "etomidato": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cetamina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tiopental": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "atracúrio": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "rocurônio": {
+      "returned": 4,
+      "alreadyHad": 3,
+      "filled": 1,
+      "posOk": 1
+    },
+    "cisatracúrio": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "succinilcolina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "propofol": {
+      "returned": 36,
+      "alreadyHad": 32,
+      "filled": 4,
+      "posOk": 4
+    },
+    "pancurônio": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "nitazoxanida": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "niclosamida": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pirantel": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ropivacaína": {
+      "returned": 13,
+      "alreadyHad": 5,
+      "filled": 8,
+      "posOk": 8
+    },
+    "levamizol": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "espiramicina": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tiabendazol": {
+      "returned": 18,
+      "alreadyHad": 18,
+      "filled": 0,
+      "posOk": 0
+    },
+    "primaquina": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "artemeter": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lumefantrina": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "mefloquina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "saccharomyces boulardii": {
+      "returned": 36,
+      "alreadyHad": 36,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bifidobacterium": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "florax": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lactobacillus": {
+      "returned": 42,
+      "alreadyHad": 41,
+      "filled": 1,
+      "posOk": 1
+    },
+    "pancreatina": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lipase": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "reuteri": {
+      "returned": 12,
+      "alreadyHad": 11,
+      "filled": 1,
+      "posOk": 1
+    },
+    "papaína": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "queratinase": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bromelina": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "tocoferol": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "vitamina A": {
+      "returned": 43,
+      "alreadyHad": 43,
+      "filled": 0,
+      "posOk": 0
+    },
+    "retinol palmitato": {
+      "returned": 26,
+      "alreadyHad": 25,
+      "filled": 1,
+      "posOk": 1
+    },
+    "vitamina E": {
+      "returned": 44,
+      "alreadyHad": 44,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fitomenadiona": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "vitamina K": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "menadiona": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "niacina": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pantotenato": {
+      "returned": 21,
+      "alreadyHad": 21,
+      "filled": 0,
+      "posOk": 0
+    },
+    "inositol": {
+      "returned": 26,
+      "alreadyHad": 26,
+      "filled": 0,
+      "posOk": 0
+    },
+    "colina": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "betaína": {
+      "returned": 19,
+      "alreadyHad": 19,
+      "filled": 0,
+      "posOk": 0
+    },
+    "selênio": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cromo picolinato": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "manganês": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "molibdênio": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "boro": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "iodeto de potássio": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "iodo": {
+      "returned": 43,
+      "alreadyHad": 43,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cobre": {
+      "returned": 43,
+      "alreadyHad": 43,
+      "filled": 0,
+      "posOk": 0
+    },
+    "creatina": {
+      "returned": 30,
+      "alreadyHad": 30,
+      "filled": 0,
+      "posOk": 0
+    },
+    "BCAA": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "glutamina": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "zinco quelato": {
+      "returned": 9,
+      "alreadyHad": 8,
+      "filled": 1,
+      "posOk": 1
+    },
+    "beta-alanina": {
+      "returned": 13,
+      "alreadyHad": 13,
+      "filled": 0,
+      "posOk": 0
+    },
+    "taurina": {
+      "returned": 33,
+      "alreadyHad": 33,
+      "filled": 0,
+      "posOk": 0
+    },
+    "carnitina": {
+      "returned": 18,
+      "alreadyHad": 18,
+      "filled": 0,
+      "posOk": 0
+    },
+    "L-arginina": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "L-citrulina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "leucina": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "colágeno": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "colágeno tipo II": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácido hialurônico oral": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "valeriana": {
+      "returned": 18,
+      "alreadyHad": 18,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ginkgo biloba": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "camomila": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "hipérico": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "erva-doce": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "boldo": {
+      "returned": 22,
+      "alreadyHad": 22,
+      "filled": 0,
+      "posOk": 0
+    },
+    "espinheira-santa": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "passiflora": {
+      "returned": 40,
+      "alreadyHad": 38,
+      "filled": 2,
+      "posOk": 2
+    },
+    "cáscara sagrada": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sene": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tamarindo": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pygeum africanum": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ameixa": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "saw palmetto": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "serenoa repens": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "maca peruana": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ginseng": {
+      "returned": 28,
+      "alreadyHad": 28,
+      "filled": 0,
+      "posOk": 0
+    },
+    "panax ginseng": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ginseng coreano": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "equinácea": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "babosa": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "aloe vera": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "calêndula": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "arnica": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "garcínia cambogia": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "hamamélis": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "guaraná": {
+      "returned": 15,
+      "alreadyHad": 15,
+      "filled": 0,
+      "posOk": 0
+    },
+    "alcachofra": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "centella asiatica": {
+      "returned": 31,
+      "alreadyHad": 31,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cártamo": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "chá verde": {
+      "returned": 30,
+      "alreadyHad": 30,
+      "filled": 0,
+      "posOk": 0
+    },
+    "curcumina": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cúrcuma": {
+      "returned": 29,
+      "alreadyHad": 29,
+      "filled": 0,
+      "posOk": 0
+    },
+    "uncaria tomentosa": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "unha de gato": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "carqueja": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácido tióctico": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácido alfa lipóico": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "coenzima Q10 ubiquinol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "luteína": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "zeaxantina": {
+      "returned": 29,
+      "alreadyHad": 29,
+      "filled": 0,
+      "posOk": 0
+    },
+    "licopeno": {
+      "returned": 14,
+      "alreadyHad": 14,
+      "filled": 0,
+      "posOk": 0
+    },
+    "astaxantina": {
+      "returned": 18,
+      "alreadyHad": 18,
+      "filled": 0,
+      "posOk": 0
+    },
+    "quercetina": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "rutina": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "hesperidina": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "diosmina": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "rutosídeo": {
+      "returned": 4,
+      "alreadyHad": 3,
+      "filled": 1,
+      "posOk": 1
+    },
+    "condroitina": {
+      "returned": 23,
+      "alreadyHad": 23,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cloridrato de glicosamina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metilsulfonilmetano": {
+      "returned": 14,
+      "alreadyHad": 14,
+      "filled": 0,
+      "posOk": 0
+    },
+    "MSM": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácidos graxos essenciais": {
+      "returned": 19,
+      "alreadyHad": 19,
+      "filled": 0,
+      "posOk": 0
+    },
+    "linhaça": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Diane 35": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sulfato de glicosamina": {
+      "returned": 33,
+      "alreadyHad": 30,
+      "filled": 3,
+      "posOk": 3
+    },
+    "Allurene": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Selene": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Yasminelle": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Aliane": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Naturetti": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tamarine": {
+      "returned": 15,
+      "alreadyHad": 15,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lacto-purga": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sene Composto": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Eparema": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Hepatilon": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Estomazil": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sonrisal": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sal de Andrews": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Estomalcin": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Eno": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pepsamar": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Mylanta Plus": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cetoconazol shampoo": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Nizoral shampoo": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Caspar": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pielus": {
+      "returned": 32,
+      "alreadyHad": 32,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pirisept": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Selsun": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Atroveran": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Migral": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Anador": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lisador": {
+      "returned": 28,
+      "alreadyHad": 28,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sucralox": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Hipoglós": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Bepantol Derma": {
+      "returned": 14,
+      "alreadyHad": 14,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Bepantol Baby": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Trofodermin": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cicatricure": {
+      "returned": 18,
+      "alreadyHad": 18,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Contractubex": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cataflam Pro": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cataflam Gotas": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Voltaren Emulgel": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Calminex Diclofenaco": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Algi-Reumatril": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Aciclo": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Herpesil": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zovirax creme": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Profenid": {
+      "returned": 12,
+      "alreadyHad": 7,
+      "filled": 5,
+      "posOk": 5
+    },
+    "Avamys": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Nasonex": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Nasacort": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Rhinocort": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Veramyst": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sonrisal Limão": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Otrivina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sorine": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Naridrin": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Mylanta": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Berotec": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Berodual": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Bricanyl Turbohaler": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Onbrize Breezhaler": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Seebri": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Daliresp": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sinex": {
+      "returned": 5,
+      "alreadyHad": 2,
+      "filled": 3,
+      "posOk": 3
+    },
+    "Aerogold": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Asmalium": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pulmoflux": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Aspirina Prevent": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Saúde da Mulher": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "AAS Protect": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cardizem": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Atenoblok": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cardilol": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Carduran": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Minipress": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Hytrin": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cardura": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Insulina NPH": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Glargina U300": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Toujeo": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Soliqua": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Xultophy": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Trijardy": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Yasmin Flex": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Stezza": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cyclacur": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Climen": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Provera": {
+      "returned": 8,
+      "alreadyHad": 7,
+      "filled": 1,
+      "posOk": 1
+    },
+    "Hidrosec": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Mucosolvan": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Bisolvon": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Acelbrofeno": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Hytos Plus": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Notuss": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Toplexil": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Fluimucil": {
+      "returned": 8,
+      "alreadyHad": 5,
+      "filled": 3,
+      "posOk": 3
+    },
+    "Reuquinol": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Plaquinol": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Quensyl": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pamelor": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cebralat": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Carbolitium": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Akathin": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Akineton": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Atensina LP": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lyrica CR": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Trileptal CR": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Depakote ER": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Ritalina LA": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Concerta": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Adderall": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pressat": {
+      "returned": 14,
+      "alreadyHad": 0,
+      "filled": 14,
+      "posOk": 14
+    },
+    "Donaren Retard": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Trittico": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Olcadil": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lexotan SL": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Octenisept": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Riodeine": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cicaplast Baume": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Toleriane": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Effaclar": {
+      "returned": 25,
+      "alreadyHad": 25,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Anthelios": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Capital Soleil": {
+      "returned": 27,
+      "alreadyHad": 27,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Photoderm": {
+      "returned": 23,
+      "alreadyHad": 23,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Mineral 89": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Liftactiv": {
+      "returned": 12,
+      "alreadyHad": 12,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Aqualia": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Caudalie": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Eucerin Atopicontrol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Eucerin AntiPigment": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Skinceuticals": {
+      "returned": 29,
+      "alreadyHad": 29,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lipless": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Vitamine E": {
+      "returned": 44,
+      "alreadyHad": 44,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lopid": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Premarin Conjugado": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Trinordiol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Caduet": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Microvlar": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Ginlactil": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Floralax": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Nopaxen": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Etna": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tylex 30": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Toragesic": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Algi-tanderil": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    }
+  }
+}

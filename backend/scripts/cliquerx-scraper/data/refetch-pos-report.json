@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-05-13T18:00:43.761Z",
+  "summary": {
+    "candidates": 6467,
+    "processed": 6467,
+    "filledMeds": 14,
+    "emptyMeds": 6453,
+    "errors": 0,
+    "posologiesAdded": 19,
+    "posBefore": 26209,
+    "posAfter": 26228
+  }
+}

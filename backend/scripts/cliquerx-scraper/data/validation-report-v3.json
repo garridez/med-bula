@@ -1,0 +1,3460 @@
+{
+  "generatedAt": "2026-05-13T22:08:31.659Z",
+  "summary": {
+    "namesTotal": 495,
+    "namesWithResults": 172,
+    "namesEmpty": 323,
+    "namesError": 0,
+    "productsReturnedTotal": 3698,
+    "productsAlreadyHad": 3480,
+    "productsFilled": 218,
+    "coveragePercent": 94.1,
+    "medsBefore": 22434,
+    "medsAfter": 22652,
+    "medsAdded": 218
+  },
+  "namesNotFoundInCliquerx": [
+    "paracetamol 750mg",
+    "dipirona 1g",
+    "paracetamol 32mg/ml",
+    "dipirona 50mg/ml",
+    "dipirona 500mg/ml",
+    "ibuprofeno 300mg",
+    "ibuprofeno 800mg",
+    "ibuprofeno 600mg",
+    "diclofenaco 100mg",
+    "diclofenaco 75mg",
+    "nimesulida 50mg/ml",
+    "naproxeno 250mg",
+    "nimesulida 100mg/ml",
+    "naproxeno 550mg",
+    "cetoprofeno 50mg",
+    "cetoprofeno 150mg",
+    "meloxicam 7,5mg",
+    "amoxicilina 200mg/5ml",
+    "amoxicilina 250mg",
+    "meloxicam 15mg",
+    "amoxicilina 875mg",
+    "amoxicilina clavulanato 200mg",
+    "azitromicina 200mg/5ml",
+    "azitromicina 1g",
+    "azitromicina 600mg",
+    "cefalexina 250mg",
+    "cefalexina 250mg/5ml",
+    "cefadroxila 500mg/5ml",
+    "ciprofloxacino 750mg",
+    "levofloxacino 250mg",
+    "levofloxacino 750mg",
+    "claritromicina 250mg",
+    "claritromicina 125mg/5ml",
+    "metronidazol 4%",
+    "metronidazol 400mg",
+    "metronidazol 250mg",
+    "fluconazol 150mg",
+    "fluconazol 100mg",
+    "fluconazol 200mg",
+    "cetoconazol 200mg",
+    "cetoconazol 2%",
+    "cetoconazol shampoo 20mg/g",
+    "itraconazol 100mg",
+    "aciclovir 200mg",
+    "aciclovir 400mg",
+    "aciclovir 50mg/g",
+    "valaciclovir 500mg",
+    "valaciclovir 1g",
+    "losartana 12,5mg",
+    "losartana 100mg",
+    "losartana 25mg",
+    "valsartana 80mg",
+    "valsartana 320mg",
+    "valsartana 160mg",
+    "olmesartana 20mg",
+    "olmesartana 40mg",
+    "telmisartana 40mg",
+    "telmisartana 80mg",
+    "candesartana 8mg",
+    "candesartana 16mg",
+    "candesartana 32mg",
+    "irbesartana 150mg",
+    "irbesartana 300mg",
+    "enalapril 2,5mg",
+    "enalapril 5mg",
+    "enalapril 10mg",
+    "enalapril 20mg",
+    "captopril 12,5mg",
+    "captopril 50mg",
+    "ramipril 2,5mg",
+    "ramipril 5mg",
+    "ramipril 10mg",
+    "lisinopril 5mg",
+    "lisinopril 10mg",
+    "lisinopril 20mg",
+    "perindopril 4mg",
+    "perindopril 8mg",
+    "anlodipino 2,5mg",
+    "anlodipino 5mg",
+    "nifedipino 10mg",
+    "nifedipino 20mg",
+    "atenolol 100mg",
+    "atenolol 25mg",
+    "propranolol 10mg",
+    "propranolol 40mg",
+    "propranolol 80mg",
+    "metoprolol 25mg",
+    "metoprolol 50mg",
+    "metoprolol 100mg",
+    "metoprolol 200mg",
+    "carvedilol 3,125mg",
+    "carvedilol 6,25mg",
+    "carvedilol 12,5mg",
+    "carvedilol 25mg",
+    "bisoprolol 1,25mg",
+    "bisoprolol 2,5mg",
+    "bisoprolol 5mg",
+    "bisoprolol 10mg",
+    "nebivolol 5mg",
+    "hidroclorotiazida 25mg",
+    "hidroclorotiazida 12,5mg",
+    "hidroclorotiazida 50mg",
+    "furosemida 40mg/4ml",
+    "furosemida 10mg/ml",
+    "espironolactona 25mg",
+    "espironolactona 50mg",
+    "clortalidona 12,5mg",
+    "espironolactona 100mg",
+    "clortalidona 25mg",
+    "clortalidona 50mg",
+    "sinvastatina 5mg",
+    "indapamida 1,5mg",
+    "indapamida 2,5mg",
+    "sinvastatina 80mg",
+    "atorvastatina 5mg",
+    "atorvastatina 80mg",
+    "rosuvastatina 5mg",
+    "rosuvastatina 30mg",
+    "pravastatina 10mg",
+    "pravastatina 20mg",
+    "pravastatina 40mg",
+    "ezetimiba 10mg",
+    "fenofibrato 200mg",
+    "fenofibrato 250mg",
+    "metformina 500mg",
+    "metformina 850mg",
+    "metformina 1g",
+    "metformina LP",
+    "glibenclamida 2,5mg",
+    "glibenclamida 5mg",
+    "gliclazida 30mg",
+    "gliclazida 60mg",
+    "glimepirida 1mg",
+    "glimepirida 2mg",
+    "glimepirida 3mg",
+    "glimepirida 4mg",
+    "sitagliptina 25mg",
+    "sitagliptina 50mg",
+    "sitagliptina 100mg",
+    "linagliptina 5mg",
+    "empagliflozina 10mg",
+    "empagliflozina 25mg",
+    "dapagliflozina 5mg",
+    "dapagliflozina 10mg",
+    "insulina NPH 100UI",
+    "insulina regular 100UI",
+    "omeprazol 10mg",
+    "omeprazol 40mg",
+    "pantoprazol 20mg",
+    "pantoprazol 40mg",
+    "esomeprazol 20mg",
+    "lansoprazol 15mg",
+    "esomeprazol 40mg",
+    "lansoprazol 30mg",
+    "domperidona 10mg",
+    "domperidona 1mg/ml",
+    "bromoprida 4mg/ml",
+    "bromoprida 10mg",
+    "ondansetrona 4mg",
+    "ondansetrona 8mg",
+    "ondansetrona 2mg/ml",
+    "metoclopramida 4mg/ml",
+    "metoclopramida 10mg",
+    "sertralina 25mg",
+    "sertralina 100mg",
+    "fluoxetina 10mg",
+    "escitalopram 5mg",
+    "escitalopram 15mg",
+    "paroxetina 12,5mg",
+    "paroxetina 25mg",
+    "paroxetina 37,5mg",
+    "venlafaxina 37,5mg",
+    "venlafaxina 75mg",
+    "venlafaxina 150mg",
+    "duloxetina 30mg",
+    "duloxetina 60mg",
+    "bupropiona 150mg",
+    "bupropiona 300mg",
+    "mirtazapina 15mg",
+    "mirtazapina 30mg",
+    "mirtazapina 45mg",
+    "trazodona 50mg",
+    "trazodona 100mg",
+    "trazodona 150mg",
+    "vortioxetina 10mg",
+    "vortioxetina 20mg",
+    "amitriptilina 75mg",
+    "amitriptilina 25mg",
+    "alprazolam 0,25mg",
+    "alprazolam 1mg",
+    "alprazolam 2mg",
+    "clonazepam 0,5mg",
+    "clonazepam 2mg",
+    "clonazepam 2,5mg/ml",
+    "diazepam 5mg/ml",
+    "zolpidem 5mg",
+    "diazepam 10mg",
+    "zolpidem 10mg",
+    "quetiapina 100mg",
+    "quetiapina 25mg",
+    "quetiapina 200mg",
+    "quetiapina 300mg",
+    "risperidona 1mg",
+    "risperidona 2mg",
+    "risperidona 3mg",
+    "olanzapina 2,5mg",
+    "olanzapina 5mg",
+    "olanzapina 10mg",
+    "aripiprazol 10mg",
+    "aripiprazol 15mg",
+    "aripiprazol 30mg",
+    "pregabalina 25mg",
+    "pregabalina 75mg",
+    "pregabalina 100mg",
+    "pregabalina 150mg",
+    "pregabalina 225mg",
+    "pregabalina 300mg",
+    "gabapentina 100mg",
+    "gabapentina 300mg",
+    "gabapentina 400mg",
+    "gabapentina 600mg",
+    "gabapentina 800mg",
+    "topiramato 25mg",
+    "topiramato 50mg",
+    "topiramato 100mg",
+    "topiramato 200mg",
+    "lamotrigina 25mg",
+    "lamotrigina 100mg",
+    "lamotrigina 200mg",
+    "carbamazepina 200mg",
+    "carbamazepina 400mg",
+    "oxcarbazepina 300mg",
+    "oxcarbazepina 600mg",
+    "levetiracetam 250mg",
+    "levetiracetam 500mg",
+    "levetiracetam 750mg",
+    "levetiracetam 1g",
+    "levetiracetam 100mg/ml",
+    "valproato 500mg",
+    "valproato 250mg",
+    "metilfenidato 10mg",
+    "metilfenidato 18mg",
+    "metilfenidato 36mg",
+    "lisdexanfetamina 30mg",
+    "lisdexanfetamina 50mg",
+    "lisdexanfetamina 70mg",
+    "levotiroxina 25mcg",
+    "levotiroxina 37mcg",
+    "levotiroxina 50mcg",
+    "levotiroxina 75mcg",
+    "levotiroxina 88mcg",
+    "levotiroxina 100mcg",
+    "levotiroxina 112mcg",
+    "levotiroxina 125mcg",
+    "levotiroxina 150mcg",
+    "levotiroxina 175mcg",
+    "levotiroxina 137mcg",
+    "levotiroxina 200mcg",
+    "prednisona 5mg",
+    "prednisona 20mg",
+    "prednisona 40mg",
+    "prednisolona 3mg/ml",
+    "prednisolona 5mg",
+    "prednisolona 20mg",
+    "dexametasona 0,5mg",
+    "betametasona 0,5mg/ml",
+    "hidrocortisona 500mg",
+    "hidrocortisona 100mg",
+    "sildenafila 25mg",
+    "sildenafila 100mg",
+    "tadalafila 2,5mg",
+    "tadalafila 5mg",
+    "tadalafila 10mg",
+    "finasterida 1mg",
+    "dutasterida 0,5mg",
+    "tansulosina 0,4mg",
+    "salbutamol 100mcg",
+    "fenoterol spray",
+    "budesonida 64mcg",
+    "budesonida 200mcg",
+    "budesonida 400mcg",
+    "formoterol 6mcg",
+    "formoterol 12mcg",
+    "fluticasona 50mcg",
+    "fluticasona 250mcg",
+    "loratadina 1mg/ml",
+    "loratadina 10mg",
+    "desloratadina 0,5mg/ml",
+    "desloratadina 5mg",
+    "cetirizina 1mg/ml",
+    "cetirizina 10mg",
+    "tramadol 50mg",
+    "tramadol 100mg",
+    "tramadol 50mg/ml",
+    "tramadol 100mg/ml",
+    "tramadol LP",
+    "codeína 30mg",
+    "codeína 7,5mg/5ml",
+    "ibuprofeno cafeína",
+    "ibuprofeno pseudoefedrina",
+    "lisinopril hidroclorotiazida",
+    "anlodipino atorvastatina",
+    "atorvastatina ezetimiba",
+    "glimepirida pioglitazona",
+    "norgestimato etinilestradiol",
+    "dienogeste etinilestradiol",
+    "salbutamol ipratrópio",
+    "ofloxacino dexametasona",
+    "ciprofloxacino fluocinolona",
+    "Brainfarma",
+    "Klinger",
+    "Brassmar",
+    "Bunker",
+    "Hexa Pharma",
+    "Brainfarma Indústria",
+    "Brainfarma SA",
+    "Krka",
+    "Sanofi Aventis",
+    "pessário",
+    "aerossol oral",
+    "aerosol nasal",
+    "shampoo medicinal",
+    "gel dental"
+  ],
+  "errors": [],
+  "topGaps": [
+    {
+      "name": "olmesartana hidroclorotiazida",
+      "filled": 38,
+      "returned": 41
+    },
+    {
+      "name": "anlodipino losartana",
+      "filled": 35,
+      "returned": 40
+    },
+    {
+      "name": "losartana hidroclorotiazida",
+      "filled": 29,
+      "returned": 41
+    },
+    {
+      "name": "enalapril hidroclorotiazida",
+      "filled": 25,
+      "returned": 40
+    },
+    {
+      "name": "valsartana hidroclorotiazida",
+      "filled": 17,
+      "returned": 42
+    },
+    {
+      "name": "glimepirida metformina",
+      "filled": 10,
+      "returned": 22
+    },
+    {
+      "name": "betametasona creme",
+      "filled": 7,
+      "returned": 40
+    },
+    {
+      "name": "neomicina bacitracina",
+      "filled": 6,
+      "returned": 35
+    },
+    {
+      "name": "Cellera",
+      "filled": 5,
+      "returned": 40
+    },
+    {
+      "name": "divalproato",
+      "filled": 4,
+      "returned": 41
+    },
+    {
+      "name": "anlodipino olmesartana",
+      "filled": 4,
+      "returned": 30
+    },
+    {
+      "name": "anlodipino valsartana",
+      "filled": 4,
+      "returned": 38
+    },
+    {
+      "name": "Belfar",
+      "filled": 4,
+      "returned": 40
+    },
+    {
+      "name": "venlafaxina XR",
+      "filled": 3,
+      "returned": 12
+    },
+    {
+      "name": "atenolol clortalidona",
+      "filled": 3,
+      "returned": 40
+    },
+    {
+      "name": "metoprolol succinato",
+      "filled": 2,
+      "returned": 40
+    },
+    {
+      "name": "zolpidem CR",
+      "filled": 2,
+      "returned": 6
+    },
+    {
+      "name": "anlodipino benazepril",
+      "filled": 2,
+      "returned": 5
+    },
+    {
+      "name": "Vitamedic",
+      "filled": 2,
+      "returned": 40
+    },
+    {
+      "name": "União Química",
+      "filled": 2,
+      "returned": 40
+    },
+    {
+      "name": "metronidazol creme vaginal",
+      "filled": 1,
+      "returned": 8
+    },
+    {
+      "name": "metronidazol gel",
+      "filled": 1,
+      "returned": 12
+    },
+    {
+      "name": "sinvastatina ezetimiba",
+      "filled": 1,
+      "returned": 35
+    },
+    {
+      "name": "Hipolabor",
+      "filled": 1,
+      "returned": 15
+    },
+    {
+      "name": "Aspen",
+      "filled": 1,
+      "returned": 40
+    },
+    {
+      "name": "Marjan",
+      "filled": 1,
+      "returned": 40
+    },
+    {
+      "name": "Sandoz",
+      "filled": 1,
+      "returned": 40
+    },
+    {
+      "name": "Cristália",
+      "filled": 1,
+      "returned": 40
+    },
+    {
+      "name": "Eurofarma",
+      "filled": 1,
+      "returned": 40
+    },
+    {
+      "name": "AstraZeneca",
+      "filled": 1,
+      "returned": 40
+    }
+  ],
+  "perName": {
+    "paracetamol 750mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dipirona 1g": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "paracetamol 32mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "paracetamol 200mg": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dipirona 50mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dipirona 500mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ibuprofeno 300mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ibuprofeno 200mg": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ibuprofeno 800mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ibuprofeno 600mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "diclofenaco 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "diclofenaco 75mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "diclofenaco resinato": {
+      "returned": 12,
+      "alreadyHad": 12,
+      "filled": 0,
+      "posOk": 0
+    },
+    "nimesulida 50mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "naproxeno 250mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "nimesulida 100mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "naproxeno 550mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cetoprofeno 50mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cetoprofeno 150mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "meloxicam 7,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "amoxicilina 200mg/5ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "amoxicilina 250mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "meloxicam 15mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "amoxicilina 875mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "amoxicilina clavulanato 200mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "azitromicina 200mg/5ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "amoxicilina clavulanato 875": {
+      "returned": 32,
+      "alreadyHad": 32,
+      "filled": 0,
+      "posOk": 0
+    },
+    "azitromicina 1g": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "azitromicina 600mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cefalexina 250mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cefalexina 250mg/5ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cefadroxila 500mg/5ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ciprofloxacino 750mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ciprofloxacino 500mg": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ciprofloxacino 0,3%": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ciprofloxacino otológico": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levofloxacino 250mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levofloxacino 750mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "claritromicina 250mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "claritromicina 125mg/5ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metronidazol 4%": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metronidazol 400mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metronidazol 250mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fluconazol 150mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fluconazol 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metronidazol creme vaginal": {
+      "returned": 8,
+      "alreadyHad": 7,
+      "filled": 1,
+      "posOk": 1
+    },
+    "metronidazol gel": {
+      "returned": 12,
+      "alreadyHad": 11,
+      "filled": 1,
+      "posOk": 1
+    },
+    "fluconazol 200mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cetoconazol 200mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cetoconazol 2%": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cetoconazol shampoo 20mg/g": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "itraconazol 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "aciclovir 200mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "aciclovir 400mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "aciclovir 50mg/g": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "valaciclovir 500mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "valaciclovir 1g": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "losartana 12,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "losartana 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "losartana 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "valsartana 80mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "valsartana 320mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "valsartana 160mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "olmesartana 20mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "olmesartana 40mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "telmisartana 40mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "telmisartana 80mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "candesartana 8mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "candesartana 16mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "candesartana 32mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "irbesartana 150mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "irbesartana 300mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "enalapril 2,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "enalapril 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "enalapril 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "enalapril 20mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "captopril 12,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "captopril 50mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ramipril 2,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ramipril 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ramipril 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lisinopril 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lisinopril 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lisinopril 20mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "perindopril 4mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "perindopril 8mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "anlodipino 2,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "anlodipino 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "anlodipino 10mg": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "nifedipino 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "nifedipino 20mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "nifedipino retard": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "nifedipino oros": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "atenolol 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "atenolol 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "propranolol 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "propranolol 40mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "propranolol 80mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metoprolol 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metoprolol 50mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metoprolol 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metoprolol 200mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metoprolol tartarato": {
+      "returned": 12,
+      "alreadyHad": 12,
+      "filled": 0,
+      "posOk": 0
+    },
+    "carvedilol 3,125mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "carvedilol 6,25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "carvedilol 12,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "carvedilol 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bisoprolol 1,25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metoprolol succinato": {
+      "returned": 40,
+      "alreadyHad": 38,
+      "filled": 2,
+      "posOk": 2
+    },
+    "bisoprolol 2,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bisoprolol 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bisoprolol 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "nebivolol 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "hidroclorotiazida 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "hidroclorotiazida 12,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "hidroclorotiazida 50mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "furosemida 40mg/4ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "furosemida 10mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "espironolactona 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "espironolactona 50mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "clortalidona 12,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "espironolactona 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "clortalidona 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "clortalidona 50mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sinvastatina 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "indapamida 1,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "indapamida 2,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sinvastatina 80mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "atorvastatina 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "atorvastatina 80mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "rosuvastatina 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "rosuvastatina 30mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pravastatina 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pravastatina 20mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pravastatina 40mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ezetimiba 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fenofibrato 200mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fenofibrato 250mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metformina 500mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metformina 850mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metformina 1g": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metformina LP": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metformina XR": {
+      "returned": 21,
+      "alreadyHad": 21,
+      "filled": 0,
+      "posOk": 0
+    },
+    "glibenclamida 2,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "glibenclamida 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "gliclazida MR": {
+      "returned": 13,
+      "alreadyHad": 13,
+      "filled": 0,
+      "posOk": 0
+    },
+    "gliclazida 30mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "gliclazida 60mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "glimepirida 1mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "glimepirida 2mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "glimepirida 3mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "glimepirida 4mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sitagliptina 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sitagliptina 50mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sitagliptina 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "linagliptina 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "empagliflozina 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "empagliflozina 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dapagliflozina 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dapagliflozina 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "insulina NPH 100UI": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "insulina regular 100UI": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "omeprazol 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "omeprazol 40mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pantoprazol 20mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pantoprazol 40mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "esomeprazol 20mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lansoprazol 15mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "esomeprazol 40mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lansoprazol 30mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "domperidona 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "domperidona 1mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bromoprida 4mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bromoprida 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ondansetrona 4mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ondansetrona 8mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ondansetrona 2mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metoclopramida 4mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metoclopramida 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sertralina 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sertralina 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fluoxetina 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "escitalopram 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "escitalopram 15mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "escitalopram gotas": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "paroxetina 12,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "paroxetina 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "paroxetina 37,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "venlafaxina 37,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "venlafaxina 75mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "venlafaxina 150mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "duloxetina 30mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "duloxetina 60mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bupropiona 150mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bupropiona SR": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bupropiona 300mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "mirtazapina 15mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "mirtazapina 30mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "mirtazapina 45mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "trazodona 50mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "venlafaxina XR": {
+      "returned": 12,
+      "alreadyHad": 9,
+      "filled": 3,
+      "posOk": 3
+    },
+    "trazodona 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "trazodona 150mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "vortioxetina 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "vortioxetina 20mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "amitriptilina 75mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "amitriptilina 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "alprazolam 0,25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "alprazolam 0,5mg": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "alprazolam 1mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "alprazolam 2mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "clonazepam 0,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "clonazepam 2mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "clonazepam 2,5mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "diazepam 5mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "zolpidem 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "diazepam 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "zolpidem 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "quetiapina 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "quetiapina 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "quetiapina 200mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "quetiapina 300mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "zolpidem CR": {
+      "returned": 6,
+      "alreadyHad": 4,
+      "filled": 2,
+      "posOk": 2
+    },
+    "quetiapina XR": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "risperidona 1mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "risperidona 2mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "risperidona 3mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "olanzapina 2,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "olanzapina 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "olanzapina 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "aripiprazol 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "aripiprazol 15mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "aripiprazol 30mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pregabalina 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pregabalina 75mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pregabalina 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pregabalina 150mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pregabalina 225mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pregabalina 300mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "gabapentina 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "gabapentina 300mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "gabapentina 400mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "gabapentina 600mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "gabapentina 800mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "topiramato 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "topiramato 50mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "topiramato 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "topiramato 200mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lamotrigina 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lamotrigina 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lamotrigina 200mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "carbamazepina 200mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "carbamazepina 400mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "carbamazepina CR": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "oxcarbazepina 300mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "oxcarbazepina 600mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levetiracetam 250mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levetiracetam 500mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levetiracetam 750mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levetiracetam 1g": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levetiracetam 100mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "valproato 500mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "valproato 250mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metilfenidato 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metilfenidato 18mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metilfenidato 36mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metilfenidato LA": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lisdexanfetamina 30mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metilfenidato Ritalina LA": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lisdexanfetamina 50mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lisdexanfetamina 70mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levotiroxina 25mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levotiroxina 37mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levotiroxina 50mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levotiroxina 75mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levotiroxina 88mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levotiroxina 100mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levotiroxina 112mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "divalproato": {
+      "returned": 41,
+      "alreadyHad": 37,
+      "filled": 4,
+      "posOk": 4
+    },
+    "levotiroxina 125mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levotiroxina 150mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levotiroxina 175mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levotiroxina 137mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levotiroxina 200mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "prednisona 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "prednisona 20mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "prednisona 40mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "prednisolona 3mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "prednisolona 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "prednisolona 20mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dexametasona 0,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dexametasona 4mg": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dexametasona elixir": {
+      "returned": 15,
+      "alreadyHad": 15,
+      "filled": 0,
+      "posOk": 0
+    },
+    "betametasona 0,5mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dexametasona 0,1%": {
+      "returned": 15,
+      "alreadyHad": 15,
+      "filled": 0,
+      "posOk": 0
+    },
+    "hidrocortisona 500mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "hidrocortisona 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "betametasona injetável": {
+      "returned": 19,
+      "alreadyHad": 19,
+      "filled": 0,
+      "posOk": 0
+    },
+    "hidrocortisona creme": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sildenafila 25mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sildenafila 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tadalafila 2,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tadalafila 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tadalafila 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "finasterida 1mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dutasterida 0,5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tansulosina 0,4mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "salbutamol spray": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "salbutamol 100mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "salbutamol xarope": {
+      "returned": 12,
+      "alreadyHad": 12,
+      "filled": 0,
+      "posOk": 0
+    },
+    "salbutamol aerosol": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "salbutamol solução": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fenoterol gotas": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fenoterol spray": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "betametasona creme": {
+      "returned": 40,
+      "alreadyHad": 33,
+      "filled": 7,
+      "posOk": 7
+    },
+    "budesonida aerosol": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "budesonida nasal": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "budesonida 64mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "budesonida 200mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "budesonida 400mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "formoterol 6mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "formoterol 12mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fluticasona spray": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fluticasona 50mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fluticasona 250mcg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "salmeterol fluticasona": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "formoterol budesonida": {
+      "returned": 13,
+      "alreadyHad": 13,
+      "filled": 0,
+      "posOk": 0
+    },
+    "loratadina 1mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "loratadina 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "desloratadina 0,5mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "desloratadina 5mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cetirizina 1mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cetirizina 10mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tramadol 50mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tramadol 100mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tramadol gotas": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tramadol 50mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tramadol 100mg/ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tramadol LP": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tramadol retard": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "codeína 30mg": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "codeína 7,5mg/5ml": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "paracetamol cafeína": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ibuprofeno cafeína": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "paracetamol orfenadrina": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "paracetamol codeína": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ibuprofeno arginina": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ibuprofeno pseudoefedrina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácido acetilsalicílico cafeína": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "telmisartana hidroclorotiazida": {
+      "returned": 17,
+      "alreadyHad": 17,
+      "filled": 0,
+      "posOk": 0
+    },
+    "candesartana hidroclorotiazida": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "irbesartana hidroclorotiazida": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "valsartana hidroclorotiazida": {
+      "returned": 42,
+      "alreadyHad": 25,
+      "filled": 17,
+      "posOk": 17
+    },
+    "lisinopril hidroclorotiazida": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ramipril hidroclorotiazida": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "losartana hidroclorotiazida": {
+      "returned": 41,
+      "alreadyHad": 12,
+      "filled": 29,
+      "posOk": 29
+    },
+    "enalapril hidroclorotiazida": {
+      "returned": 40,
+      "alreadyHad": 15,
+      "filled": 25,
+      "posOk": 25
+    },
+    "anlodipino olmesartana": {
+      "returned": 30,
+      "alreadyHad": 26,
+      "filled": 4,
+      "posOk": 4
+    },
+    "anlodipino valsartana": {
+      "returned": 38,
+      "alreadyHad": 34,
+      "filled": 4,
+      "posOk": 4
+    },
+    "anlodipino telmisartana": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "anlodipino atorvastatina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "anlodipino perindopril": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "olmesartana hidroclorotiazida": {
+      "returned": 41,
+      "alreadyHad": 3,
+      "filled": 38,
+      "posOk": 38
+    },
+    "anlodipino benazepril": {
+      "returned": 5,
+      "alreadyHad": 3,
+      "filled": 2,
+      "posOk": 2
+    },
+    "bisoprolol hidroclorotiazida": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "propranolol hidroclorotiazida": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metoprolol hidroclorotiazida": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "atorvastatina ezetimiba": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "atenolol clortalidona": {
+      "returned": 40,
+      "alreadyHad": 37,
+      "filled": 3,
+      "posOk": 3
+    },
+    "sinvastatina ezetimiba": {
+      "returned": 35,
+      "alreadyHad": 34,
+      "filled": 1,
+      "posOk": 1
+    },
+    "metformina sitagliptina": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "rosuvastatina ezetimiba": {
+      "returned": 22,
+      "alreadyHad": 22,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metformina vildagliptina": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metformina linagliptina": {
+      "returned": 14,
+      "alreadyHad": 14,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metformina saxagliptina": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metformina dapagliflozina": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metformina empagliflozina": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "glimepirida pioglitazona": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levodopa carbidopa": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sulfametoxazol trimetoprima": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levodopa benserazida": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "carbidopa levodopa entacapona": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "drospirenona etinilestradiol": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levonorgestrel etinilestradiol": {
+      "returned": 28,
+      "alreadyHad": 28,
+      "filled": 0,
+      "posOk": 0
+    },
+    "gestodeno etinilestradiol": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "desogestrel etinilestradiol": {
+      "returned": 24,
+      "alreadyHad": 24,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ciproterona etinilestradiol": {
+      "returned": 27,
+      "alreadyHad": 27,
+      "filled": 0,
+      "posOk": 0
+    },
+    "norgestimato etinilestradiol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dienogeste etinilestradiol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "estradiol nomegestrol": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "latanoprosta timolol": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "travoprosta timolol": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bimatoprosta timolol": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "brimonidina timolol": {
+      "returned": 15,
+      "alreadyHad": 15,
+      "filled": 0,
+      "posOk": 0
+    },
+    "anlodipino losartana": {
+      "returned": 40,
+      "alreadyHad": 5,
+      "filled": 35,
+      "posOk": 35
+    },
+    "brinzolamida timolol": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dorzolamida timolol": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "glimepirida metformina": {
+      "returned": 22,
+      "alreadyHad": 12,
+      "filled": 10,
+      "posOk": 10
+    },
+    "salbutamol ipratrópio": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fenoterol ipratrópio": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "vilanterol fluticasona": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "indacaterol glicopirrônio": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "umeclidínio vilanterol": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tiotrópio olodaterol": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "formoterol glicopirrônio budesonida": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tobramicina dexametasona": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dexametasona neomicina polimixina": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "nistatina óxido de zinco": {
+      "returned": 23,
+      "alreadyHad": 23,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ofloxacino dexametasona": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ciprofloxacino dexametasona": {
+      "returned": 17,
+      "alreadyHad": 17,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ciprofloxacino fluocinolona": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pharlab": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Geolab": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Brainfarma": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Hipolabor": {
+      "returned": 15,
+      "alreadyHad": 14,
+      "filled": 1,
+      "posOk": 1
+    },
+    "neomicina bacitracina": {
+      "returned": 35,
+      "alreadyHad": 29,
+      "filled": 6,
+      "posOk": 6
+    },
+    "Cosmed": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Vitamedic": {
+      "returned": 40,
+      "alreadyHad": 38,
+      "filled": 2,
+      "posOk": 2
+    },
+    "Pierre Fabre": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Hertz": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Belfar": {
+      "returned": 40,
+      "alreadyHad": 36,
+      "filled": 4,
+      "posOk": 4
+    },
+    "Stiefel": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cifarma": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Apsen": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Genom": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Aspen": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "Cellera": {
+      "returned": 40,
+      "alreadyHad": 35,
+      "filled": 5,
+      "posOk": 5
+    },
+    "BLAU": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Klinger": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Galderma": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Brassmar": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Bunker": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Daudt": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Catarinense Pharma": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Hexa Pharma": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Glenmark": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Nikkho": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Servier": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Marjan": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "Takeda": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zambon": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zydus Nikkho": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Brainfarma Indústria": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Greenpharma": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Legrand": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Multilab": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Brainfarma SA": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Prati Donaduzzi": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Krka": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sigma Pharma": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sandoz": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "Onefarma": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cristália": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "Sanofi Aventis": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Boehringer Ingelheim": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "União Química": {
+      "returned": 40,
+      "alreadyHad": 38,
+      "filled": 2,
+      "posOk": 2
+    },
+    "Eurofarma": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "Bayer": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Novartis": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "GSK": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "AstraZeneca": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "Janssen": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "comprimido XR": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "comprimido LP": {
+      "returned": 25,
+      "alreadyHad": 25,
+      "filled": 0,
+      "posOk": 0
+    },
+    "comprimido CR": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "comprimido SR": {
+      "returned": 19,
+      "alreadyHad": 19,
+      "filled": 0,
+      "posOk": 0
+    },
+    "comprimido ER": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "comprimido OD": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "comprimido OROS": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "comprimido orodispersível": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "comprimido sublingual": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "drágea": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "supositório": {
+      "returned": 18,
+      "alreadyHad": 18,
+      "filled": 0,
+      "posOk": 0
+    },
+    "comprimido mastigável": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "óvulo": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "comprimido efervescente": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "pessário": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "elixir": {
+      "returned": 30,
+      "alreadyHad": 30,
+      "filled": 0,
+      "posOk": 0
+    },
+    "aerossol oral": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "spray nasal": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "aerosol nasal": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "spray oral": {
+      "returned": 16,
+      "alreadyHad": 15,
+      "filled": 1,
+      "posOk": 1
+    },
+    "espuma": {
+      "returned": 37,
+      "alreadyHad": 37,
+      "filled": 0,
+      "posOk": 0
+    },
+    "loção capilar": {
+      "returned": 24,
+      "alreadyHad": 24,
+      "filled": 0,
+      "posOk": 0
+    },
+    "shampoo medicinal": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "creme vaginal": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "gel oral": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "gel dental": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "solução otológica": {
+      "returned": 14,
+      "alreadyHad": 14,
+      "filled": 0,
+      "posOk": 0
+    },
+    "solução oftálmica": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "patch transdérmico": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "adesivo transdérmico": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "implante subcutâneo": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "DIU": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    }
+  }
+}

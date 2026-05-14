@@ -1,0 +1,970 @@
+{
+  "generatedAt": "2026-05-13T23:58:21.245Z",
+  "summary": {
+    "namesTotal": 140,
+    "namesWithResults": 32,
+    "namesEmpty": 108,
+    "namesError": 0,
+    "productsReturnedTotal": 606,
+    "productsAlreadyHad": 606,
+    "productsFilled": 0,
+    "coveragePercent": 100,
+    "medsBefore": 23834,
+    "medsAfter": 23834,
+    "medsAdded": 0
+  },
+  "namesNotFoundInCliquerx": [
+    "Abilify",
+    "Acebrofeno",
+    "Accolate",
+    "Aderogil",
+    "Akathin",
+    "Allopurinol",
+    "Algi-tanderil",
+    "Algi-Reumatril",
+    "Always",
+    "Atensina LP",
+    "Atenoblok",
+    "Atorlip",
+    "Azimax",
+    "Bensartana",
+    "Berocca",
+    "Berodual",
+    "Buscopan Plus",
+    "Caladerm",
+    "Caladryl",
+    "Calmosine",
+    "Cardimax",
+    "Cebrocan",
+    "Cefacliman",
+    "Cinaplus",
+    "Cibalena",
+    "Cipralex",
+    "Clonotril",
+    "Combivir",
+    "Cordarone",
+    "Cutaderm",
+    "Cyclacur",
+    "Decongest",
+    "Dualid",
+    "Esitca",
+    "Estomalcin",
+    "Ferronyl",
+    "Gaviscon",
+    "Glucanin",
+    "Gardenal Sódico",
+    "Glucophage",
+    "Hidrasec",
+    "Hipoglós Cremoso",
+    "Hypermag",
+    "Hytrin",
+    "Iberogast",
+    "Indinavir",
+    "Lactacyd",
+    "Lactopurga",
+    "Lioram",
+    "Liquemine",
+    "Lyrica CR",
+    "MST",
+    "Maxlitan",
+    "Maxsuporten",
+    "Mederma",
+    "Mexilon",
+    "Mictonorm",
+    "Mirtaron",
+    "Mirapex",
+    "Mycostatin",
+    "Neurontin",
+    "Nizoral Shampoo",
+    "Olcadil",
+    "Olpress",
+    "Nimedex",
+    "Olysio",
+    "Otrivina",
+    "Pirisept",
+    "Plenitude",
+    "Pravacol",
+    "Quensyl",
+    "Proscar",
+    "Refluxar",
+    "Requip",
+    "Rhinocort",
+    "Rituxan",
+    "Selsun",
+    "Sal de Andrews",
+    "Sinemet",
+    "Spedra",
+    "Stamicin",
+    "Strattera",
+    "Sulfatrim",
+    "Sustanon",
+    "Tavanic",
+    "Telfast",
+    "Tenoretic",
+    "Testovirin",
+    "Tilazem",
+    "Topamax Sprinkle",
+    "Triderm",
+    "Trijardy",
+    "Trileptal CR",
+    "Trinordiol",
+    "Trittico",
+    "Tryptanol",
+    "Uloric",
+    "Veramyst",
+    "Velamox",
+    "Vibrocil",
+    "Vivacor",
+    "Vidacaps",
+    "Voltaren Emulgel",
+    "Voltaren Sachê",
+    "Yasminelle",
+    "Zimax",
+    "Zocor",
+    "Zydelig"
+  ],
+  "errors": [],
+  "topGaps": [],
+  "perName": {
+    "Abilify": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Acebrofeno": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Accolate": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Aderogil": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Acivirex": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Active D": {
+      "returned": 31,
+      "alreadyHad": 31,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Akathin": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Allopurinol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Algi-tanderil": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Algi-Reumatril": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Always": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Anita": {
+      "returned": 13,
+      "alreadyHad": 13,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Antak": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Atensina LP": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Atenoblok": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Atorlip": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Azimax": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Bensartana": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Berocca": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Berodual": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Buscopan Plus": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Bromopride": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Bromhexina": {
+      "returned": 38,
+      "alreadyHad": 38,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Caladerm": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Caladryl": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Calmosine": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cardimax": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cebrocan": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cefacliman": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Ceftin": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Centrum Homem": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Centrum Mulher": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cetinax": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cinaplus": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cibalena": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cipralex": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Clonotril": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Co-Aprovel": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Clarix": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Co-Diovan": {
+      "returned": 26,
+      "alreadyHad": 26,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Combivir": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cordarone": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cutaderm": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cyclacur": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Decongest": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Dermovate": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cálcio D3": {
+      "returned": 42,
+      "alreadyHad": 42,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Dualid": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Esitca": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Estomalcin": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Diclofenacol": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Ferronyl": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Gaviscon": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Glucanin": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Gardenal Sódico": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Glucophage": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Glucol": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Hidrasec": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Halc": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Hipoglós Cremoso": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Hypermag": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Hytrin": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Iberogast": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Indinavir": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lactacyd": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lactopurga": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lioram": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Liquemine": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lyrica CR": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "MST": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Magnesil": {
+      "returned": 44,
+      "alreadyHad": 44,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Magnopirol": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Maraviroque": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Magnesil B6": {
+      "returned": 42,
+      "alreadyHad": 42,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Maxlitan": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Mavyret": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Maxsuporten": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Mederma": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Mexilon": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Mefenamil": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Mictonorm": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Mirtaron": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Mirapex": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Mobic": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Mycostatin": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Neurontin": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Nizoral Shampoo": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Olcadil": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Olpress": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Nimedex": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Olysio": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Otrivina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Phebo": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pirisept": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Plenitude": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pravacol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Quensyl": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Proscar": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Quetapin": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Refluxar": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Requip": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Rhinocort": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Risperdon": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Rituxan": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Selsun": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sal de Andrews": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Septra": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sinemet": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sinex": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Solosa": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Spedra": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Stamicin": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Strattera": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sulfato Ferroso": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sulfatrim": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sustanon": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tavanic": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Telfast": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tenoretic": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Testovirin": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tilazem": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Topamax Sprinkle": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Triderm": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Trijardy": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Trileptal CR": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Trinordiol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Trittico": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tryptanol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Uloric": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Veramyst": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Velamox": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Vibrocil": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Vivacor": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Vidacaps": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Voltaren Emulgel": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Voltaren Sachê": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Yasminelle": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zimax": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zocor": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zydelig": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    }
+  }
+}

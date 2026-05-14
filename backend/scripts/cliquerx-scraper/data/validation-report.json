@@ -1,0 +1,4013 @@
+{
+  "generatedAt": "2026-05-13T17:11:01.953Z",
+  "summary": {
+    "namesTotal": 637,
+    "namesWithResults": 583,
+    "namesEmpty": 54,
+    "namesError": 0,
+    "productsReturnedTotal": 10508,
+    "productsAlreadyHad": 9868,
+    "productsFilled": 640,
+    "coveragePercent": 93.91,
+    "medsBefore": 21589,
+    "medsAfter": 22229,
+    "medsAdded": 640
+  },
+  "namesNotFoundInCliquerx": [
+    "ranitidina",
+    "cloxazolam",
+    "penicilina benzatina",
+    "pirazinamida",
+    "griseofulvina",
+    "praziquantel",
+    "ciclesonida",
+    "zafirlucaste",
+    "liotironina",
+    "metimazol",
+    "febuxostate",
+    "avanafila",
+    "alfuzosina",
+    "ropinirol",
+    "ergocalciferol",
+    "Telfast",
+    "Cordarone",
+    "Tenoretic",
+    "Zocor",
+    "Glucophage",
+    "Lactopurga",
+    "Cipralex",
+    "Tryptanol",
+    "Abilify",
+    "Strattera",
+    "Velamox",
+    "Zimax",
+    "Tavanic",
+    "Floxacin",
+    "Stamicin",
+    "Cidofovir",
+    "Mycostatin",
+    "Serevent",
+    "Accolate",
+    "Neurontin",
+    "Sinemet",
+    "Requip",
+    "Uloric",
+    "Spedra",
+    "Proscar",
+    "Mictonorm",
+    "MST",
+    "Spironol",
+    "Pravacol",
+    "Olcadil",
+    "Berocca",
+    "Ferronyl",
+    "Niferex",
+    "Caladerm",
+    "Caladryl",
+    "Sustanon",
+    "Trinordiol",
+    "Decongestin",
+    "Cibalena"
+  ],
+  "errors": [],
+  "topGaps": [
+    {
+      "name": "rosuvastatina",
+      "filled": 33,
+      "returned": 44
+    },
+    {
+      "name": "risperidona",
+      "filled": 29,
+      "returned": 41
+    },
+    {
+      "name": "rivaroxabana",
+      "filled": 29,
+      "returned": 41
+    },
+    {
+      "name": "venlafaxina",
+      "filled": 24,
+      "returned": 40
+    },
+    {
+      "name": "ciprofloxacino",
+      "filled": 22,
+      "returned": 40
+    },
+    {
+      "name": "clortalidona",
+      "filled": 21,
+      "returned": 40
+    },
+    {
+      "name": "vortioxetina",
+      "filled": 21,
+      "returned": 40
+    },
+    {
+      "name": "rivastigmina",
+      "filled": 18,
+      "returned": 41
+    },
+    {
+      "name": "prednisolona",
+      "filled": 15,
+      "returned": 42
+    },
+    {
+      "name": "voriconazol",
+      "filled": 14,
+      "returned": 23
+    },
+    {
+      "name": "hidroxizina",
+      "filled": 13,
+      "returned": 28
+    },
+    {
+      "name": "Vasopril",
+      "filled": 13,
+      "returned": 15
+    },
+    {
+      "name": "zolpidem",
+      "filled": 12,
+      "returned": 41
+    },
+    {
+      "name": "valproato de sódio",
+      "filled": 12,
+      "returned": 27
+    },
+    {
+      "name": "hidroclorotiazida",
+      "filled": 11,
+      "returned": 44
+    },
+    {
+      "name": "miconazol",
+      "filled": 11,
+      "returned": 40
+    },
+    {
+      "name": "captopril",
+      "filled": 9,
+      "returned": 40
+    },
+    {
+      "name": "atenolol",
+      "filled": 9,
+      "returned": 40
+    },
+    {
+      "name": "carvedilol",
+      "filled": 9,
+      "returned": 40
+    },
+    {
+      "name": "verapamil",
+      "filled": 9,
+      "returned": 13
+    },
+    {
+      "name": "prednisona",
+      "filled": 9,
+      "returned": 36
+    },
+    {
+      "name": "pantoprazol",
+      "filled": 7,
+      "returned": 43
+    },
+    {
+      "name": "quetiapina",
+      "filled": 7,
+      "returned": 41
+    },
+    {
+      "name": "clotrimazol",
+      "filled": 7,
+      "returned": 40
+    },
+    {
+      "name": "montelucaste",
+      "filled": 7,
+      "returned": 41
+    },
+    {
+      "name": "amoxicilina clavulanato",
+      "filled": 6,
+      "returned": 41
+    },
+    {
+      "name": "valaciclovir",
+      "filled": 6,
+      "returned": 16
+    },
+    {
+      "name": "colecalciferol",
+      "filled": 6,
+      "returned": 42
+    },
+    {
+      "name": "ramipril",
+      "filled": 5,
+      "returned": 21
+    },
+    {
+      "name": "ezetimiba",
+      "filled": 5,
+      "returned": 42
+    }
+  ],
+  "perName": {
+    "nimesulida": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ibuprofeno": {
+      "returned": 41,
+      "alreadyHad": 40,
+      "filled": 1,
+      "posOk": 1
+    },
+    "paracetamol": {
+      "returned": 44,
+      "alreadyHad": 42,
+      "filled": 2,
+      "posOk": 2
+    },
+    "dipirona": {
+      "returned": 41,
+      "alreadyHad": 38,
+      "filled": 3,
+      "posOk": 3
+    },
+    "ácido acetilsalicílico": {
+      "returned": 40,
+      "alreadyHad": 38,
+      "filled": 2,
+      "posOk": 2
+    },
+    "diclofenaco": {
+      "returned": 41,
+      "alreadyHad": 38,
+      "filled": 3,
+      "posOk": 3
+    },
+    "naproxeno": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cetoprofeno": {
+      "returned": 41,
+      "alreadyHad": 39,
+      "filled": 2,
+      "posOk": 2
+    },
+    "meloxicam": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "piroxicam": {
+      "returned": 24,
+      "alreadyHad": 24,
+      "filled": 0,
+      "posOk": 0
+    },
+    "celecoxibe": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "etoricoxibe": {
+      "returned": 32,
+      "alreadyHad": 32,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tenoxicam": {
+      "returned": 14,
+      "alreadyHad": 13,
+      "filled": 1,
+      "posOk": 1
+    },
+    "indometacina": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "losartana": {
+      "returned": 42,
+      "alreadyHad": 42,
+      "filled": 0,
+      "posOk": 0
+    },
+    "olmesartana": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "valsartana": {
+      "returned": 44,
+      "alreadyHad": 43,
+      "filled": 1,
+      "posOk": 1
+    },
+    "aceclofenaco": {
+      "returned": 20,
+      "alreadyHad": 18,
+      "filled": 2,
+      "posOk": 2
+    },
+    "candesartana": {
+      "returned": 42,
+      "alreadyHad": 42,
+      "filled": 0,
+      "posOk": 0
+    },
+    "telmisartana": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "enalapril": {
+      "returned": 41,
+      "alreadyHad": 40,
+      "filled": 1,
+      "posOk": 1
+    },
+    "lisinopril": {
+      "returned": 27,
+      "alreadyHad": 24,
+      "filled": 3,
+      "posOk": 3
+    },
+    "propranolol": {
+      "returned": 29,
+      "alreadyHad": 29,
+      "filled": 0,
+      "posOk": 0
+    },
+    "perindopril": {
+      "returned": 18,
+      "alreadyHad": 14,
+      "filled": 4,
+      "posOk": 4
+    },
+    "ramipril": {
+      "returned": 21,
+      "alreadyHad": 16,
+      "filled": 5,
+      "posOk": 5
+    },
+    "metoprolol": {
+      "returned": 41,
+      "alreadyHad": 40,
+      "filled": 1,
+      "posOk": 1
+    },
+    "captopril": {
+      "returned": 40,
+      "alreadyHad": 31,
+      "filled": 9,
+      "posOk": 9
+    },
+    "nebivolol": {
+      "returned": 42,
+      "alreadyHad": 42,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bisoprolol": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "nifedipino": {
+      "returned": 13,
+      "alreadyHad": 13,
+      "filled": 0,
+      "posOk": 0
+    },
+    "anlodipino": {
+      "returned": 42,
+      "alreadyHad": 41,
+      "filled": 1,
+      "posOk": 1
+    },
+    "atenolol": {
+      "returned": 40,
+      "alreadyHad": 31,
+      "filled": 9,
+      "posOk": 9
+    },
+    "diltiazem": {
+      "returned": 20,
+      "alreadyHad": 20,
+      "filled": 0,
+      "posOk": 0
+    },
+    "felodipino": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "furosemida": {
+      "returned": 20,
+      "alreadyHad": 20,
+      "filled": 0,
+      "posOk": 0
+    },
+    "carvedilol": {
+      "returned": 40,
+      "alreadyHad": 31,
+      "filled": 9,
+      "posOk": 9
+    },
+    "espironolactona": {
+      "returned": 33,
+      "alreadyHad": 33,
+      "filled": 0,
+      "posOk": 0
+    },
+    "indapamida": {
+      "returned": 35,
+      "alreadyHad": 35,
+      "filled": 0,
+      "posOk": 0
+    },
+    "verapamil": {
+      "returned": 13,
+      "alreadyHad": 4,
+      "filled": 9,
+      "posOk": 9
+    },
+    "sinvastatina": {
+      "returned": 41,
+      "alreadyHad": 38,
+      "filled": 3,
+      "posOk": 3
+    },
+    "atorvastatina": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pravastatina": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "hidroclorotiazida": {
+      "returned": 44,
+      "alreadyHad": 33,
+      "filled": 11,
+      "posOk": 11
+    },
+    "fenofibrato": {
+      "returned": 21,
+      "alreadyHad": 20,
+      "filled": 1,
+      "posOk": 1
+    },
+    "ezetimiba": {
+      "returned": 42,
+      "alreadyHad": 37,
+      "filled": 5,
+      "posOk": 5
+    },
+    "ciprofibrato": {
+      "returned": 25,
+      "alreadyHad": 23,
+      "filled": 2,
+      "posOk": 2
+    },
+    "bezafibrato": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "amiodarona": {
+      "returned": 34,
+      "alreadyHad": 34,
+      "filled": 0,
+      "posOk": 0
+    },
+    "digoxina": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ivabradina": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sacubitril": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "glibenclamida": {
+      "returned": 21,
+      "alreadyHad": 21,
+      "filled": 0,
+      "posOk": 0
+    },
+    "gliclazida": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metformina": {
+      "returned": 42,
+      "alreadyHad": 39,
+      "filled": 3,
+      "posOk": 3
+    },
+    "glimepirida": {
+      "returned": 40,
+      "alreadyHad": 38,
+      "filled": 2,
+      "posOk": 2
+    },
+    "clortalidona": {
+      "returned": 40,
+      "alreadyHad": 19,
+      "filled": 21,
+      "posOk": 21
+    },
+    "glipizida": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sitagliptina": {
+      "returned": 19,
+      "alreadyHad": 19,
+      "filled": 0,
+      "posOk": 0
+    },
+    "linagliptina": {
+      "returned": 24,
+      "alreadyHad": 24,
+      "filled": 0,
+      "posOk": 0
+    },
+    "saxagliptina": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "vildagliptina": {
+      "returned": 12,
+      "alreadyHad": 11,
+      "filled": 1,
+      "posOk": 1
+    },
+    "empagliflozina": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dapagliflozina": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "canagliflozina": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "liraglutida": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "semaglutida": {
+      "returned": 17,
+      "alreadyHad": 17,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dulaglutida": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "insulina glargina": {
+      "returned": 21,
+      "alreadyHad": 21,
+      "filled": 0,
+      "posOk": 0
+    },
+    "insulina lispro": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "insulina aspart": {
+      "returned": 14,
+      "alreadyHad": 14,
+      "filled": 0,
+      "posOk": 0
+    },
+    "insulina detemir": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "insulina degludeca": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "acarbose": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pioglitazona": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "esomeprazol": {
+      "returned": 43,
+      "alreadyHad": 43,
+      "filled": 0,
+      "posOk": 0
+    },
+    "omeprazol": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "lansoprazol": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dexlansoprazol": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ranitidina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "rabeprazol": {
+      "returned": 11,
+      "alreadyHad": 8,
+      "filled": 3,
+      "posOk": 3
+    },
+    "famotidina": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pantoprazol": {
+      "returned": 43,
+      "alreadyHad": 36,
+      "filled": 7,
+      "posOk": 7
+    },
+    "domperidona": {
+      "returned": 34,
+      "alreadyHad": 34,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bromoprida": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ondansetrona": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sucralfato": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dimeticona": {
+      "returned": 15,
+      "alreadyHad": 15,
+      "filled": 0,
+      "posOk": 0
+    },
+    "simeticona": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "alginato de sódio": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metoclopramida": {
+      "returned": 19,
+      "alreadyHad": 17,
+      "filled": 2,
+      "posOk": 2
+    },
+    "loperamida": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "rosuvastatina": {
+      "returned": 44,
+      "alreadyHad": 11,
+      "filled": 33,
+      "posOk": 33
+    },
+    "macrogol": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lactulose": {
+      "returned": 31,
+      "alreadyHad": 31,
+      "filled": 0,
+      "posOk": 0
+    },
+    "racecadotrila": {
+      "returned": 10,
+      "alreadyHad": 9,
+      "filled": 1,
+      "posOk": 1
+    },
+    "sulfassalazina": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "mesalazina": {
+      "returned": 30,
+      "alreadyHad": 30,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sertralina": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "paroxetina": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "escitalopram": {
+      "returned": 43,
+      "alreadyHad": 43,
+      "filled": 0,
+      "posOk": 0
+    },
+    "citalopram": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "duloxetina": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bupropiona": {
+      "returned": 42,
+      "alreadyHad": 42,
+      "filled": 0,
+      "posOk": 0
+    },
+    "mirtazapina": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "trazodona": {
+      "returned": 31,
+      "alreadyHad": 31,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fluoxetina": {
+      "returned": 42,
+      "alreadyHad": 37,
+      "filled": 5,
+      "posOk": 5
+    },
+    "desvenlafaxina": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "agomelatina": {
+      "returned": 27,
+      "alreadyHad": 27,
+      "filled": 0,
+      "posOk": 0
+    },
+    "amitriptilina": {
+      "returned": 26,
+      "alreadyHad": 26,
+      "filled": 0,
+      "posOk": 0
+    },
+    "nortriptilina": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "imipramina": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "clomipramina": {
+      "returned": 14,
+      "alreadyHad": 14,
+      "filled": 0,
+      "posOk": 0
+    },
+    "alprazolam": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "diazepam": {
+      "returned": 24,
+      "alreadyHad": 23,
+      "filled": 1,
+      "posOk": 1
+    },
+    "bromazepam": {
+      "returned": 37,
+      "alreadyHad": 37,
+      "filled": 0,
+      "posOk": 0
+    },
+    "clonazepam": {
+      "returned": 41,
+      "alreadyHad": 38,
+      "filled": 3,
+      "posOk": 3
+    },
+    "lorazepam": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "midazolam": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cloxazolam": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "flurazepam": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "zopiclona": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "eszopiclona": {
+      "returned": 15,
+      "alreadyHad": 15,
+      "filled": 0,
+      "posOk": 0
+    },
+    "venlafaxina": {
+      "returned": 40,
+      "alreadyHad": 16,
+      "filled": 24,
+      "posOk": 24
+    },
+    "quetiapina": {
+      "returned": 41,
+      "alreadyHad": 34,
+      "filled": 7,
+      "posOk": 7
+    },
+    "vortioxetina": {
+      "returned": 40,
+      "alreadyHad": 19,
+      "filled": 21,
+      "posOk": 21
+    },
+    "zolpidem": {
+      "returned": 41,
+      "alreadyHad": 29,
+      "filled": 12,
+      "posOk": 12
+    },
+    "aripiprazol": {
+      "returned": 42,
+      "alreadyHad": 42,
+      "filled": 0,
+      "posOk": 0
+    },
+    "clozapina": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "haloperidol": {
+      "returned": 14,
+      "alreadyHad": 14,
+      "filled": 0,
+      "posOk": 0
+    },
+    "clorpromazina": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "olanzapina": {
+      "returned": 41,
+      "alreadyHad": 37,
+      "filled": 4,
+      "posOk": 4
+    },
+    "lurasidona": {
+      "returned": 24,
+      "alreadyHad": 24,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ziprasidona": {
+      "returned": 4,
+      "alreadyHad": 2,
+      "filled": 2,
+      "posOk": 2
+    },
+    "paliperidona": {
+      "returned": 20,
+      "alreadyHad": 20,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lítio": {
+      "returned": 19,
+      "alreadyHad": 19,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lamotrigina": {
+      "returned": 42,
+      "alreadyHad": 42,
+      "filled": 0,
+      "posOk": 0
+    },
+    "carbamazepina": {
+      "returned": 32,
+      "alreadyHad": 32,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácido valproico": {
+      "returned": 11,
+      "alreadyHad": 8,
+      "filled": 3,
+      "posOk": 3
+    },
+    "oxcarbazepina": {
+      "returned": 38,
+      "alreadyHad": 38,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metilfenidato": {
+      "returned": 40,
+      "alreadyHad": 38,
+      "filled": 2,
+      "posOk": 2
+    },
+    "topiramato": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "valproato de sódio": {
+      "returned": 27,
+      "alreadyHad": 15,
+      "filled": 12,
+      "posOk": 12
+    },
+    "atomoxetina": {
+      "returned": 7,
+      "alreadyHad": 4,
+      "filled": 3,
+      "posOk": 3
+    },
+    "lisdexanfetamina": {
+      "returned": 40,
+      "alreadyHad": 36,
+      "filled": 4,
+      "posOk": 4
+    },
+    "donepezila": {
+      "returned": 43,
+      "alreadyHad": 43,
+      "filled": 0,
+      "posOk": 0
+    },
+    "memantina": {
+      "returned": 43,
+      "alreadyHad": 42,
+      "filled": 1,
+      "posOk": 1
+    },
+    "galantamina": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "amoxicilina": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ampicilina": {
+      "returned": 30,
+      "alreadyHad": 30,
+      "filled": 0,
+      "posOk": 0
+    },
+    "penicilina benzatina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "azitromicina": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "risperidona": {
+      "returned": 41,
+      "alreadyHad": 12,
+      "filled": 29,
+      "posOk": 29
+    },
+    "claritromicina": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "eritromicina": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "amoxicilina clavulanato": {
+      "returned": 41,
+      "alreadyHad": 35,
+      "filled": 6,
+      "posOk": 6
+    },
+    "cefadroxila": {
+      "returned": 15,
+      "alreadyHad": 15,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cefaclor": {
+      "returned": 15,
+      "alreadyHad": 15,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ceftriaxona": {
+      "returned": 14,
+      "alreadyHad": 14,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cefuroxima": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cefepime": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cefalexina": {
+      "returned": 41,
+      "alreadyHad": 37,
+      "filled": 4,
+      "posOk": 4
+    },
+    "levofloxacino": {
+      "returned": 43,
+      "alreadyHad": 43,
+      "filled": 0,
+      "posOk": 0
+    },
+    "moxifloxacino": {
+      "returned": 25,
+      "alreadyHad": 25,
+      "filled": 0,
+      "posOk": 0
+    },
+    "norfloxacino": {
+      "returned": 26,
+      "alreadyHad": 26,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ofloxacino": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "trimetoprima": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "rivastigmina": {
+      "returned": 41,
+      "alreadyHad": 23,
+      "filled": 18,
+      "posOk": 18
+    },
+    "sulfametoxazol": {
+      "returned": 40,
+      "alreadyHad": 38,
+      "filled": 2,
+      "posOk": 2
+    },
+    "clindamicina": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "minociclina": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tetraciclina": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tinidazol": {
+      "returned": 35,
+      "alreadyHad": 35,
+      "filled": 0,
+      "posOk": 0
+    },
+    "doxiciclina": {
+      "returned": 15,
+      "alreadyHad": 12,
+      "filled": 3,
+      "posOk": 3
+    },
+    "secnidazol": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metronidazol": {
+      "returned": 40,
+      "alreadyHad": 38,
+      "filled": 2,
+      "posOk": 2
+    },
+    "nitrofurantoína": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fosfomicina": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "rifampicina": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "isoniazida": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "etambutol": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pirazinamida": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "vancomicina": {
+      "returned": 5,
+      "alreadyHad": 3,
+      "filled": 2,
+      "posOk": 2
+    },
+    "aciclovir": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ganciclovir": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "oseltamivir": {
+      "returned": 18,
+      "alreadyHad": 18,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tenofovir": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "lamivudina": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "efavirenz": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dolutegravir": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "itraconazol": {
+      "returned": 39,
+      "alreadyHad": 39,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fluconazol": {
+      "returned": 41,
+      "alreadyHad": 40,
+      "filled": 1,
+      "posOk": 1
+    },
+    "valaciclovir": {
+      "returned": 16,
+      "alreadyHad": 10,
+      "filled": 6,
+      "posOk": 6
+    },
+    "ciprofloxacino": {
+      "returned": 40,
+      "alreadyHad": 18,
+      "filled": 22,
+      "posOk": 22
+    },
+    "cetoconazol": {
+      "returned": 40,
+      "alreadyHad": 38,
+      "filled": 2,
+      "posOk": 2
+    },
+    "nistatina": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "terbinafina": {
+      "returned": 29,
+      "alreadyHad": 27,
+      "filled": 2,
+      "posOk": 2
+    },
+    "griseofulvina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "albendazol": {
+      "returned": 34,
+      "alreadyHad": 32,
+      "filled": 2,
+      "posOk": 2
+    },
+    "mebendazol": {
+      "returned": 22,
+      "alreadyHad": 22,
+      "filled": 0,
+      "posOk": 0
+    },
+    "clotrimazol": {
+      "returned": 40,
+      "alreadyHad": 33,
+      "filled": 7,
+      "posOk": 7
+    },
+    "ivermectina": {
+      "returned": 18,
+      "alreadyHad": 18,
+      "filled": 0,
+      "posOk": 0
+    },
+    "praziquantel": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "miconazol": {
+      "returned": 40,
+      "alreadyHad": 29,
+      "filled": 11,
+      "posOk": 11
+    },
+    "voriconazol": {
+      "returned": 23,
+      "alreadyHad": 9,
+      "filled": 14,
+      "posOk": 14
+    },
+    "loratadina": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "fexofenadina": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "desloratadina": {
+      "returned": 41,
+      "alreadyHad": 39,
+      "filled": 2,
+      "posOk": 2
+    },
+    "cetirizina": {
+      "returned": 10,
+      "alreadyHad": 8,
+      "filled": 2,
+      "posOk": 2
+    },
+    "ebastina": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "rupatadina": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "bilastina": {
+      "returned": 12,
+      "alreadyHad": 12,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levocetirizina": {
+      "returned": 26,
+      "alreadyHad": 23,
+      "filled": 3,
+      "posOk": 3
+    },
+    "dexclorfeniramina": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "prometazina": {
+      "returned": 22,
+      "alreadyHad": 21,
+      "filled": 1,
+      "posOk": 1
+    },
+    "fenoterol": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "terbutalina": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "salbutamol": {
+      "returned": 27,
+      "alreadyHad": 25,
+      "filled": 2,
+      "posOk": 2
+    },
+    "formoterol": {
+      "returned": 34,
+      "alreadyHad": 34,
+      "filled": 0,
+      "posOk": 0
+    },
+    "salmeterol": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "indacaterol": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "vilanterol": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "budesonida": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ciclesonida": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "beclometasona": {
+      "returned": 34,
+      "alreadyHad": 34,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fluticasona": {
+      "returned": 32,
+      "alreadyHad": 32,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ipratrópio": {
+      "returned": 18,
+      "alreadyHad": 18,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tiotrópio": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "mometasona": {
+      "returned": 32,
+      "alreadyHad": 32,
+      "filled": 0,
+      "posOk": 0
+    },
+    "umeclidínio": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "glicopirrônio": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "zafirlucaste": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "teofilina": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "roflumilaste": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "omalizumabe": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "mepolizumabe": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dupilumabe": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levotiroxina": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "liotironina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "propiltiouracila": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metimazol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "hidroxizina": {
+      "returned": 28,
+      "alreadyHad": 15,
+      "filled": 13,
+      "posOk": 13
+    },
+    "deflazacort": {
+      "returned": 14,
+      "alreadyHad": 14,
+      "filled": 0,
+      "posOk": 0
+    },
+    "montelucaste": {
+      "returned": 41,
+      "alreadyHad": 34,
+      "filled": 7,
+      "posOk": 7
+    },
+    "betametasona": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metilprednisolona": {
+      "returned": 14,
+      "alreadyHad": 14,
+      "filled": 0,
+      "posOk": 0
+    },
+    "hidrocortisona": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "dexametasona": {
+      "returned": 40,
+      "alreadyHad": 38,
+      "filled": 2,
+      "posOk": 2
+    },
+    "triancinolona": {
+      "returned": 31,
+      "alreadyHad": 31,
+      "filled": 0,
+      "posOk": 0
+    },
+    "testosterona": {
+      "returned": 12,
+      "alreadyHad": 12,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tamoxifeno": {
+      "returned": 21,
+      "alreadyHad": 21,
+      "filled": 0,
+      "posOk": 0
+    },
+    "letrozol": {
+      "returned": 19,
+      "alreadyHad": 19,
+      "filled": 0,
+      "posOk": 0
+    },
+    "anastrozol": {
+      "returned": 14,
+      "alreadyHad": 14,
+      "filled": 0,
+      "posOk": 0
+    },
+    "exemestano": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "prednisona": {
+      "returned": 36,
+      "alreadyHad": 27,
+      "filled": 9,
+      "posOk": 9
+    },
+    "estradiol": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "estriol": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "didrogesterona": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "noretisterona": {
+      "returned": 23,
+      "alreadyHad": 23,
+      "filled": 0,
+      "posOk": 0
+    },
+    "progesterona": {
+      "returned": 15,
+      "alreadyHad": 13,
+      "filled": 2,
+      "posOk": 2
+    },
+    "drospirenona": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "etinilestradiol": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dienogeste": {
+      "returned": 35,
+      "alreadyHad": 33,
+      "filled": 2,
+      "posOk": 2
+    },
+    "prednisolona": {
+      "returned": 42,
+      "alreadyHad": 27,
+      "filled": 15,
+      "posOk": 15
+    },
+    "desogestrel": {
+      "returned": 42,
+      "alreadyHad": 42,
+      "filled": 0,
+      "posOk": 0
+    },
+    "gestodeno": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "norelgestromina": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levonorgestrel": {
+      "returned": 40,
+      "alreadyHad": 36,
+      "filled": 4,
+      "posOk": 4
+    },
+    "varfarina": {
+      "returned": 11,
+      "alreadyHad": 8,
+      "filled": 3,
+      "posOk": 3
+    },
+    "dabigatrana": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ciproterona": {
+      "returned": 32,
+      "alreadyHad": 28,
+      "filled": 4,
+      "posOk": 4
+    },
+    "apixabana": {
+      "returned": 30,
+      "alreadyHad": 30,
+      "filled": 0,
+      "posOk": 0
+    },
+    "edoxabana": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "clopidogrel": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "heparina": {
+      "returned": 14,
+      "alreadyHad": 13,
+      "filled": 1,
+      "posOk": 1
+    },
+    "enoxaparina": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "ticagrelor": {
+      "returned": 15,
+      "alreadyHad": 15,
+      "filled": 0,
+      "posOk": 0
+    },
+    "prasugrel": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "alopurinol": {
+      "returned": 15,
+      "alreadyHad": 15,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácido tranexâmico": {
+      "returned": 36,
+      "alreadyHad": 36,
+      "filled": 0,
+      "posOk": 0
+    },
+    "febuxostate": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "colchicina": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sildenafila": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tadalafila": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "vardenafila": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "avanafila": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "dutasterida": {
+      "returned": 20,
+      "alreadyHad": 20,
+      "filled": 0,
+      "posOk": 0
+    },
+    "finasterida": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "alfuzosina": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "silodosina": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tansulosina": {
+      "returned": 40,
+      "alreadyHad": 38,
+      "filled": 2,
+      "posOk": 2
+    },
+    "oxibutinina": {
+      "returned": 9,
+      "alreadyHad": 8,
+      "filled": 1,
+      "posOk": 1
+    },
+    "tolterodina": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "solifenacina": {
+      "returned": 18,
+      "alreadyHad": 16,
+      "filled": 2,
+      "posOk": 2
+    },
+    "mirabegrona": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fenobarbital": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "gabapentina": {
+      "returned": 34,
+      "alreadyHad": 34,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fenitoína": {
+      "returned": 8,
+      "alreadyHad": 7,
+      "filled": 1,
+      "posOk": 1
+    },
+    "vigabatrina": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "primidona": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "etossuximida": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "levetiracetam": {
+      "returned": 40,
+      "alreadyHad": 36,
+      "filled": 4,
+      "posOk": 4
+    },
+    "pregabalina": {
+      "returned": 42,
+      "alreadyHad": 37,
+      "filled": 5,
+      "posOk": 5
+    },
+    "levodopa": {
+      "returned": 15,
+      "alreadyHad": 14,
+      "filled": 1,
+      "posOk": 1
+    },
+    "ropinirol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "carbidopa": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "rasagilina": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "selegilina": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "amantadina": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "entacapona": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sumatriptano": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "biperideno": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "pramipexol": {
+      "returned": 42,
+      "alreadyHad": 38,
+      "filled": 4,
+      "posOk": 4
+    },
+    "zolmitriptano": {
+      "returned": 2,
+      "alreadyHad": 1,
+      "filled": 1,
+      "posOk": 1
+    },
+    "naratriptano": {
+      "returned": 18,
+      "alreadyHad": 18,
+      "filled": 0,
+      "posOk": 0
+    },
+    "rizatriptano": {
+      "returned": 6,
+      "alreadyHad": 4,
+      "filled": 2,
+      "posOk": 2
+    },
+    "cinarizina": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "rivaroxabana": {
+      "returned": 41,
+      "alreadyHad": 12,
+      "filled": 29,
+      "posOk": 29
+    },
+    "betahistina": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tramadol": {
+      "returned": 43,
+      "alreadyHad": 43,
+      "filled": 0,
+      "posOk": 0
+    },
+    "codeína": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "morfina": {
+      "returned": 12,
+      "alreadyHad": 12,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metadona": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "oxicodona": {
+      "returned": 19,
+      "alreadyHad": 19,
+      "filled": 0,
+      "posOk": 0
+    },
+    "fentanil": {
+      "returned": 13,
+      "alreadyHad": 13,
+      "filled": 0,
+      "posOk": 0
+    },
+    "buprenorfina": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tapentadol": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "flunarizina": {
+      "returned": 8,
+      "alreadyHad": 3,
+      "filled": 5,
+      "posOk": 5
+    },
+    "azatioprina": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tacrolimo": {
+      "returned": 35,
+      "alreadyHad": 35,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ciclosporina": {
+      "returned": 16,
+      "alreadyHad": 15,
+      "filled": 1,
+      "posOk": 1
+    },
+    "metotrexato": {
+      "returned": 12,
+      "alreadyHad": 12,
+      "filled": 0,
+      "posOk": 0
+    },
+    "leflunomida": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "hidroxicloroquina": {
+      "returned": 12,
+      "alreadyHad": 11,
+      "filled": 1,
+      "posOk": 1
+    },
+    "etanercepte": {
+      "returned": 19,
+      "alreadyHad": 19,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cloroquina": {
+      "returned": 2,
+      "alreadyHad": 1,
+      "filled": 1,
+      "posOk": 1
+    },
+    "adalimumabe": {
+      "returned": 24,
+      "alreadyHad": 24,
+      "filled": 0,
+      "posOk": 0
+    },
+    "abatacepte": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "tocilizumabe": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "secuquinumabe": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "infliximabe": {
+      "returned": 4,
+      "alreadyHad": 3,
+      "filled": 1,
+      "posOk": 1
+    },
+    "ustequinumabe": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ixequizumabe": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácido fólico": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácido ascórbico": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "rituximabe": {
+      "returned": 15,
+      "alreadyHad": 11,
+      "filled": 4,
+      "posOk": 4
+    },
+    "ergocalciferol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "vitamina B12": {
+      "returned": 44,
+      "alreadyHad": 44,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cianocobalamina": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "metilcobalamina": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "vitamina D": {
+      "returned": 42,
+      "alreadyHad": 38,
+      "filled": 4,
+      "posOk": 4
+    },
+    "tiamina": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "piridoxina": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "riboflavina": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "biotina": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sulfato ferroso": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "colecalciferol": {
+      "returned": 42,
+      "alreadyHad": 36,
+      "filled": 6,
+      "posOk": 6
+    },
+    "sacarato férrico": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "carbonato de cálcio": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ferripolimaltose": {
+      "returned": 23,
+      "alreadyHad": 22,
+      "filled": 1,
+      "posOk": 1
+    },
+    "citrato de cálcio": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "óxido de magnésio": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "sulfato de magnésio": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ácidos graxos": {
+      "returned": 36,
+      "alreadyHad": 36,
+      "filled": 0,
+      "posOk": 0
+    },
+    "ômega 3": {
+      "returned": 43,
+      "alreadyHad": 43,
+      "filled": 0,
+      "posOk": 0
+    },
+    "coenzima Q10": {
+      "returned": 36,
+      "alreadyHad": 36,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tylenol": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "cloreto de magnésio": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "Dorflex": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Buscopan": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Neosaldina": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cataflam": {
+      "returned": 15,
+      "alreadyHad": 15,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Advil": {
+      "returned": 13,
+      "alreadyHad": 13,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Aspirina": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Doril": {
+      "returned": 35,
+      "alreadyHad": 35,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Naldecon": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Voltaren": {
+      "returned": 4,
+      "alreadyHad": 2,
+      "filled": 2,
+      "posOk": 2
+    },
+    "Engov": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Dorsal": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tylex": {
+      "returned": 15,
+      "alreadyHad": 15,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Resfenol": {
+      "returned": 6,
+      "alreadyHad": 4,
+      "filled": 2,
+      "posOk": 2
+    },
+    "Migraliv": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Maxalt": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Naramig": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sumax": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zomig": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Allegra": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Vick": {
+      "returned": 40,
+      "alreadyHad": 37,
+      "filled": 3,
+      "posOk": 3
+    },
+    "Polaramine": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Histamin": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Loratamed": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Claritin": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cetinax": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zyrtec": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Telfast": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Polaryn": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Selozok": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Concor": {
+      "returned": 35,
+      "alreadyHad": 35,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Adalat": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Norvasc": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lopressor": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cordarone": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tenoretic": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Atensina": {
+      "returned": 3,
+      "alreadyHad": 1,
+      "filled": 2,
+      "posOk": 2
+    },
+    "Lopid": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Diovan": {
+      "returned": 26,
+      "alreadyHad": 26,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Atenol": {
+      "returned": 40,
+      "alreadyHad": 38,
+      "filled": 2,
+      "posOk": 2
+    },
+    "Cozaar": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Renitec": {
+      "returned": 5,
+      "alreadyHad": 2,
+      "filled": 3,
+      "posOk": 3
+    },
+    "Aprovel": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Crestor": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zetia": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zocor": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Micardis": {
+      "returned": 14,
+      "alreadyHad": 11,
+      "filled": 3,
+      "posOk": 3
+    },
+    "Vytorin": {
+      "returned": 9,
+      "alreadyHad": 7,
+      "filled": 2,
+      "posOk": 2
+    },
+    "Lipitor": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Glucophage": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Galvus": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Janumet": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Glifage": {
+      "returned": 7,
+      "alreadyHad": 5,
+      "filled": 2,
+      "posOk": 2
+    },
+    "Forxiga": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Jardiance": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Trayenta": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Onglyza": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Saxenda": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Victoza": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Ozempic": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Trulicity": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lantus": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Humalog": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tresiba": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Losec": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Levemir": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Vasopril": {
+      "returned": 15,
+      "alreadyHad": 2,
+      "filled": 13,
+      "posOk": 13
+    },
+    "Pantozol": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Nexium": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Prazol": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pariet": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tecta": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Motilium": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Plasil": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Vonau": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Mylanta": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Imosec": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Bromopride": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tiorfan": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lactopurga": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cipralex": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lexapro": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Daforin": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pondera": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Efexor": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Wellbutrin": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pristiq": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zoloft": {
+      "returned": 2,
+      "alreadyHad": 0,
+      "filled": 2,
+      "posOk": 2
+    },
+    "Aropax": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pamelor": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Prozac": {
+      "returned": 5,
+      "alreadyHad": 2,
+      "filled": 3,
+      "posOk": 3
+    },
+    "Tryptanol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Remeron": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cymbalta": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Anafranil": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Frontal": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lexotan": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Valium": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Stilnox": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lorax": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Rivotril": {
+      "returned": 6,
+      "alreadyHad": 4,
+      "filled": 2,
+      "posOk": 2
+    },
+    "Seroquel": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Abilify": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Trileptal": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Depakote": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lamictal": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Ritalina": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Venvanse": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Strattera": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Risperdal": {
+      "returned": 11,
+      "alreadyHad": 7,
+      "filled": 4,
+      "posOk": 4
+    },
+    "Ebix": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Eranz": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zyprexa": {
+      "returned": 7,
+      "alreadyHad": 2,
+      "filled": 5,
+      "posOk": 5
+    },
+    "Exelon": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Velamox": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Amoxil": {
+      "returned": 41,
+      "alreadyHad": 40,
+      "filled": 1,
+      "posOk": 1
+    },
+    "Bactrim": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Clavulin": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zimax": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Keflex": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Ceclor": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Clarix": {
+      "returned": 41,
+      "alreadyHad": 40,
+      "filled": 1,
+      "posOk": 1
+    },
+    "Cefalexina": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zitromax": {
+      "returned": 2,
+      "alreadyHad": 0,
+      "filled": 2,
+      "posOk": 2
+    },
+    "Rocefin": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Levaquin": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cipro": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tavanic": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Floxacin": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Flagyl": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Annita": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Stamicin": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Macrodantina": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tamiflu": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cidofovir": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sporanox": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Nizoral": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Daktarin": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zovirax": {
+      "returned": 4,
+      "alreadyHad": 1,
+      "filled": 3,
+      "posOk": 3
+    },
+    "Mycostatin": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lamisil": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Aerolin": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zoltec": {
+      "returned": 4,
+      "alreadyHad": 1,
+      "filled": 3,
+      "posOk": 3
+    },
+    "Bricanyl": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Serevent": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Symbicort": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Onbrize": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Foradil": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Seretide": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Vannair": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pulmicort": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Clenil": {
+      "returned": 9,
+      "alreadyHad": 9,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Flixotide": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Atrovent": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Spiriva": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Anoro": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Trelegy": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Singulair": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Accolate": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Daxas": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Synthroid": {
+      "returned": 12,
+      "alreadyHad": 12,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Levoid": {
+      "returned": 31,
+      "alreadyHad": 31,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Euthyrox": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Puran T4": {
+      "returned": 15,
+      "alreadyHad": 15,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Decadron": {
+      "returned": 13,
+      "alreadyHad": 13,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Meticorten": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tapazol": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Diprospan": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Predsim": {
+      "returned": 12,
+      "alreadyHad": 12,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Triancil": {
+      "returned": 31,
+      "alreadyHad": 31,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Yasmin": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Allurene": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Celestone": {
+      "returned": 5,
+      "alreadyHad": 2,
+      "filled": 3,
+      "posOk": 3
+    },
+    "Tâmisa": {
+      "returned": 12,
+      "alreadyHad": 12,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Yaz": {
+      "returned": 3,
+      "alreadyHad": 2,
+      "filled": 1,
+      "posOk": 1
+    },
+    "Diane": {
+      "returned": 37,
+      "alreadyHad": 37,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cerazette": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Belara": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Mirena": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Selene": {
+      "returned": 40,
+      "alreadyHad": 39,
+      "filled": 1,
+      "posOk": 1
+    },
+    "Iumi": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Stezza": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Qlaira": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tegretol": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Depakene": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Neurontin": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lyrica": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Keppra": {
+      "returned": 11,
+      "alreadyHad": 11,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sabril": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Prolopa": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sinemet": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Stalevo": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sifrol": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Requip": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Azilect": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Akineton": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Lasix": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Higroton": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Aldactone": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Diurix": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Marevan": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Xarelto": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pradaxa": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Eliquis": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Plavix": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Brilinta": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Clexane": {
+      "returned": 12,
+      "alreadyHad": 12,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Zyloric": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Uloric": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Colchis": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cialis": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Levitra": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Spedra": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Proscar": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Avodart": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Secotex": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Mictonorm": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tramal": {
+      "returned": 43,
+      "alreadyHad": 43,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Codein": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Dimorf": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Viagra": {
+      "returned": 6,
+      "alreadyHad": 2,
+      "filled": 4,
+      "posOk": 4
+    },
+    "MST": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Spironol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Aradois": {
+      "returned": 13,
+      "alreadyHad": 13,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Furosemida": {
+      "returned": 20,
+      "alreadyHad": 20,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Atorvastatin": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pravacol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Donaren": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Olcadil": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Centrum": {
+      "returned": 18,
+      "alreadyHad": 18,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Pharmaton": {
+      "returned": 4,
+      "alreadyHad": 4,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Berocca": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sinvastatin": {
+      "returned": 41,
+      "alreadyHad": 37,
+      "filled": 4,
+      "posOk": 4
+    },
+    "Hidroclorotiazida": {
+      "returned": 44,
+      "alreadyHad": 40,
+      "filled": 4,
+      "posOk": 4
+    },
+    "Caltrate": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Calcitran": {
+      "returned": 10,
+      "alreadyHad": 10,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Ferronyl": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Combiron": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Noripurum": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sulfato Ferroso": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "DePura": {
+      "returned": 5,
+      "alreadyHad": 5,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Addera D3": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Niferex": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Vita D": {
+      "returned": 44,
+      "alreadyHad": 44,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Bepantol": {
+      "returned": 16,
+      "alreadyHad": 16,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Hipoglós": {
+      "returned": 7,
+      "alreadyHad": 7,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cicaplast": {
+      "returned": 8,
+      "alreadyHad": 8,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cicalfate": {
+      "returned": 6,
+      "alreadyHad": 6,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Caladerm": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Caladryl": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Sustanon": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Durateston": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Deposteron": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Androgel": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Estradot": {
+      "returned": 3,
+      "alreadyHad": 3,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Climen": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Trinordiol": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Aciclovir": {
+      "returned": 41,
+      "alreadyHad": 41,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Premarin": {
+      "returned": 3,
+      "alreadyHad": 1,
+      "filled": 2,
+      "posOk": 2
+    },
+    "Loratamed D": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Decongestin": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Allegra D": {
+      "returned": 40,
+      "alreadyHad": 40,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Tylenol Sinus": {
+      "returned": 2,
+      "alreadyHad": 2,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Dorsal Cafeína": {
+      "returned": 1,
+      "alreadyHad": 1,
+      "filled": 0,
+      "posOk": 0
+    },
+    "Cibalena": {
+      "returned": 0,
+      "alreadyHad": 0,
+      "filled": 0,
+      "posOk": 0
+    }
+  }
+}
